@@ -1,0 +1,81 @@
+EnergyPlus Starting
+EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.05.15 09:50
+Adjusting Air System Sizing
+Adjusting Standard 62.1 Ventilation Sizing
+Initializing Simulation
+Reporting Surfaces
+Beginning Primary Simulation
+Initializing New Environment Parameters
+Warming up {1}
+Instantiating Building Controls Virtual Test Bed
+ExternalInterface initializes.
+Number of outputs in ExternalInterface = 9
+Number of inputs  in ExternalInterface = 6
+Warming up {2}
+Warming up {3}
+Warming up {4}
+Warming up {5}
+Warming up {6}
+Warming up {7}
+Warming up {8}
+Warming up {9}
+Warming up {10}
+Warming up {11}
+Warming up {12}
+Warming up {13}
+Warming up {14}
+Warming up {15}
+Warming up {16}
+Warming up {17}
+Warming up {18}
+Warming up {19}
+Warming up {20}
+Warming up {21}
+Warming up {22}
+Warming up {23}
+Warming up {24}
+Warming up {25}
+Warming up {26}
+Warming up {27}
+Warming up {28}
+Warming up {29}
+Warming up {30}
+Warming up {31}
+Warming up {32}
+Warming up {33}
+Warming up {34}
+Warming up {35}
+Warming up {36}
+Warming up {37}
+Warming up {38}
+Warming up {39}
+Warming up {40}
+Warming up {41}
+Warming up {42}
+Warming up {43}
+Warming up {44}
+Warming up {45}
+Warming up {46}
+Warming up {47}
+Warming up {48}
+Warming up {49}
+Warming up {50}
+Starting Simulation at 03/01/2010 for WHOLEYEARDAY
+ExternalInterface starts first data exchange.
+Updating Shadowing Calculations, Start Date=03/21/2010
+Continuing Simulation at 03/21/2010 for WHOLEYEARDAY
+Updating Shadowing Calculations, Start Date=04/10/2010
+Continuing Simulation at 04/10/2010 for WHOLEYEARDAY
+Updating Shadowing Calculations, Start Date=04/30/2010
+Continuing Simulation at 04/30/2010 for WHOLEYEARDAY
+Updating Shadowing Calculations, Start Date=05/20/2010
+Continuing Simulation at 05/20/2010 for WHOLEYEARDAY
+Updating Shadowing Calculations, Start Date=06/09/2010
+Continuing Simulation at 06/09/2010 for WHOLEYEARDAY
+Updating Shadowing Calculations, Start Date=06/29/2010
+Continuing Simulation at 06/29/2010 for WHOLEYEARDAY
+Updating Shadowing Calculations, Start Date=07/19/2010
+Continuing Simulation at 07/19/2010 for WHOLEYEARDAY
+Writing tabular output file results using HTML format.
+Writing final SQL reports
+EnergyPlus Run Time=00hr 00min 17.86sec
