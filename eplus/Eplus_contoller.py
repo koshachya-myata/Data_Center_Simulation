@@ -24,8 +24,11 @@ class Eplus_controller:
         os.chdir(idf_dir)
 
         if os.name == "nt":  # for windows
-            print('FIXME')
-            exit(1)
+            print('Windows support may not work')
+            eplus_script = eplus_path + "energyplus"
+            idf_path = os.path.join(os.path.dirname(__file__), idf_file)
+            weather_path = os.path.join(os.path.dirname(__file__), weather)
+            self.p = subprocess.Popen([eplus_script, "-w", weather_path, idf_path], stdout=log_file)
 
         else:  # for linux/mac
             eplus_script = eplus_path + "energyplus"
@@ -88,22 +91,4 @@ def set_eplus_dir(path):
             path = path + "/"
 
     eplus_dir = path
-
-
-"""
-Energy Plus Protocol Version 1 & 2:
-Packet has the form:
-      v f dr di db t r1 r2 ... i1 i2 ... b1 b2 ...
-where
-  v    - version number (1,2)
-  f    - flag (0: communicate, 1: finish, -10: initialization error,
-               -20: time integration error, -1: unknown error)
-  dr   - number of real values
-  di   - number of integer values
-  db   - number of boolean values
-  t    - current simulation time in seconds (format %20.15e)
-  r1 r2 ... are real values (format %20.15e)
-  i1 i2 ... are integer values (format %d)
-  b1 b2 ... are boolean values (format %d)
-Note that if f is non-zero, other values after it will not be processed.
-"""
+    

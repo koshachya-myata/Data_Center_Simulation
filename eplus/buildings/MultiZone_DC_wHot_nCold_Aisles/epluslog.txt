@@ -1,0 +1,213 @@
+EnergyPlus Starting
+EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.06.07 17:52
+Initializing Response Factors
+Calculating CTFs for "TYPICAL IEAD ROOF R-31.25"
+Calculating CTFs for "TYPICAL INSULATED CARPETED 8IN SLAB FLOOR"
+Calculating CTFs for "TYPICAL INSULATED CARPETED 8IN SLAB FLOOR"
+Calculating CTFs for "TYPICAL INSULATED STEEL FRAMED EXTERIOR WALL R-20.41"
+Calculating CTFs for "TYPICAL INTERIOR CEILING"
+Initializing Window Optical Properties
+Initializing Solar Calculations
+Allocate Solar Module Arrays
+Initializing Zone and Enclosure Report Variables
+Initializing Surface (Shading) Report Variables
+Computing Interior Solar Absorption Factors
+Determining Shadowing Combinations
+Computing Window Shade Absorption Factors
+Proceeding with Initializing Solar Calculations
+Initializing Surfaces
+Initializing Outdoor environment for Surfaces
+Setting up Surface Reporting Variables
+Initializing Temperature and Flux Histories
+Initializing Window Shading
+Computing Interior Absorption Factors
+Computing Interior Diffuse Solar Absorption Factors
+Initializing Solar Heat Gains
+Initializing Internal Heat Gains
+Initializing Interior Solar Distribution
+Initializing Interior Convection Coefficients
+Gathering Information for Predefined Reporting
+Completed Initializing Surface Heat Balance
+Calculate Outside Surface Heat Balance
+Calculate Inside Surface Heat Balance
+Calculate Air Heat Balance
+Initializing HVAC
+Warming up
+Warming up
+Warming up
+Warming up
+Warming up
+Performing Zone Sizing Simulation
+...for Sizing Period: #1 MOSCOW ANN CLG .4% CONDNS DB=>MWB
+Warming up
+Warming up
+Warming up
+Warming up
+Warming up
+Performing Zone Sizing Simulation
+...for Sizing Period: #2 MOSCOW ANN CLG .4% CONDNS DP=>MDB
+Warming up
+Warming up
+Warming up
+Warming up
+Warming up
+Performing Zone Sizing Simulation
+...for Sizing Period: #3 MOSCOW ANN CLG .4% CONDNS ENTH=>MDB
+Warming up
+Warming up
+Warming up
+Warming up
+Warming up
+Performing Zone Sizing Simulation
+...for Sizing Period: #4 MOSCOW ANN CLG .4% CONDNS WB=>MDB
+Warming up
+Warming up
+Warming up
+Warming up
+Warming up
+Performing Zone Sizing Simulation
+...for Sizing Period: #5 MOSCOW ANN HTG 99.6% CONDNS DB
+Warming up
+Warming up
+Warming up
+Warming up
+Warming up
+Performing Zone Sizing Simulation
+...for Sizing Period: #6 MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB
+Warming up
+Warming up
+Warming up
+Warming up
+Warming up
+Performing Zone Sizing Simulation
+...for Sizing Period: #7 MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB
+Warming up
+Warming up
+Warming up
+Warming up
+Warming up
+Performing Zone Sizing Simulation
+...for Sizing Period: #8 ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB
+Warming up
+Warming up
+Warming up
+Warming up
+Warming up
+Performing Zone Sizing Simulation
+...for Sizing Period: #9 ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB
+Calculating System sizing
+...for Sizing Period: #1 MOSCOW ANN CLG .4% CONDNS DB=>MWB
+Calculating System sizing
+...for Sizing Period: #2 MOSCOW ANN CLG .4% CONDNS DP=>MDB
+Calculating System sizing
+...for Sizing Period: #3 MOSCOW ANN CLG .4% CONDNS ENTH=>MDB
+Calculating System sizing
+...for Sizing Period: #4 MOSCOW ANN CLG .4% CONDNS WB=>MDB
+Calculating System sizing
+...for Sizing Period: #5 MOSCOW ANN HTG 99.6% CONDNS DB
+Calculating System sizing
+...for Sizing Period: #6 MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB
+Calculating System sizing
+...for Sizing Period: #7 MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB
+Calculating System sizing
+...for Sizing Period: #8 ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB
+Calculating System sizing
+...for Sizing Period: #9 ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB
+Adjusting Air System Sizing
+Adjusting Standard 62.1 Ventilation Sizing
+Initializing Simulation
+Reporting Surfaces
+Beginning HVAC Sizing Simulation
+Initializing New Environment Parameters, HVAC Sizing Simulation
+Warming up {1}
+Warming up {2}
+Warming up {3}
+Warming up {4}
+Warming up {5}
+Warming up {6}
+Starting HVAC Sizing Simulation at 07/21 for MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1
+Initializing New Environment Parameters, HVAC Sizing Simulation
+Warming up {1}
+Warming up {2}
+Warming up {3}
+Warming up {4}
+Warming up {5}
+Warming up {6}
+Warming up {7}
+Warming up {8}
+Warming up {9}
+Warming up {10}
+Warming up {11}
+Warming up {12}
+Warming up {13}
+Warming up {14}
+Warming up {15}
+Warming up {16}
+Warming up {17}
+Warming up {18}
+Warming up {19}
+Warming up {20}
+Warming up {21}
+Warming up {22}
+Warming up {23}
+Warming up {24}
+Warming up {25}
+Warming up {26}
+Warming up {27}
+Warming up {28}
+Warming up {29}
+Warming up {30}
+Warming up {31}
+Warming up {32}
+Warming up {33}
+Warming up {34}
+Warming up {35}
+Warming up {36}
+Warming up {37}
+Warming up {38}
+Warming up {39}
+Warming up {40}
+Warming up {41}
+Warming up {42}
+Warming up {43}
+Warming up {44}
+Warming up {45}
+Warming up {46}
+Warming up {47}
+Warming up {48}
+Warming up {49}
+Warming up {50}
+Starting HVAC Sizing Simulation at 07/21 for MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1
+Initializing New Environment Parameters, HVAC Sizing Simulation
+Warming up {1}
+Warming up {2}
+Warming up {3}
+Warming up {4}
+Warming up {5}
+Starting HVAC Sizing Simulation at 07/21 for MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1
+Initializing New Environment Parameters, HVAC Sizing Simulation
+Warming up {1}
+Warming up {2}
+Warming up {3}
+Warming up {4}
+Warming up {5}
+Starting HVAC Sizing Simulation at 07/21 for MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1
+Initializing New Environment Parameters, HVAC Sizing Simulation
+Warming up {1}
+Warming up {2}
+Warming up {3}
+Warming up {4}
+Warming up {5}
+Warming up {6}
+Warming up {7}
+Warming up {8}
+Warming up {9}
+Warming up {10}
+Warming up {11}
+Starting HVAC Sizing Simulation at 02/21 for MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1
+Initializing New Environment Parameters, HVAC Sizing Simulation
+Warming up {1}
+Warming up {2}
+Warming up {3}
+Warming up {4}
+Warming up {5}

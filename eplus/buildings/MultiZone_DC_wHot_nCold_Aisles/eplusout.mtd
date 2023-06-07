@@ -1,0 +1,1378 @@
+
+ Meters for 12,ZONE_2_COLD LIGTS_LOAD_DC:Lights Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 2 COLD [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:THERMAL ZONE 2 COLD [J]
+  OnMeter=InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+  OnMeter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 2 COLD [J]
+  OnMeter=General:InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 133,ZONE_3_HOT LIGTS_LOAD_DC:Lights Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 3 HOT [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:THERMAL ZONE 3 HOT [J]
+  OnMeter=InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+  OnMeter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 3 HOT [J]
+  OnMeter=General:InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 170,ZONE_6_COLD LIGTS_LOAD_DC:Lights Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 6 COLD [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:THERMAL ZONE 6 COLD [J]
+  OnMeter=InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+  OnMeter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 6 COLD [J]
+  OnMeter=General:InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 207,ZONE_11_HOT_LAST LIGTS_LOAD_DC:Lights Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 11 HOT LAST [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:THERMAL ZONE 11 HOT LAST [J]
+  OnMeter=InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+  OnMeter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 11 HOT LAST [J]
+  OnMeter=General:InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 244,ZONE_4_COLD LIGTS_LOAD_DC:Lights Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 4 COLD [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:THERMAL ZONE 4 COLD [J]
+  OnMeter=InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+  OnMeter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 4 COLD [J]
+  OnMeter=General:InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 281,ZONE_10_COLD LIGTS_LOAD_DC:Lights Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 10 COLD [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:THERMAL ZONE 10 COLD [J]
+  OnMeter=InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+  OnMeter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 10 COLD [J]
+  OnMeter=General:InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 318,ZONE_1_HOT_FIRST LIGTS_LOAD_DC:Lights Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 1 HOT [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:THERMAL ZONE 1 HOT [J]
+  OnMeter=InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+  OnMeter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 1 HOT [J]
+  OnMeter=General:InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 355,ZONE_8_COLD LIGTS_LOAD_DC:Lights Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 8 COLD [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:THERMAL ZONE 8 COLD [J]
+  OnMeter=InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+  OnMeter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 8 COLD [J]
+  OnMeter=General:InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 392,ZONE_9_HOT LIGTS_LOAD_DC:Lights Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 9 HOT [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:THERMAL ZONE 9 HOT [J]
+  OnMeter=InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+  OnMeter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 9 HOT [J]
+  OnMeter=General:InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 429,ZONE_5_HOT LIGTS_LOAD_DC:Lights Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 5 HOT [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:THERMAL ZONE 5 HOT [J]
+  OnMeter=InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+  OnMeter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 5 HOT [J]
+  OnMeter=General:InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 466,ZONE_7_HOT LIGTS_LOAD_DC:Lights Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 7 HOT [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorLights:Electricity [J]
+  OnMeter=InteriorLights:Electricity:Zone:THERMAL ZONE 7 HOT [J]
+  OnMeter=InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorLights:Electricity [J]
+  OnMeter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 7 HOT [J]
+  OnMeter=General:InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 503,ELECTRIC EQUIPMENT 5:Electric Equipment Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 1 HOT [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 1 HOT [J]
+  OnMeter=InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+  OnMeter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 1 HOT [J]
+  OnMeter=General:InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 576,ELECTRIC EQUIPMENT 2:Electric Equipment Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 10 COLD [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 10 COLD [J]
+  OnMeter=InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+  OnMeter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 10 COLD [J]
+  OnMeter=General:InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 601,ELECTRIC EQUIPMENT 3:Electric Equipment Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 11 HOT LAST [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 11 HOT LAST [J]
+  OnMeter=InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+  OnMeter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 11 HOT LAST [J]
+  OnMeter=General:InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 626,ELECTRIC EQUIPMENT 4:Electric Equipment Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 2 COLD [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 2 COLD [J]
+  OnMeter=InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+  OnMeter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 2 COLD [J]
+  OnMeter=General:InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 651,ELECTRIC EQUIPMENT 6:Electric Equipment Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 3 HOT [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 3 HOT [J]
+  OnMeter=InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+  OnMeter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 3 HOT [J]
+  OnMeter=General:InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 676,ELECTRIC EQUIPMENT 7:Electric Equipment Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 4 COLD [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 4 COLD [J]
+  OnMeter=InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+  OnMeter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 4 COLD [J]
+  OnMeter=General:InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 701,ELECTRIC EQUIPMENT 8:Electric Equipment Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 5 HOT [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 5 HOT [J]
+  OnMeter=InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+  OnMeter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 5 HOT [J]
+  OnMeter=General:InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 726,ELECTRIC EQUIPMENT 9:Electric Equipment Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 6 COLD [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 6 COLD [J]
+  OnMeter=InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+  OnMeter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 6 COLD [J]
+  OnMeter=General:InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 751,ELECTRIC EQUIPMENT 10:Electric Equipment Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 7 HOT [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 7 HOT [J]
+  OnMeter=InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+  OnMeter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 7 HOT [J]
+  OnMeter=General:InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 776,ELECTRIC EQUIPMENT 11:Electric Equipment Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 8 COLD [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 8 COLD [J]
+  OnMeter=InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+  OnMeter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 8 COLD [J]
+  OnMeter=General:InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 801,ELECTRIC EQUIPMENT 12:Electric Equipment Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Building [J]
+  OnMeter=Electricity:Zone:THERMAL ZONE 9 HOT [J]
+  OnMeter=Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=InteriorEquipment:Electricity [J]
+  OnMeter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 9 HOT [J]
+  OnMeter=InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+  OnMeter=General:InteriorEquipment:Electricity [J]
+  OnMeter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 9 HOT [J]
+  OnMeter=General:InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J]
+
+ Meters for 830,THERMAL ZONE 1 HOT:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 1 HOT [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:THERMAL ZONE 1 HOT [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+  OnMeter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 1 HOT [J]
+
+ Meters for 915,THERMAL ZONE 1 HOT:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 1 HOT [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 1 HOT [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+  OnMeter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 1 HOT [J]
+
+ Meters for 968,THERMAL ZONE 10 COLD:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 10 COLD [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:THERMAL ZONE 10 COLD [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+  OnMeter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 10 COLD [J]
+
+ Meters for 1005,THERMAL ZONE 10 COLD:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 10 COLD [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 10 COLD [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+  OnMeter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 10 COLD [J]
+
+ Meters for 1034,THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 11 HOT LAST [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:THERMAL ZONE 11 HOT LAST [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+  OnMeter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 11 HOT LAST [J]
+
+ Meters for 1071,THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 11 HOT LAST [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 11 HOT LAST [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+  OnMeter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 11 HOT LAST [J]
+
+ Meters for 1100,THERMAL ZONE 2 COLD:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 2 COLD [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:THERMAL ZONE 2 COLD [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+  OnMeter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 2 COLD [J]
+
+ Meters for 1137,THERMAL ZONE 2 COLD:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 2 COLD [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 2 COLD [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+  OnMeter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 2 COLD [J]
+
+ Meters for 1166,THERMAL ZONE 3 HOT:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 3 HOT [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:THERMAL ZONE 3 HOT [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+  OnMeter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 3 HOT [J]
+
+ Meters for 1203,THERMAL ZONE 3 HOT:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 3 HOT [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 3 HOT [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+  OnMeter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 3 HOT [J]
+
+ Meters for 1232,THERMAL ZONE 4 COLD:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 4 COLD [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:THERMAL ZONE 4 COLD [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+  OnMeter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 4 COLD [J]
+
+ Meters for 1269,THERMAL ZONE 4 COLD:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 4 COLD [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 4 COLD [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+  OnMeter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 4 COLD [J]
+
+ Meters for 1298,THERMAL ZONE 5 HOT:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 5 HOT [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:THERMAL ZONE 5 HOT [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+  OnMeter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 5 HOT [J]
+
+ Meters for 1335,THERMAL ZONE 5 HOT:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 5 HOT [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 5 HOT [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+  OnMeter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 5 HOT [J]
+
+ Meters for 1364,THERMAL ZONE 6 COLD:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 6 COLD [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:THERMAL ZONE 6 COLD [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+  OnMeter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 6 COLD [J]
+
+ Meters for 1401,THERMAL ZONE 6 COLD:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 6 COLD [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 6 COLD [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+  OnMeter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 6 COLD [J]
+
+ Meters for 1430,THERMAL ZONE 7 HOT:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 7 HOT [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:THERMAL ZONE 7 HOT [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+  OnMeter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 7 HOT [J]
+
+ Meters for 1467,THERMAL ZONE 7 HOT:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 7 HOT [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 7 HOT [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+  OnMeter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 7 HOT [J]
+
+ Meters for 1496,THERMAL ZONE 8 COLD:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 8 COLD [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:THERMAL ZONE 8 COLD [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+  OnMeter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 8 COLD [J]
+
+ Meters for 1533,THERMAL ZONE 8 COLD:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 8 COLD [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 8 COLD [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+  OnMeter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 8 COLD [J]
+
+ Meters for 1562,THERMAL ZONE 9 HOT:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 9 HOT [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:THERMAL ZONE 9 HOT [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+  OnMeter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 9 HOT [J]
+
+ Meters for 1599,THERMAL ZONE 9 HOT:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE 9 HOT [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 9 HOT [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+  OnMeter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 9 HOT [J]
+
+ Meters for 1628,THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Heating Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE SUPPLY PLENUM [J]
+  OnMeter=Heating:EnergyTransfer [J]
+  OnMeter=Heating:EnergyTransfer:Zone:THERMAL ZONE SUPPLY PLENUM [J]
+  OnMeter=General:Heating:EnergyTransfer [J]
+  OnMeter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE SUPPLY PLENUM [J]
+
+ Meters for 1665,THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Building [J]
+  OnMeter=EnergyTransfer:Zone:THERMAL ZONE SUPPLY PLENUM [J]
+  OnMeter=Cooling:EnergyTransfer [J]
+  OnMeter=Cooling:EnergyTransfer:Zone:THERMAL ZONE SUPPLY PLENUM [J]
+  OnMeter=General:Cooling:EnergyTransfer [J]
+  OnMeter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE SUPPLY PLENUM [J]
+
+ Meters for 1714,Whole Building:Facility Total Purchased Electricity Energy [J]
+  OnMeter=ElectricityPurchased:Facility [J]
+  OnMeter=ElectricityPurchased:Plant [J]
+  OnMeter=Cogeneration:ElectricityPurchased [J]
+  OnMeter=General:Cogeneration:ElectricityPurchased [J]
+
+ Meters for 1763,Whole Building:Facility Total Surplus Electricity Energy [J]
+  OnMeter=ElectricitySurplusSold:Facility [J]
+  OnMeter=ElectricitySurplusSold:Plant [J]
+  OnMeter=Cogeneration:ElectricitySurplusSold [J]
+  OnMeter=General:Cogeneration:ElectricitySurplusSold [J]
+
+ Meters for 1812,Whole Building:Facility Net Purchased Electricity Energy [J]
+  OnMeter=ElectricityNet:Facility [J]
+  OnMeter=ElectricityNet:Plant [J]
+  OnMeter=Cogeneration:ElectricityNet [J]
+  OnMeter=General:Cogeneration:ElectricityNet [J]
+
+ Meters for 1862,CRAH WATER CLG COIL:Cooling Coil Total Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:HVAC [J]
+  OnMeter=CoolingCoils:EnergyTransfer [J]
+
+ Meters for 1887,CRAH WATER CLG COIL:Cooling Coil Source Side Heat Transfer Energy [J]
+  OnMeter=PlantLoopCoolingDemand:Facility [J]
+  OnMeter=PlantLoopCoolingDemand:HVAC [J]
+  OnMeter=CoolingCoils:PlantLoopCoolingDemand [J]
+
+ Meters for 1924,CRAH FAN:Fan Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Fans:Electricity [J]
+  OnMeter=General:Fans:Electricity [J]
+
+ Meters for 1961,CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Water Volume [m3]
+  OnMeter=Water:Facility [m3]
+  OnMeter=Water:HVAC [m3]
+  OnMeter=Humidifier:Water [m3]
+  OnMeter=General:Humidifier:Water [m3]
+
+ Meters for 2010,CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Mains Water Volume [m3]
+  OnMeter=MainsWater:Facility [m3]
+  OnMeter=MainsWater:HVAC [m3]
+  OnMeter=Humidifier:MainsWater [m3]
+  OnMeter=General:Humidifier:MainsWater [m3]
+
+ Meters for 2059,CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:HVAC [J]
+  OnMeter=Humidifier:Electricity [J]
+  OnMeter=General:Humidifier:Electricity [J]
+
+ Meters for 2084,90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Cooling:Electricity [J]
+  OnMeter=General:Cooling:Electricity [J]
+
+ Meters for 2121,90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Evaporator Cooling Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Plant [J]
+  OnMeter=Chillers:EnergyTransfer [J]
+
+ Meters for 2146,90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Condenser Heat Transfer Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Plant [J]
+  OnMeter=HeatRejection:EnergyTransfer [J]
+  OnMeter=General:HeatRejection:EnergyTransfer [J]
+
+ Meters for 2171,INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER:Fluid Heat Exchanger Heat Transfer Energy [J]
+  OnMeter=EnergyTransfer:Facility [J]
+  OnMeter=EnergyTransfer:Plant [J]
+  OnMeter=Freecooling:EnergyTransfer [J]
+
+ Meters for 2184,CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Fan Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=HeatRejection:Electricity [J]
+  OnMeter=General:HeatRejection:Electricity [J]
+
+ Meters for 2209,CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Make Up Water Volume [m3]
+  OnMeter=Water:Facility [m3]
+  OnMeter=Water:Plant [m3]
+  OnMeter=HeatRejection:Water [m3]
+  OnMeter=General:HeatRejection:Water [m3]
+
+ Meters for 2246,CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Make Up Mains Water Volume [m3]
+  OnMeter=MainsWater:Facility [m3]
+  OnMeter=MainsWater:Plant [m3]
+  OnMeter=HeatRejection:MainsWater [m3]
+  OnMeter=General:HeatRejection:MainsWater [m3]
+
+ Meters for 2283,CHILLED WATER LOOP SECONDARY PUMP:Pump Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+  OnMeter=General:Pumps:Electricity [J]
+
+ Meters for 2308,CHILLED WATER LOOP PRIMARY PUMP:Pump Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+  OnMeter=General:Pumps:Electricity [J]
+
+ Meters for 2309,CONDENSER WATER LOOP CONSTANT PUMP:Pump Electricity Energy [J]
+  OnMeter=Electricity:Facility [J]
+  OnMeter=Electricity:Plant [J]
+  OnMeter=Pumps:Electricity [J]
+  OnMeter=General:Pumps:Electricity [J]
+
+ Meters for 2310,Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ Meters for 2335,Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ Meters for 2336,Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass [kg]
+  OnMeter=Carbon Equivalent:Facility [kg]
+  OnMeter=CarbonEquivalentEmissions:Carbon Equivalent [kg]
+
+ For Meter=Electricity:Facility [J], ResourceType=Electricity, contents are:
+  ZONE_2_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_3_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_6_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_11_HOT_LAST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_4_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_10_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_1_HOT_FIRST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_8_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_9_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_5_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_7_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 5:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 2:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 3:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 4:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 6:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 7:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 8:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 9:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 10:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 11:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 12:Electric Equipment Electricity Energy
+  CRAH FAN:Fan Electricity Energy
+  CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Electricity Energy
+  90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Electricity Energy
+  CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Fan Electricity Energy
+  CHILLED WATER LOOP SECONDARY PUMP:Pump Electricity Energy
+  CHILLED WATER LOOP PRIMARY PUMP:Pump Electricity Energy
+  CONDENSER WATER LOOP CONSTANT PUMP:Pump Electricity Energy
+
+ For Meter=Electricity:Building [J], ResourceType=Electricity, Group=Building, contents are:
+  ZONE_2_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_3_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_6_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_11_HOT_LAST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_4_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_10_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_1_HOT_FIRST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_8_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_9_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_5_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_7_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 5:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 2:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 3:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 4:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 6:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 7:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 8:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 9:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 10:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 11:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 12:Electric Equipment Electricity Energy
+
+ For Meter=Electricity:Zone:THERMAL ZONE 2 COLD [J], ResourceType=Electricity, Group=Zone, contents are:
+  ZONE_2_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 4:Electric Equipment Electricity Energy
+
+ For Meter=Electricity:SpaceType:DATACENTERSPACETYPE [J], ResourceType=Electricity, Group=SpaceType, contents are:
+  ZONE_2_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_3_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_6_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_11_HOT_LAST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_4_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_10_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_1_HOT_FIRST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_8_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_9_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_5_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_7_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 5:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 2:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 3:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 4:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 6:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 7:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 8:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 9:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 10:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 11:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 12:Electric Equipment Electricity Energy
+
+ For Meter=InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  ZONE_2_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_3_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_6_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_11_HOT_LAST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_4_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_10_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_1_HOT_FIRST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_8_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_9_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_5_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_7_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=InteriorLights:Electricity:Zone:THERMAL ZONE 2 COLD [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_2_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J], ResourceType=Electricity, EndUse=InteriorLights, Group=SpaceType, contents are:
+  ZONE_2_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_3_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_6_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_11_HOT_LAST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_4_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_10_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_1_HOT_FIRST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_8_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_9_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_5_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_7_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity [J], ResourceType=Electricity, EndUse=InteriorLights, contents are:
+  ZONE_2_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_3_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_6_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_11_HOT_LAST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_4_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_10_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_1_HOT_FIRST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_8_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_9_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_5_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_7_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 2 COLD [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_2_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity:SpaceType:DATACENTERSPACETYPE [J], ResourceType=Electricity, EndUse=InteriorLights, Group=SpaceType, contents are:
+  ZONE_2_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_3_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_6_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_11_HOT_LAST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_4_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_10_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_1_HOT_FIRST LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_8_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_9_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_5_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ZONE_7_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=Electricity:Zone:THERMAL ZONE 3 HOT [J], ResourceType=Electricity, Group=Zone, contents are:
+  ZONE_3_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 6:Electric Equipment Electricity Energy
+
+ For Meter=InteriorLights:Electricity:Zone:THERMAL ZONE 3 HOT [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_3_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 3 HOT [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_3_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=Electricity:Zone:THERMAL ZONE 6 COLD [J], ResourceType=Electricity, Group=Zone, contents are:
+  ZONE_6_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 9:Electric Equipment Electricity Energy
+
+ For Meter=InteriorLights:Electricity:Zone:THERMAL ZONE 6 COLD [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_6_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 6 COLD [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_6_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=Electricity:Zone:THERMAL ZONE 11 HOT LAST [J], ResourceType=Electricity, Group=Zone, contents are:
+  ZONE_11_HOT_LAST LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 3:Electric Equipment Electricity Energy
+
+ For Meter=InteriorLights:Electricity:Zone:THERMAL ZONE 11 HOT LAST [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_11_HOT_LAST LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 11 HOT LAST [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_11_HOT_LAST LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=Electricity:Zone:THERMAL ZONE 4 COLD [J], ResourceType=Electricity, Group=Zone, contents are:
+  ZONE_4_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 7:Electric Equipment Electricity Energy
+
+ For Meter=InteriorLights:Electricity:Zone:THERMAL ZONE 4 COLD [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_4_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 4 COLD [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_4_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=Electricity:Zone:THERMAL ZONE 10 COLD [J], ResourceType=Electricity, Group=Zone, contents are:
+  ZONE_10_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 2:Electric Equipment Electricity Energy
+
+ For Meter=InteriorLights:Electricity:Zone:THERMAL ZONE 10 COLD [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_10_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 10 COLD [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_10_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=Electricity:Zone:THERMAL ZONE 1 HOT [J], ResourceType=Electricity, Group=Zone, contents are:
+  ZONE_1_HOT_FIRST LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 5:Electric Equipment Electricity Energy
+
+ For Meter=InteriorLights:Electricity:Zone:THERMAL ZONE 1 HOT [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_1_HOT_FIRST LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 1 HOT [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_1_HOT_FIRST LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=Electricity:Zone:THERMAL ZONE 8 COLD [J], ResourceType=Electricity, Group=Zone, contents are:
+  ZONE_8_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 11:Electric Equipment Electricity Energy
+
+ For Meter=InteriorLights:Electricity:Zone:THERMAL ZONE 8 COLD [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_8_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 8 COLD [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_8_COLD LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=Electricity:Zone:THERMAL ZONE 9 HOT [J], ResourceType=Electricity, Group=Zone, contents are:
+  ZONE_9_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 12:Electric Equipment Electricity Energy
+
+ For Meter=InteriorLights:Electricity:Zone:THERMAL ZONE 9 HOT [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_9_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 9 HOT [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_9_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=Electricity:Zone:THERMAL ZONE 5 HOT [J], ResourceType=Electricity, Group=Zone, contents are:
+  ZONE_5_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 8:Electric Equipment Electricity Energy
+
+ For Meter=InteriorLights:Electricity:Zone:THERMAL ZONE 5 HOT [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_5_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 5 HOT [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_5_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=Electricity:Zone:THERMAL ZONE 7 HOT [J], ResourceType=Electricity, Group=Zone, contents are:
+  ZONE_7_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+  ELECTRIC EQUIPMENT 10:Electric Equipment Electricity Energy
+
+ For Meter=InteriorLights:Electricity:Zone:THERMAL ZONE 7 HOT [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_7_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=General:InteriorLights:Electricity:Zone:THERMAL ZONE 7 HOT [J], ResourceType=Electricity, EndUse=InteriorLights, Group=Zone, contents are:
+  ZONE_7_HOT LIGTS_LOAD_DC:Lights Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  ELECTRIC EQUIPMENT 5:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 2:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 3:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 4:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 6:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 7:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 8:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 9:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 10:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 11:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 12:Electric Equipment Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 1 HOT [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 5:Electric Equipment Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=SpaceType, contents are:
+  ELECTRIC EQUIPMENT 5:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 2:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 3:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 4:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 6:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 7:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 8:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 9:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 10:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 11:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 12:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity [J], ResourceType=Electricity, EndUse=InteriorEquipment, contents are:
+  ELECTRIC EQUIPMENT 5:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 2:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 3:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 4:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 6:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 7:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 8:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 9:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 10:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 11:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 12:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 1 HOT [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 5:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity:SpaceType:DATACENTERSPACETYPE [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=SpaceType, contents are:
+  ELECTRIC EQUIPMENT 5:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 2:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 3:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 4:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 6:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 7:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 8:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 9:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 10:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 11:Electric Equipment Electricity Energy
+  ELECTRIC EQUIPMENT 12:Electric Equipment Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 10 COLD [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 2:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 10 COLD [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 2:Electric Equipment Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 11 HOT LAST [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 3:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 11 HOT LAST [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 3:Electric Equipment Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 2 COLD [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 4:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 2 COLD [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 4:Electric Equipment Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 3 HOT [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 6:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 3 HOT [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 6:Electric Equipment Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 4 COLD [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 7:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 4 COLD [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 7:Electric Equipment Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 5 HOT [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 8:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 5 HOT [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 8:Electric Equipment Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 6 COLD [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 9:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 6 COLD [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 9:Electric Equipment Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 7 HOT [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 10:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 7 HOT [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 10:Electric Equipment Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 8 COLD [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 11:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 8 COLD [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 11:Electric Equipment Electricity Energy
+
+ For Meter=InteriorEquipment:Electricity:Zone:THERMAL ZONE 9 HOT [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 12:Electric Equipment Electricity Energy
+
+ For Meter=General:InteriorEquipment:Electricity:Zone:THERMAL ZONE 9 HOT [J], ResourceType=Electricity, EndUse=InteriorEquipment, Group=Zone, contents are:
+  ELECTRIC EQUIPMENT 12:Electric Equipment Electricity Energy
+
+ For Meter=EnergyTransfer:Facility [J], ResourceType=EnergyTransfer, contents are:
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Heating Energy
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Cooling Energy
+  CRAH WATER CLG COIL:Cooling Coil Total Cooling Energy
+  90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Evaporator Cooling Energy
+  90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Condenser Heat Transfer Energy
+  INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER:Fluid Heat Exchanger Heat Transfer Energy
+
+ For Meter=EnergyTransfer:Building [J], ResourceType=EnergyTransfer, Group=Building, contents are:
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Heating Energy
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:THERMAL ZONE 1 HOT [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Heating, contents are:
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Heating Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:THERMAL ZONE 1 HOT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Heating, contents are:
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 1 HOT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Cooling, contents are:
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 1 HOT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Cooling, contents are:
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Cooling Energy
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 1 HOT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 1 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:THERMAL ZONE 10 COLD [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:THERMAL ZONE 10 COLD [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 10 COLD [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 10 COLD [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 10 COLD [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 10 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:THERMAL ZONE 11 HOT LAST [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:THERMAL ZONE 11 HOT LAST [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 11 HOT LAST [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 11 HOT LAST [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 11 HOT LAST [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 11 HOT LAST:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:THERMAL ZONE 2 COLD [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:THERMAL ZONE 2 COLD [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 2 COLD [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 2 COLD [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 2 COLD [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 2 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:THERMAL ZONE 3 HOT [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:THERMAL ZONE 3 HOT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 3 HOT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 3 HOT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 3 HOT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 3 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:THERMAL ZONE 4 COLD [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:THERMAL ZONE 4 COLD [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 4 COLD [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 4 COLD [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 4 COLD [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 4 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:THERMAL ZONE 5 HOT [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:THERMAL ZONE 5 HOT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 5 HOT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 5 HOT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 5 HOT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 5 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:THERMAL ZONE 6 COLD [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:THERMAL ZONE 6 COLD [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 6 COLD [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 6 COLD [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 6 COLD [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 6 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:THERMAL ZONE 7 HOT [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:THERMAL ZONE 7 HOT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 7 HOT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 7 HOT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 7 HOT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 7 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:THERMAL ZONE 8 COLD [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:THERMAL ZONE 8 COLD [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 8 COLD [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 8 COLD [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 8 COLD [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 8 COLD:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:THERMAL ZONE 9 HOT [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Heating Energy
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:THERMAL ZONE 9 HOT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE 9 HOT [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:THERMAL ZONE 9 HOT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE 9 HOT [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE 9 HOT:Zone Air System Sensible Cooling Energy
+
+ For Meter=EnergyTransfer:Zone:THERMAL ZONE SUPPLY PLENUM [J], ResourceType=EnergyTransfer, Group=Zone, contents are:
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Heating Energy
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Cooling Energy
+
+ For Meter=Heating:EnergyTransfer:Zone:THERMAL ZONE SUPPLY PLENUM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Heating Energy
+
+ For Meter=General:Heating:EnergyTransfer:Zone:THERMAL ZONE SUPPLY PLENUM [J], ResourceType=EnergyTransfer, EndUse=Heating, Group=Zone, contents are:
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Heating Energy
+
+ For Meter=Cooling:EnergyTransfer:Zone:THERMAL ZONE SUPPLY PLENUM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Cooling Energy
+
+ For Meter=General:Cooling:EnergyTransfer:Zone:THERMAL ZONE SUPPLY PLENUM [J], ResourceType=EnergyTransfer, EndUse=Cooling, Group=Zone, contents are:
+  THERMAL ZONE SUPPLY PLENUM:Zone Air System Sensible Cooling Energy
+
+ For Meter=ElectricityPurchased:Facility [J], ResourceType=ElectricityPurchased, contents are:
+  Whole Building:Facility Total Purchased Electricity Energy
+
+ For Meter=ElectricityPurchased:Plant [J], ResourceType=ElectricityPurchased, Group=Plant, contents are:
+  Whole Building:Facility Total Purchased Electricity Energy
+
+ For Meter=Cogeneration:ElectricityPurchased [J], ResourceType=ElectricityPurchased, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Total Purchased Electricity Energy
+
+ For Meter=General:Cogeneration:ElectricityPurchased [J], ResourceType=ElectricityPurchased, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Total Purchased Electricity Energy
+
+ For Meter=ElectricitySurplusSold:Facility [J], ResourceType=ElectricitySurplusSold, contents are:
+  Whole Building:Facility Total Surplus Electricity Energy
+
+ For Meter=ElectricitySurplusSold:Plant [J], ResourceType=ElectricitySurplusSold, Group=Plant, contents are:
+  Whole Building:Facility Total Surplus Electricity Energy
+
+ For Meter=Cogeneration:ElectricitySurplusSold [J], ResourceType=ElectricitySurplusSold, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Total Surplus Electricity Energy
+
+ For Meter=General:Cogeneration:ElectricitySurplusSold [J], ResourceType=ElectricitySurplusSold, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Total Surplus Electricity Energy
+
+ For Meter=ElectricityNet:Facility [J], ResourceType=ElectricityNet, contents are:
+  Whole Building:Facility Net Purchased Electricity Energy
+
+ For Meter=ElectricityNet:Plant [J], ResourceType=ElectricityNet, Group=Plant, contents are:
+  Whole Building:Facility Net Purchased Electricity Energy
+
+ For Meter=Cogeneration:ElectricityNet [J], ResourceType=ElectricityNet, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Net Purchased Electricity Energy
+
+ For Meter=General:Cogeneration:ElectricityNet [J], ResourceType=ElectricityNet, EndUse=Cogeneration, contents are:
+  Whole Building:Facility Net Purchased Electricity Energy
+
+ For Meter=EnergyTransfer:HVAC [J], ResourceType=EnergyTransfer, Group=HVAC, contents are:
+  CRAH WATER CLG COIL:Cooling Coil Total Cooling Energy
+
+ For Meter=CoolingCoils:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=CoolingCoils, contents are:
+  CRAH WATER CLG COIL:Cooling Coil Total Cooling Energy
+
+ For Meter=PlantLoopCoolingDemand:Facility [J], ResourceType=PlantLoopCoolingDemand, contents are:
+  CRAH WATER CLG COIL:Cooling Coil Source Side Heat Transfer Energy
+
+ For Meter=PlantLoopCoolingDemand:HVAC [J], ResourceType=PlantLoopCoolingDemand, Group=HVAC, contents are:
+  CRAH WATER CLG COIL:Cooling Coil Source Side Heat Transfer Energy
+
+ For Meter=CoolingCoils:PlantLoopCoolingDemand [J], ResourceType=PlantLoopCoolingDemand, EndUse=CoolingCoils, contents are:
+  CRAH WATER CLG COIL:Cooling Coil Source Side Heat Transfer Energy
+
+ For Meter=Electricity:HVAC [J], ResourceType=Electricity, Group=HVAC, contents are:
+  CRAH FAN:Fan Electricity Energy
+  CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Electricity Energy
+
+ For Meter=Fans:Electricity [J], ResourceType=Electricity, EndUse=Fans, contents are:
+  CRAH FAN:Fan Electricity Energy
+
+ For Meter=General:Fans:Electricity [J], ResourceType=Electricity, EndUse=Fans, contents are:
+  CRAH FAN:Fan Electricity Energy
+
+ For Meter=Water:Facility [m3], ResourceType=Water, contents are:
+  CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Water Volume
+  CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Make Up Water Volume
+
+ For Meter=Water:HVAC [m3], ResourceType=Water, Group=HVAC, contents are:
+  CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Water Volume
+
+ For Meter=Humidifier:Water [m3], ResourceType=Water, EndUse=Humidifier, contents are:
+  CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Water Volume
+
+ For Meter=General:Humidifier:Water [m3], ResourceType=Water, EndUse=Humidifier, contents are:
+  CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Water Volume
+
+ For Meter=MainsWater:Facility [m3], ResourceType=MainsWater, contents are:
+  CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Mains Water Volume
+  CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Make Up Mains Water Volume
+
+ For Meter=MainsWater:HVAC [m3], ResourceType=MainsWater, Group=HVAC, contents are:
+  CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Mains Water Volume
+
+ For Meter=Humidifier:MainsWater [m3], ResourceType=MainsWater, EndUse=Humidifier, contents are:
+  CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Mains Water Volume
+
+ For Meter=General:Humidifier:MainsWater [m3], ResourceType=MainsWater, EndUse=Humidifier, contents are:
+  CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Mains Water Volume
+
+ For Meter=Humidifier:Electricity [J], ResourceType=Electricity, EndUse=Humidifier, contents are:
+  CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Electricity Energy
+
+ For Meter=General:Humidifier:Electricity [J], ResourceType=Electricity, EndUse=Humidifier, contents are:
+  CRAH ELECTRIC STEAM HUMIDIFIER:Humidifier Electricity Energy
+
+ For Meter=Electricity:Plant [J], ResourceType=Electricity, Group=Plant, contents are:
+  90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Electricity Energy
+  CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Fan Electricity Energy
+  CHILLED WATER LOOP SECONDARY PUMP:Pump Electricity Energy
+  CHILLED WATER LOOP PRIMARY PUMP:Pump Electricity Energy
+  CONDENSER WATER LOOP CONSTANT PUMP:Pump Electricity Energy
+
+ For Meter=Cooling:Electricity [J], ResourceType=Electricity, EndUse=Cooling, contents are:
+  90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Electricity Energy
+
+ For Meter=General:Cooling:Electricity [J], ResourceType=Electricity, EndUse=Cooling, contents are:
+  90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Electricity Energy
+
+ For Meter=EnergyTransfer:Plant [J], ResourceType=EnergyTransfer, Group=Plant, contents are:
+  90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Evaporator Cooling Energy
+  90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Condenser Heat Transfer Energy
+  INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER:Fluid Heat Exchanger Heat Transfer Energy
+
+ For Meter=Chillers:EnergyTransfer [J], ResourceType=Ene

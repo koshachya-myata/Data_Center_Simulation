@@ -7,13 +7,19 @@ from eplus import Eplus_contoller
 from eplus.socket_builder import socket_builder
 from gymnasium import spaces
 from eplus.eplus_packet_contoller import encode_packet_simple,decode_packet_simple
+import platform
 
 class DataCenterEnv(gym.Env):
     def __init__(self, config):
-        cur_dir = os.path.dirname(__file__)
-        self.idf_file = cur_dir + "/buildings/1ZoneDataCenterCRAC_wPumpedDXCoolingCoil/1ZoneDataCenterCRAC_wPumpedDXCoolingCoil.idf"
+        os_type = platform.system()
+        pwd_del = '/'
+        if os_type == "nt":  # windows
+            pwd_del = '\\'
 
-        self.weather_file = cur_dir + "/" + config["weather_file"]
+        cur_dir = os.path.dirname(__file__)
+        self.idf_file = cur_dir + pwd_del + "buildings" + pwd_del + "MultiZone_DC_wHot_nCold_Aisles" + pwd_del + "MultiZone_DC.idf"
+
+        self.weather_file = cur_dir + pwd_del + config["weather_file"]
 
         if "eplus_path" in config:
             self.eplus_path = config["eplus_path"]
@@ -43,78 +49,97 @@ class DataCenterEnv(gym.Env):
         self.kStep = 0
         self.ep = None
 
-        # state can be all the inputs required to make a control decision
-        # getting all the outputs coming from EnergyPlus for the time being
+        # Z (T + rh + co2), O (T + rh + W)
+        observation_space_lb = [0] * 11 + [0] + [0] + [-50, 0] + [0, 0]
+        observation_space_ub = [65] * 11 + [1200] + [100] + [60, 100] + [360, 20]
+
         self.observation_space = spaces.Box(
-            np.array([0, -50, 0, 0, 0]),  # zone temp, outdoor drybulb temp, relative humidity, zone Humidity, wind speed
-            np.array([60, 70, 100, 100, 20]),
+            np.array(observation_space_lb),
+            np.array(observation_space_ub),
             dtype=np.float32,
         )
 
-        self.clg_min = 16
+        self.clg_min = 15
         self.clg_max = 32
 
-        self.htg_min = 5
-        self.htg_max = 20 
+        self.rh_min = 1
+        self.rh_max = 99
 
-        self.min_vent_lb = 10
-        self.min_vent_ub = 30
-
-        self.max_vent_lb = 20
-        self.max_vent_ub = 40
+        self.ahu_temp_min = 2
+        self.ahu_temp_max = 15
 
         # Normalized action space
-        acts_len = 6
+        acts_len = 3
         self.action_space = spaces.Box(np.array([0] * acts_len), np.array([1] * acts_len), dtype=np.float32)
 
 
     def construct_inputs(self, action):
-        # actioins is normalized
         action[0] = action[0] * (self.clg_max - self.clg_min) + (self.clg_min) # cooling
-        action[1] = action[1] * (self.htg_max - self.htg_min) + (self.htg_min) # heating
-        action[3] = action[3] * (self.min_vent_ub - self.min_vent_lb) + self.min_vent_lb # min vent
-        action[4] = action[4] * (self.max_vent_ub - self.max_vent_lb) + self.max_vent_lb # max vent
-        action[5] = action[5] * (50 - (-50)) + (-50) # vent delta
-        # force action to be within limits
-        cooling_setpoint = np.clip(action, self.clg_min, self.clg_max)[0]
-        heating_setpoint = np.clip(action, self.htg_min, self.htg_max)[1]
-        flow_rate_f_coeff = action[2]
-        vent_min_indoor_temp = np.clip(action, self.min_vent_lb, self.min_vent_ub)[3]
-        vent_max_indoor_temp = np.clip(action, self.max_vent_lb, self.max_vent_ub)[4]
-        vent_delta = np.clip(action, -50, 50)[5]
+        action[1] = action[1] * (self.rh_max - self.rh_min) + (self.rh_min) # h
+        action[2] = action[1] * (self.ahu_temp_max - self.ahu_temp_min) + (self.ahu_temp_min) # ahu
 
-        self.inputs = [cooling_setpoint, heating_setpoint, flow_rate_f_coeff,
-                    vent_min_indoor_temp, vent_max_indoor_temp, vent_delta]
+        inp1 = np.clip(action, self.clg_min, self.clg_max)[0]
+        inp2 = np.clip(action, self.rh_min, self.rh_max)[1]
+        inp3 = np.clip(action, self.ahu_temp_min, self.ahu_temp_max)[2]
         
+        print(self.inputs)
+        self.inputs = [inp1, inp2, inp3]
         return action
     
-    def construct_reward(self, action):  # ! FIX ME
-        # reward needs to be a combination of energy and comfort requirement
-        energy_coeff = -0.000005
-        heating_coeff = -100
-        cooling_coeff = -100
-        energy = self.outputs[0]
-        zone_temperature = self.outputs[1]  # taking mid-zone 2 as an example
-        heating_setpoint = 18  # fixed lower limit in celcius
-        cooling_setpoint = 27  # fixed upper limit in celcius
-        heating_penalty = max(heating_setpoint - zone_temperature, 0)
-        cooling_penalty = max(zone_temperature - cooling_setpoint, 0)
+    def construct_reward(self, action):
+        def temp_penalty(self, cooling_coeff=1):
+            res = 0
+            for i in range(1,12):
+                temp = self.outputs[i]
+                if i & 1: # HOT AISLE
+                    if temp > 40:
+                        res += 500
+                    elif temp > 38:
+                        res += 200
+                else: # COLD AISLE
+                    if temp > 30:
+                        res += 500
+                    elif temp > 27:
+                        res += 150
+            return res * cooling_coeff
+        
+        def energy_penalty(self, energy_coeff=0.01): # увеличить коэффициент?
+            return self.outputs[0] * energy_coeff
+        
+        def rh_penalty(self, rh_coeff=1):
+            res = 0
+            rh =  self.outputs[17]
+            if rh > 85:
+                res += 100
+            if rh < 3:
+                res += 25
+            return self.outputs[17] * rh_coeff
+        
+        def action_penalty(self, action, coeff=15000):
+            res = 0
+            res += max(self.clg_min - action[0], 0)
+            res += max(action[0] - self.clg_max, 0)
+            if action[0] < 0.05:
+                res += 1000
 
-        # punish if action is out of limits
-        action_penalty_coeff = -75
-        max_penalty = max(self.clg_min - action[0], 0)
-        min_penalty = max(action[0] - self.clg_max, 0)
-        action_penalty = action_penalty_coeff * (max_penalty + min_penalty)
-        max_penalty = max(self.htg_min - action[1], 0)
-        min_penalty = max(action[1] - self.htg_max, 0)
-        action_penalty += action_penalty_coeff * (max_penalty + min_penalty)
+            res += max(self.rh_min - action[1], 0)
+            res += max(action[1] - self.rh_max, 0)
 
-        # final reward
+            res += max(self.ahu_temp_min - action[2], 0)
+            res += max(action[2] - self.ahu_temp_max, 0)
+
+            return res * coeff
+
+        energy_reward = -energy_penalty(self)
+        action_reward = -action_penalty(self, action)
+        rh_reward = -rh_penalty(self)
+        temp_rewatd = -temp_penalty(self)
+
         reward = (
-            energy_coeff * energy
-            + heating_coeff * heating_penalty
-            + cooling_coeff * cooling_penalty
-            + action_penalty
+            energy_reward
+            + action_reward
+            + rh_reward
+            + temp_rewatd
         )
         return reward
 
@@ -133,28 +158,60 @@ class DataCenterEnv(gym.Env):
             self.ep = None
         return is_sim_finised
     
-    def return_info(self, time):
+    def construct_info(self, time):
         info = {
             'day': int(self.kStep / self.DAYSTEPS) + 1,
             'time': time,
             'cooling_setpoint': self.inputs[0],
-            'heating_setpoint': self.inputs[1],
-            'flow_rate_f_coeff': self.inputs[2],
-            'vent_min_indoor_temp': self.inputs[3],
-            'vent_max_indoor_temp': self.inputs[4],
-            'vent_delta': self.inputs[5],
+            'Humidity_setpoint': self.inputs[1],
+            'AHU_Supply_Temp': self.inputs[2],
+            
             'Facility_Total_Electricity_Demand_Rate': self.outputs[0],
-            'Zone_Air_Temperature': self.outputs[1],
-            'Site_Outdoor_Air_Drybulb_Temperature': self.outputs[2],
-            'Outdoor_Air_Wetbulb_Temperature': self.outputs[3],
-            'Outdoor_Air_Relative_Humidity': self.outputs[4],
-            'Wind_Speed': self.outputs[5],
-            'Wind_Direction': self.outputs[6],
-            'CO2_ppm': self.outputs[7],
-            'Zone_Air_Relative_Humidity' : self.outputs[8]
+            'Temp_Z_1': self.outputs[1],
+            'Temp_Z_2': self.outputs[2],
+            'Temp_Z_3': self.outputs[3],
+            'Temp_Z_4': self.outputs[4],
+            'Temp_Z_5': self.outputs[5],
+            'Temp_Z_6': self.outputs[6],
+            'Temp_Z_7': self.outputs[7],
+            'Temp_Z_8': self.outputs[8],
+            'Temp_Z_9': self.outputs[9],
+            'Temp_Z_10': self.outputs[10],
+            'Temp_Z_11': self.outputs[11],
+
+            'CO2_Z_1': self.outputs[12],
+            'RH_Z_1': self.outputs[13],
+
+            'CO2_Z_5': self.outputs[14],
+            'RH_Z_5': self.outputs[15],
+
+            'CO2_Z_6': self.outputs[16],
+            'RH_Z_6': self.outputs[17],
+
+            'CO2_Z_7': self.outputs[18],
+            'RH_Z_7': self.outputs[19],
+
+            'CO2_Z_11': self.outputs[20],
+            'RH_Z_11': self.outputs[21],
+
+
+            'Outdoor_Air_Drybulb_Temperature': self.outputs[22],
+            'Outdoor_Air_Wetbulb_Temperature': self.outputs[23],
+            'Outdoor_Air_Relative_Humidity': self.outputs[24],
+            'Wind_Speed': self.outputs[25],
+            'Wind_Direction': self.outputs[26],
+
+            'Thermal Zone Supply Plenum': self.outputs[27]
             }
         return info
+    
+    def construct_next_state(self):
+        res = [self.outputs[i] for i in range(1, 12)]
+        res += [self.outputs[16], self.outputs[17], self.outputs[22], self.outputs[24],
+                self.outputs[25], self.outputs[26]]
 
+        return res
+    
     def step(self, action):
         time = self.kStep * self.deltaT
         dayTime = time % (60 * 60 * 24)
@@ -166,20 +223,17 @@ class DataCenterEnv(gym.Env):
         action = self.construct_inputs(action) # also set it in self.input
         input_packet = encode_packet_simple(self.inputs, time)
         self.ep.write(input_packet)
-
         # after EnergyPlus runs the simulation step, it returns the outputs
         output_packet = self.ep.read()
         self.outputs = decode_packet_simple(output_packet)
         if not self.outputs:
             next_state = self.reset()
             return next_state, 0, False, {}
-        
         reward = self.construct_reward(action)
-        next_state = np.array([self.outputs[1], self.outputs[2], self.outputs[4], 
-                            self.outputs[-1], self.outputs[5]])
+        next_state = np.array(self.construct_next_state())
         is_sim_finised = self.increment_step_counter(time)
     
-        return next_state, reward, is_sim_finised, self.return_info(time)
+        return next_state, reward, is_sim_finised, self.construct_info(time)
 
     def reset(self):
         if self.ep:
@@ -199,8 +253,6 @@ class DataCenterEnv(gym.Env):
         # read the initial outputs from EnergyPlus
         # these outputs are from warmup phase, so this does not count as a simulation step
         self.outputs = decode_packet_simple(self.ep.read())
-        #print('OUTPUT:-----------------------', self.outputs)
-        next_state = np.array([self.outputs[1], self.outputs[2], self.outputs[4], 
-                            self.outputs[-1], self.outputs[5]])
+        next_state = np.array(self.construct_next_state())
         return next_state
     

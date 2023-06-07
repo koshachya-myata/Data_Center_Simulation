@@ -1413,8 +1413,6 @@
 
   Output:Variable,*,Site Outdoor Air Relative Humidity,Timestep;
 
-  Output:Variable,*,Site Outdoor Air Relative Humidity,Timestep;
-
 !  Output:Variable,*,Zone Mean Air Temperature,Hourly;
 
 !  Output:Variable,*,Baseboard Electric Power,Hourly;
@@ -1450,6 +1448,8 @@ ZoneAirContaminantBalance,
 
     ;          !- Field 3
 
+ScheduleTypeLimits,Air CO2 Concentration Type, 1, 1200, DISCRETE;
+
 !-  ZoneControl:ContaminantController,
 !    Main Zone Contaminant Controller,  !- Name
 !    Main Zone,                !- Zone Name
@@ -1457,7 +1457,6 @@ ZoneAirContaminantBalance,
 !    Zone Setpoint CO2 Concentration,  !- Carbon Dioxide Setpoint Schedule Name
 !    ;  !- Minimum Carbon Dioxide Concentration Schedule Name
 
-ScheduleTypeLimits,Air CO2 Concentration Type, 1, 1200, DISCRETE;
 
   Schedule:Compact,
     HVACTemplate-Always 1,   !- Name
