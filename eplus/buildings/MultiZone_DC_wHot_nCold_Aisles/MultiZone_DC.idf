@@ -5,6 +5,21 @@ Version,
 Timestep,
   12;                                      !- Number of Timesteps per Hour
 
+RunPeriod,
+  Run Period 1,                           !- Name
+  1,                                      !- Begin Month
+  1,                                      !- Begin Day of Month
+  2006,                                   !- Begin Year
+  1,                                     !- End Month 12
+  1,                                      !- End Day of Month 31
+  2007,                                   !- End Year
+  Sunday,                                 !- Day of Week for Start Day
+  No,                                     !- Use Weather File Holidays and Special Days
+  No,                                     !- Use Weather File Daylight Saving Period
+  No,                                     !- Apply Weekend Holiday Rule
+  Yes,                                    !- Use Weather File Rain Indicators
+  Yes;                                    !- Use Weather File Snow Indicators
+
 LifeCycleCost:Parameters,
   Life Cycle Cost Parameters,             !- Name
   EndOfYear,                              !- Discounting Convention
@@ -2884,21 +2899,6 @@ ConvergenceLimits,
 HeatBalanceAlgorithm,
   ConductionTransferFunction,             !- Algorithm
   200;                                    !- Surface Temperature Upper Limit {C}
-
-RunPeriod,
-  Run Period 1,                           !- Name
-  1,                                      !- Begin Month
-  1,                                      !- Begin Day of Month
-  2006,                                   !- Begin Year
-  12,                                     !- End Month 12
-  31,                                     !- End Day of Month 31
-  2006,                                   !- End Year
-  Sunday,                                 !- Day of Week for Start Day
-  No,                                     !- Use Weather File Holidays and Special Days
-  No,                                     !- Use Weather File Daylight Saving Period
-  No,                                     !- Apply Weekend Holiday Rule
-  Yes,                                    !- Use Weather File Rain Indicators
-  Yes;                                    !- Use Weather File Snow Indicators
 
 ShadowCalculation,
   PolygonClipping,                        !- Shading Calculation Method

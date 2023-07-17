@@ -20,29 +20,28 @@ else:  # mac
 config = {
     "eplus_path": eplus_path,
     "weather_file": 'weather' + pwd_del + 'Moscow.epw',
-    'days': 365,
-    'timestep': 12
+    'days': 366,
+    'timestep': 12,
+    'verbose': 1,
 }
 pwd = os.getcwd()
 
 if __name__ == "__main__":
     env = DataCenterEnv(config)
-    env.reset()
+    env.reset(seed=42)
 
     is_sim_finised = False
     print("Started simulation, taking first action.")
     data = []
 
     cooling_setpoint_coeff = 0.135
-    hum_set_point = 0.02
+    hum_set_point = 0.3
     ahu_set_point = 0.9
     while not is_sim_finised:
-
         action = [cooling_setpoint_coeff, hum_set_point, ahu_set_point]
-
-        obs, reward, is_sim_finised, info = env.step(action)
-
+        obs, reward, is_sim_finised, is_turncated, info = env.step(action)
         data.append(info)
+
     print("Completed simulation.")
     df = pd.DataFrame.from_records(data)
     file_name = pwd + pwd_del + 'simulation_data.parquet'

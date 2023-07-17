@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.06.07 18:28,
+Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.07.17 17:34,
    ************* Beginning Zone Sizing Calculations
    ** Warning ** ProcessScheduleInput: Schedule:Day:Interval="ECONOMIZER MAX OA FRACTION 70 PCT DEFAULT", Blank Schedule Type Limits Name input -- will not be validated.
    ** Warning ** GetHTSurfaceData: Surfaces with interface to Ground found but no "Ground Temperatures" were input.
@@ -96,4 +96,50 @@ Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.06.07 18:28,
    ** Warning ** Controller:MechanicalVentilation = "CRAH VENT CONTROLLER", Zone="THERMAL ZONE 10 COLD".
    **   ~~~   ** No "PEOPLE" object has been specified in the idf for this zone, but the ventilation rate is > 0 in this Controller:MechanicalVentilation Object.
    **   ~~~   ** Check ventilation rate in Controller:MechanicalVentilation object.  Simulation will continue.
-   ** Warning ** Controller:MechanicalVentilation = "CRAH VENT CONTROLLER", Zone="THERMAL ZON
+   ** Warning ** Controller:MechanicalVentilation = "CRAH VENT CONTROLLER", Zone="THERMAL ZONE 2 COLD".
+   **   ~~~   ** No "PEOPLE" object has been specified in the idf for this zone, but the ventilation rate is > 0 in this Controller:MechanicalVentilation Object.
+   **   ~~~   ** Check ventilation rate in Controller:MechanicalVentilation object.  Simulation will continue.
+   ** Warning ** Controller:MechanicalVentilation = "CRAH VENT CONTROLLER", Zone="THERMAL ZONE 4 COLD".
+   **   ~~~   ** No "PEOPLE" object has been specified in the idf for this zone, but the ventilation rate is > 0 in this Controller:MechanicalVentilation Object.
+   **   ~~~   ** Check ventilation rate in Controller:MechanicalVentilation object.  Simulation will continue.
+   ** Warning ** Controller:MechanicalVentilation = "CRAH VENT CONTROLLER", Zone="THERMAL ZONE 6 COLD".
+   **   ~~~   ** No "PEOPLE" object has been specified in the idf for this zone, but the ventilation rate is > 0 in this Controller:MechanicalVentilation Object.
+   **   ~~~   ** Check ventilation rate in Controller:MechanicalVentilation object.  Simulation will continue.
+   ** Warning ** Controller:MechanicalVentilation = "CRAH VENT CONTROLLER", Zone="THERMAL ZONE 8 COLD".
+   **   ~~~   ** No "PEOPLE" object has been specified in the idf for this zone, but the ventilation rate is > 0 in this Controller:MechanicalVentilation Object.
+   **   ~~~   ** Check ventilation rate in Controller:MechanicalVentilation object.  Simulation will continue.
+   ** Warning ** In calculating the design coil UA for Coil:Cooling:Water CRAH WATER CLG COIL
+   **   ~~~   ** the coil bypass factor is unrealistically large;
+   **   ~~~   ** The initial design conditions are: Tair,in = 15.0045
+   **   ~~~   **                                    Wair,in = 8.501067E-003
+   **   ~~~   **                                    Twater,in = 6.6667
+   **   ~~~   **                                    Tair,out = 10.9201
+   **   ~~~   **                                    Wair,out = 8.500000E-003
+   ************* Testing Individual Branch Integrity
+   ************* All Branches passed integrity testing
+   ************* Testing Individual Supply Air Path Integrity
+   ************* All Supply Air Paths passed integrity testing
+   ************* Testing Individual Return Air Path Integrity
+   ************* All Return Air Paths passed integrity testing
+   ************* No node connection errors were found.
+   ** Severe  ** CheckWarmupConvergence: Loads Initialization, Zone="THERMAL ZONE SUPPLY PLENUM" did not converge after 50 warmup days.
+   **   ~~~   ** See Warmup Convergence Information in .eio file for details.
+   **   ~~~   ** ...Environment(SizingPeriod)="MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1"
+   **   ~~~   ** ..Max Temp Comparison = 1.86E-002 vs Temperature Convergence Tolerance=0.40 - Pass Convergence
+   **   ~~~   ** ..Min Temp Comparison = 9.78E-003 vs Temperature Convergence Tolerance=0.40 - Pass Convergence
+   **   ~~~   ** ..Max Heat Load Comparison = 5.1366E-002 vs Loads Convergence Tolerance=4.00E-002 - Fail Convergence
+   **   ~~~   ** ..Max Cool Load Comparison = 0.3468 vs Loads Convergence Tolerance=4.00E-002 - Fail Convergence
+   ************* Beginning Simulation
+   ** Severe  ** ExternalInterface: Socket communication received error value "-1" at time = 8.33E-002 hours.
+   **   ~~~   ** ExternalInterface: Flag from server " 0".
+   **  Fatal  ** Error in ExternalInterface: Check EnergyPlus *.err file.
+   ...Summary of Errors that led to program termination:
+   ..... Reference severe error count=2
+   ..... Last severe error=ExternalInterface: Socket communication received error value "-1" at time = 8.33E-002 hours.
+   *************
+   ************* ===== Final Error Summary =====
+   ************* The following error categories occurred.  Consider correcting or noting.
+   ************* Loads Initialization did not Converge
+   ************* ..1) very high thermal mass such as very thick concrete (solution: increase max number of warmup
+   ************* ..   days in the BUILDING object);
+   ************* ..2) moderate mass and inadequate space conditioning such that the building keeps

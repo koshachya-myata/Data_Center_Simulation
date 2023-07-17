@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.06.07 18:28
+Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.07.17 17:34
 ! <Version>, Version ID
  Version, 23.1
 ! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
@@ -250,7 +250,7 @@ Water Cooling Coil Capacity Information,Coil:Cooling:Water,CRAH WATER CLG COIL,1
 ! <Environment:Special Days>, Special Day Name, Special Day Type, Source, Start Date, Duration {#days}
 ! <Environment:Daylight Saving>, Daylight Saving Indicator, Source, Start Date, End Date
 ! <Environment:WarmupDays>, NumberofWarmupDays
-Environment,RUN PERIOD 1,WeatherFileRunPeriod,01/01/2006,12/31/2006,Sunday,365,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
+Environment,RUN PERIOD 1,WeatherFileRunPeriod,01/01/2006,01/01/2007,Sunday,366,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
 Environment:Daylight Saving,Yes,InputFile,03/12,11/05
 ! <Environment:Design Day Data>, Max Dry-Bulb Temp {C}, Temp Range {dC}, Temp Range Ind Type, Hum Ind Type, Hum Ind Value at Max Temp, Hum Ind Units, Pressure {Pa}, Wind Direction {deg CW from N}, Wind Speed {m/s}, Clearness, Rain, Snow
 ! <Environment:Design Day Misc>,DayOfYear,ASHRAE A Coeff,ASHRAE B Coeff,ASHRAE C Coeff,Solar Constant-Annual Variation,Eq of Time {minutes}, Solar Declination Angle {deg}, Solar Model
@@ -414,46 +414,4 @@ Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
  Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Design Water Flow Rate [m3/s], 8.45848E-002
  Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Design Air Flow Rate [m3/s], 345.04332
  Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, U-Factor Times Area Value at Design Air Flow Rate [W/C], 78881.47408
- Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Free Convection Regime Air Flow Rate [m3/s], 34.50433
- Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Free Convection U-Factor Times Area Value [W/K], 7888.14741
- Component Sizing Information, Pump:ConstantSpeed, CONDENSER WATER LOOP CONSTANT PUMP, Design Flow Rate [m3/s], 8.45848E-002
- Component Sizing Information, Pump:ConstantSpeed, CONDENSER WATER LOOP CONSTANT PUMP, Design Power Consumption [W], 16886.56872
-Environment:Design Day Data,24.00,8.30,DefaultMultipliers,Dewpoint,19.30,{C},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,26.60,8.30,DefaultMultipliers,Enthalpy,62300.00,{J/kgDryAir},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,26.40,8.30,DefaultMultipliers,Wetbulb,21.20,{C},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,-23.10,0.00,DefaultMultipliers,Wetbulb,-23.10,{C},99465,290,1.4,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
-Environment:Design Day Data,-8.20,0.00,DefaultMultipliers,Wetbulb,-8.20,{C},99465,290,8.0,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
-Environment:Design Day Data,-22.70,0.00,DefaultMultipliers,Dewpoint,-25.80,{C},99465,290,1.4,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
-Environment:Design Day Data,31.20,10.60,DefaultMultipliers,Wetbulb,23.10,{C},96634,200,6.7,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,-26.20,0.00,DefaultMultipliers,Wetbulb,-26.20,{C},96634,310,5.7,0.00,No,No
-Environment:Design Day Misc, 21,1229.0,0.1415,5.7310E-002,1.0,-11.15,-20.1,ASHRAEClearSky
-Environment,RUN PERIOD 1,WeatherFileRunPeriod,01/01/2006,12/31/2006,Sunday,365,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
-Environment:Design Day Data,28.40,8.30,DefaultMultipliers,Wetbulb,20.10,{C},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,24.00,8.30,DefaultMultipliers,Dewpoint,19.30,{C},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,26.60,8.30,DefaultMultipliers,Enthalpy,62300.00,{J/kgDryAir},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,26.40,8.30,DefaultMultipliers,Wetbulb,21.20,{C},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,-23.10,0.00,DefaultMultipliers,Wetbulb,-23.10,{C},99465,290,1.4,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
-Environment:Design Day Data,-8.20,0.00,DefaultMultipliers,Wetbulb,-8.20,{C},99465,290,8.0,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
-Environment:Design Day Data,-22.70,0.00,DefaultMultipliers,Dewpoint,-25.80,{C},99465,290,1.4,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
-Environment:Design Day Data,31.20,10.60,DefaultMultipliers,Wetbulb,23.10,{C},96634,200,6.7,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,-26.20,0.00,DefaultMultipliers,Wetbulb,-26.20,{C},96634,310,5.7,0.00,No,No
-Environment:Design Day Misc, 21,1229.0,0.1415,5.7310E-002,1.0,-11.15,-20.1,ASHRAEClearSky
-Environment,RUN PERIOD 1,WeatherFileRunPeriod,01/01/2006,12/31/2006,Sunday,365,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
-Environment:Daylight Saving,Yes,InputFile,03/12,11/05
-Environment:WarmupDays,  5
- Warmup Convergence Information,THERMAL ZONE 1 HOT,RunPeriod: RUN PERIOD 1,8.313683
+ Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Free Convect
