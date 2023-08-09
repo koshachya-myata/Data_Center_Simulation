@@ -1,10 +1,7 @@
 import platform
-import random
 import pandas as pd
 from eplus import DataCenterEnv
 import os
-import numpy as np
-
 
 os_type = platform.system()
 
@@ -21,7 +18,7 @@ config = {
     "eplus_path": eplus_path,
     "weather_file": 'weather' + pwd_del + 'Moscow.epw',
     'days': 366,
-    'timestep': 12,
+    'timestep': 5,
     'verbose': 1,
 }
 pwd = os.getcwd()
@@ -34,16 +31,18 @@ if __name__ == "__main__":
     print("Started simulation, taking first action.")
     data = []
 
-    cooling_setpoint_coeff = 0.135
-    hum_set_point = 0.3
-    ahu_set_point = 0.9
+    cooling_setpoint_coeff = 0.0588235  # 0.17647 -- for SP18
+    hum_set_point = 0.15  # 0.29599
+    ahu_set_point = 0.5
+
     while not is_sim_finised:
         action = [cooling_setpoint_coeff, hum_set_point, ahu_set_point]
         obs, reward, is_sim_finised, is_turncated, info = env.step(action)
+        print(info)
         data.append(info)
 
     print("Completed simulation.")
     df = pd.DataFrame.from_records(data)
-    file_name = pwd + pwd_del + 'simulation_data.parquet'
+    file_name = pwd + pwd_del + 'simulation_data_SP16.parquet'
     df.to_parquet(file_name)
     print('Simulation data saved to', file_name)

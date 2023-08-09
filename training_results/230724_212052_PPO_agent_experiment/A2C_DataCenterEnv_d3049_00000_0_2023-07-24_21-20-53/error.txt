@@ -1,0 +1,54 @@
+Failure # 1 (occurred at 2023-07-24_21-40-22)
+[36mray::A2C.train()[39m (pid=41565, ip=127.0.0.1, actor_id=6eac8044e9c16c1ef34e661301000000, repr=A2C)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/tune/trainable/trainable.py", line 389, in train
+    raise skipped from exception_cause(skipped)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/tune/trainable/trainable.py", line 386, in train
+    result = self.step()
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/algorithm.py", line 803, in step
+    results, train_iter_ctx = self._run_one_training_iteration()
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/algorithm.py", line 2853, in _run_one_training_iteration
+    results = self.training_step()
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/a2c/a2c.py", line 174, in training_step
+    return Algorithm.training_step(self)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/algorithm.py", line 1378, in training_step
+    train_batch = synchronous_parallel_sample(
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/execution/rollout_ops.py", line 85, in synchronous_parallel_sample
+    sample_batches = worker_set.foreach_worker(
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/worker_set.py", line 722, in foreach_worker
+    handle_remote_call_result_errors(remote_results, self._ignore_worker_failures)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/worker_set.py", line 75, in handle_remote_call_result_errors
+    raise r.get()
+ray.exceptions.RayTaskError(IndexError): [36mray::RolloutWorker.apply()[39m (pid=41567, ip=127.0.0.1, actor_id=4b3ecd0d8611b926b7cfa27c01000000, repr=<ray.rllib.evaluation.rollout_worker.RolloutWorker object at 0x1436ba250>)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/utils/actor_manager.py", line 185, in apply
+    raise e
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/utils/actor_manager.py", line 176, in apply
+    return func(self, *args, **kwargs)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/execution/rollout_ops.py", line 86, in <lambda>
+    lambda w: w.sample(), local_worker=False, healthy_only=True
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/rollout_worker.py", line 915, in sample
+    batches = [self.input_reader.next()]
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/sampler.py", line 92, in next
+    batches = [self.get_data()]
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/sampler.py", line 277, in get_data
+    item = next(self._env_runner)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 323, in run
+    outputs = self.step()
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 349, in step
+    active_envs, to_eval, outputs = self._process_observations(
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 667, in _process_observations
+    self._handle_done_episode(
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 834, in _handle_done_episode
+    resetted_obs, resetted_infos = self._base_env.try_reset(env_id)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/env/vector_env.py", line 479, in try_reset
+    obs, infos = self.vector_env.reset_at(env_id, seed=seed, options=options)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/env/vector_env.py", line 314, in reset_at
+    raise e
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/env/vector_env.py", line 306, in reset_at
+    obs_and_infos = self.envs[index].reset(seed=seed, options=options)
+  File "/Users/akest/Desktop/Innostage/main_work/qweqwe/eplus/data_center_env.py", line 308, in reset
+    next_state = np.array(self.construct_next_state())
+  File "/Users/akest/Desktop/Innostage/main_work/qweqwe/eplus/data_center_env.py", line 241, in construct_next_state
+    res = [self.outputs[i] for i in range(1, 12)]
+  File "/Users/akest/Desktop/Innostage/main_work/qweqwe/eplus/data_center_env.py", line 241, in <listcomp>
+    res = [self.outputs[i] for i in range(1, 12)]
+IndexError: list index out of range

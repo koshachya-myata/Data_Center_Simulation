@@ -1,26 +1,26 @@
 import os
-import socket
 
 import gymnasium as gym
 import numpy as np
 from eplus import Eplus_contoller
 from eplus.socket_builder import socket_builder
 from gymnasium import spaces
-from eplus.eplus_packet_contoller import encode_packet_simple,decode_packet_simple
+from eplus.eplus_packet_contoller import (
+                        encode_packet_simple, decode_packet_simple)
 import platform
+
 
 class DataCenterEnv(gym.Env):
     def __init__(self, config):
         super(DataCenterEnv, self).__init__()
-
-
         os_type = platform.system()
         pwd_del = '/'
         if os_type == "nt":  # windows
             pwd_del = '\\'
 
         cur_dir = os.path.dirname(__file__)
-        self.idf_file = cur_dir + pwd_del + "buildings" + pwd_del + "MultiZone_DC_wHot_nCold_Aisles" + pwd_del + "MultiZone_DC.idf"
+        self.idf_file = cur_dir + pwd_del + "buildings" + pwd_del + \
+            "MultiZone_DC_wHot_nCold_Aisles" + pwd_del + "MultiZone_DC.idf"
 
         self.weather_file = cur_dir + pwd_del + config["weather_file"]
 
@@ -45,10 +45,11 @@ class DataCenterEnv(gym.Env):
 
         # Number of steps per day
         self.DAYSTEPS = int(24 * self.epTimeStep)
-
+        print('simDays', self.simDays)
         # Total number of steps
         self.MAXSTEPS = int(self.simDays * self.DAYSTEPS)
-
+        print('MAXSTEPS', self.MAXSTEPS
+              )
         # Time difference between each step in seconds
         self.deltaT = (60 / self.epTimeStep) * 60
 
@@ -56,10 +57,15 @@ class DataCenterEnv(gym.Env):
         self.inputs = []
         self.kStep = 0
         self.ep = None
+        # self.clip_obs = True
 
         # Z (T + co2 + rh), O (T + rh + W (speed + dir))
-        observation_space_lb = [0] * 11 + [0] + [0] + [-50, 0] + [0, 0]
-        observation_space_ub = [65] * 11 + [2500] + [100] + [60, 100] + [25, 360]
+        # observation_space_lb = [0] * 11 + [0] + [0] + [-50, 0] + [0, 0]
+        # observation_space_ub = [50] * 11 + [2500] + [100] +
+        #                       [60, 100] + [25, 360]
+
+        observation_space_lb = [0] * 3 + [0] + [-50]  # 3T + rh + O(t)
+        observation_space_ub = [50] * 3 + [100] + [60]
 
         self.observation_space = spaces.Box(
             np.array(observation_space_lb),
@@ -73,96 +79,124 @@ class DataCenterEnv(gym.Env):
         self.rh_min = 1
         self.rh_max = 99
 
-        self.ahu_temp_min = 2
-        self.ahu_temp_max = 15
+        self.ahu_temp_min = 4
+        self.ahu_temp_max = 16
 
         # Normalized action space
         acts_len = 3
-        self.action_space = spaces.Box(np.array([0] * acts_len), np.array([1] * acts_len), dtype=np.float32)
+        self.action_space = spaces.Box(np.array([0] * acts_len),
+                                       np.array([1] * acts_len),
+                                       dtype=np.float32)
 
-
-    def construct_inputs(self, action): # action is readonly
-        # convert $x \in  [0, 1]$ to $x \in [action_min_value, action_max_value]$
-        inp1 = action[0] * (self.clg_max - self.clg_min) + (self.clg_min) # cooling
-        inp2 = action[1] * (self.rh_max - self.rh_min) + (self.rh_min) # h
-        inp3 = action[1] * (self.ahu_temp_max - self.ahu_temp_min) + (self.ahu_temp_min) # ahu
+    def construct_inputs(self, action):  # action is readonly
+        """
+        USE IF INPUTS IS NORMALIZED
+        """
+        # convert $x \in  [0, 1]$ to $x \in
+        # [action_min_value, action_max_value]$
+        inp1 = action[0] * (self.clg_max - self.clg_min) + \
+            (self.clg_min)  # cooling
+        inp2 = action[1] * (self.rh_max - self.rh_min) + \
+            (self.rh_min)  # rh
+        inp3 = action[2] * (self.ahu_temp_max - self.ahu_temp_min) + \
+            (self.ahu_temp_min)  # ahu
         action_values = [inp1, inp2, inp3]
 
         # clip actions to range
         inp1_ranged = np.clip(action_values, self.clg_min, self.clg_max)[0]
         inp2_ranged = np.clip(action_values, self.rh_min, self.rh_max)[1]
-        inp3_ranged = np.clip(action_values, self.ahu_temp_min, self.ahu_temp_max)[2]
-        
+        inp3_ranged = np.clip(action_values, self.ahu_temp_min,
+                              self.ahu_temp_max)[2]
+
         if self.verbose == 2:
             print(action_values)
         self.inputs = [inp1_ranged, inp2_ranged, inp3_ranged]
         return action_values
-    
+
     def construct_reward(self, action):
-        def temp_penalty(self, cooling_coeff=5):
+
+        def temp_penalty(self, hot_aisle_coeff=0.5, cold_aisle_coeff=1,
+                         reward_if_not_cold=False):
             res = 0
-            for i in range(1,12):
+            for i in range(1, 12):
                 temp = self.outputs[i]
-                if i & 1: # HOT AISLE
-                    if temp > 40:
-                        res += 500
-                    elif temp > 38:
-                        res += 200
-                else: # COLD AISLE
-                    if temp > 30:
-                        res += 500
-                    elif temp > 27:
-                        res += 250
-            return res * cooling_coeff
-        
-        def energy_penalty(self, energy_coeff=0.001): # увеличить коэффициент?
+                if i & 1:  # HOT AISLE
+                    if temp > 44:
+                        res += (temp - 44) * hot_aisle_coeff
+                    if temp > 50:
+                        res += (temp - 44) * hot_aisle_coeff * 2
+                else:  # COLD AISLE
+                    if temp > 25:
+                        res += (temp - 25) * cold_aisle_coeff
+                    if temp > 35:
+                        res += (temp - 25) * cold_aisle_coeff * 3
+                    if reward_if_not_cold and temp >= 16.5 and temp < 25:
+                        res -= 0.5
+            return res
+
+        def energy_penalty(self, energy_coeff=0.00001):
             return self.outputs[0] * energy_coeff
-        
-        def rh_penalty(self, rh_coeff=5):
+
+        def rh_penalty(self, lb_coeff=0.5, ub_coeff=1):
             res = 0
-            rh =  self.outputs[17]
+            rh = self.outputs[17]
             if rh > 90:
-                res += 100
+                res += (rh - 90) * ub_coeff
             if rh < 3:
-                res += 50
-            return self.outputs[17] * rh_coeff
-        
-        def action_penalty(self, action, coeff=150):
+                res += (3 - rh) * lb_coeff
+            return res
+
+        def action_penalty(self, action, coeff=5, force_action=False):
             res = 0
-            res += max(self.clg_min - action[0], 0)
-            res += max(action[0] - self.clg_max, 0)
-            if action[0] < 0.05:
-                res += 2500
-            if action[0] < 0:
-                res += -action[0] * 10*5
+            res += max(self.clg_min - action[0] + 0.1, 0)
+            res += max(action[0] - self.clg_max + 0.1, 0)
 
-            res += max(self.rh_min - action[1], 0)
-            res += max(action[1] - self.rh_max, 0)
+            # res += max(self.rh_min - action[1] + 0.1, 0)
+            # res += max(action[1] - self.rh_max + 0.1, 0)
 
-            res += max(self.ahu_temp_min - action[2], 0)
-            res += max(action[2] - self.ahu_temp_max, 0)
+            res += max(self.ahu_temp_min - action[2] + 0.1, 0)
+            res += max(action[2] - self.ahu_temp_max + 0.1, 0)
+
+            if force_action:
+                if action[0] <= 16:
+                    res += (16 - action[0]) * 2
+                if action[1] <= 3:
+                    res += (3 - action[1]) * 0.5
+                if action[1] > 95:
+                    res += (action[1] - 95) * 0.5
+                if action[2] < 5:
+                    res += (5 - action[2]) * 1.5
+                if action[2] > 16:
+                    res += (action[2] - 16) * 2
 
             return res * coeff
 
-        energy_reward = -energy_penalty(self)
-        action_reward = -action_penalty(self, action)
+        # print('Getted action:', action)
+        energy_reward = -energy_penalty(self, energy_coeff=0.00002)
+        action_reward = -action_penalty(self, action, force_action=True)
         rh_reward = -rh_penalty(self)
-        temp_rewatd = -temp_penalty(self)
-
+        temp_reward = -temp_penalty(self, reward_if_not_cold=True)
+        # print('Energy penalty', energy_reward)
+        # print('Action penalty', action_reward)
+        # print('RH penalty', rh_reward)
+        # print('Temperature penalty', temp_reward)
         reward = (
             energy_reward
             + action_reward
             + rh_reward
-            + temp_rewatd
+            + temp_reward
         )
         # print('REWARD:', reward)
         return reward if reward else 0
 
     def increment_step_counter(self, time):
         self.kStep += 1
+
         is_sim_finised = False
         if self.kStep >= (self.MAXSTEPS):
-            # last step to close the simulation
+            if self.verbose >= 1:
+                print('LAST STEP')
+            # last step for closing the simulation
             input_packet = encode_packet_simple(self.inputs, time)
             self.ep.write(input_packet)
             # output is empty in the final step
@@ -172,7 +206,7 @@ class DataCenterEnv(gym.Env):
             self.ep.close()
             self.ep = None
         return is_sim_finised
-    
+
     def construct_info(self, time):
         info = {
             'day': int(self.kStep / self.DAYSTEPS) + 1,
@@ -180,7 +214,7 @@ class DataCenterEnv(gym.Env):
             'cooling_setpoint': self.inputs[0],
             'Humidity_setpoint': self.inputs[1],
             'AHU_Supply_Temp': self.inputs[2],
-            
+
             'Facility_Total_Electricity_Demand_Rate': self.outputs[0],
             'Temp_Z_1': self.outputs[1],
             'Temp_Z_2': self.outputs[2],
@@ -219,33 +253,43 @@ class DataCenterEnv(gym.Env):
             'Thermal Zone Supply Plenum': self.outputs[27]
             }
         return info
-    
+
     def construct_next_state(self):
-        res = [self.outputs[i] for i in range(1, 12)]
-        res += [self.outputs[16], self.outputs[17], self.outputs[22], self.outputs[24],
-                self.outputs[25], self.outputs[26]]
+        # res = [self.outputs[i] for i in range(1, 12)]
+        # res += [self.outputs[16], self.outputs[17], self.outputs[22],
+        #   self.outputs[24],
+        #         self.outputs[25], self.outputs[26]]
+        # print('NEW STATE', res)
+        res = [self.outputs[i] for i in [2, 6, 10]]
+        res += [self.outputs[17], self.outputs[22]]
 
         return res
-    
+
     def step(self, action):
+        # print('ACTION:', action)
         time = self.kStep * self.deltaT
         dayTime = time % (60 * 60 * 24)
 
         if dayTime == 0:
             day_num = int(self.kStep / self.DAYSTEPS) + 1
             if self.verbose >= 1:
-                print("=" * int(50 * day_num / self.simDays + 1)+ "Day: ", day_num)
+                print("=" * int(50 * day_num / self.simDays + 1) +
+                      "Day: ", day_num)
 
-        action = self.construct_inputs(action) # also set it in self.input
+#        if action[0] != 1 and action[0] != 0:
+#            print(action)
+        action = self.construct_inputs(action)  # also set it in self.input
+        if self.verbose >= 3:
+            print('NEW ACTION', action)
         input_packet = encode_packet_simple(self.inputs, time)
         self.ep.write(input_packet)
         # after EnergyPlus runs the simulation step, it returns the outputs
         output_packet = self.ep.read()
         self.outputs = decode_packet_simple(output_packet)
         if not self.outputs:
-            print('??????????????????' * 12)
+            print('NO OUTPUT FROM ENERGYPLUS')
             next_state = self.reset()
-            return next_state, 0, False, False, {}
+            return next_state, 0, True, False, {}
         reward = self.construct_reward(action)
         next_state = np.array(self.construct_next_state())
         is_sim_finised = self.increment_step_counter(time)
@@ -255,8 +299,8 @@ class DataCenterEnv(gym.Env):
             print('END STEP. REWARD: ', reward)
             print('END STEP. is_sim_finised: ', is_sim_finised)
             print('END STEP INFO: ', self.construct_info(time))
-    
-        return next_state, reward, is_sim_finised, truncated,  self.construct_info(time)
+        return next_state, reward, is_sim_finised, truncated,\
+            self.construct_info(time)
 
     def reset(self, seed=None, options=None):
         if self.verbose >= 4:
@@ -275,14 +319,18 @@ class DataCenterEnv(gym.Env):
         builder = socket_builder(idf_dir)
         configs = builder.build()
         self.ep = Eplus_contoller.Eplus_controller(
-            "localhost", configs[0], self.idf_file, self.weather_file, self.eplus_path
+            "localhost",
+            configs[0],
+            self.idf_file,
+            self.weather_file,
+            self.eplus_path
         )
 
         # read the initial outputs from EnergyPlus
-        # these outputs are from warmup phase, so this does not count as a simulation step
+        # these outputs are from warmup phase, so
+        # this does not count as a simulation step
         self.outputs = decode_packet_simple(self.ep.read())
         next_state = np.array(self.construct_next_state())
         if self.verbose >= 4:
             print('First outputs: ', next_state)
         return next_state, {}
-    

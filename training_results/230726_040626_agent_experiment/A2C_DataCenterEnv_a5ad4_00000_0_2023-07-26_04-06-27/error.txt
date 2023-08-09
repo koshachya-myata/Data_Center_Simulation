@@ -1,0 +1,17 @@
+Failure # 1 (occurred at 2023-07-26_04-06-33)
+[36mray::A2C.restore_from_object()[39m (pid=97169, ip=127.0.0.1, actor_id=4d566e32df8f4215b249956901000000, repr=A2C)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/tune/trainable/trainable.py", line 937, in restore_from_object
+    self.restore(checkpoint_path)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/tune/trainable/trainable.py", line 907, in restore
+    self.load_checkpoint(to_load)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/algorithm.py", line 2163, in load_checkpoint
+    self.__setstate__(checkpoint_data)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/algorithm.py", line 2615, in __setstate__
+    self.workers.local_worker().set_state(state["worker"])
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/rollout_worker.py", line 1709, in set_state
+    self.policy_map[pid].set_state(policy_state)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/policy/torch_policy_v2.py", line 1010, in set_state
+    self.exploration.set_state(state=state["_exploration_state"])
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/utils/exploration/epsilon_greedy.py", line 245, in set_state
+    self.last_timestep = state["last_timestep"]
+KeyError: 'last_timestep'

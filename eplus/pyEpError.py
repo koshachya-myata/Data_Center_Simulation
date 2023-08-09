@@ -10,7 +10,9 @@ class VersionError(pyEpError):
 
     def __init__(self, message=None):
         if message is None:
-            message = "Incorrect Version of EnergyPlus communications protocol. Make sure your version of EnergyPlus supports version 2"
+            message = "Incorrect Version of EnergyPlus communications \
+                protocol. Make sure your version of EnergyPlus \
+                    supports version 2"
         super(VersionError, self).__init__(str(message))
         self.version = message
 
@@ -20,7 +22,8 @@ class EpWriteError(pyEpError):
 
     def __init__(self, message=None):
         if message is None:
-            message = "Error attempting to write to closed socket by EnergyPlus. Perhaps the simulation already finished?"
+            message = "Error attempting to write to closed socket by \
+                EnergyPlus. Perhaps the simulation already finished?"
         super(EpWriteError, self).__init__(message)
         self.message = message
 
@@ -30,7 +33,8 @@ class EpReadError(pyEpError):
 
     def __init__(self, message=None):
         if message is None:
-            message = "Error attempting to read from closed EnergyPlus socket. Perhaps the simulation is already finished?"
+            message = "Error attempting to read from closed EnergyPlus socket. \
+                Perhaps the simulation is already finished?"
         super(EpReadError, self).__init__(message)
         self.message = message
 
@@ -40,6 +44,7 @@ class MissingEpPathError(pyEpError):
 
     def __init__(self, message=None):
         if message is None:
-            message = "EnergyPlus path not specified. Set the default path with set_eplus_dir()"
+            message = "EnergyPlus path not specified. Set the default path \
+                with set_eplus_dir()"
         super(MissingEpPathError, self).__init__(message)
         self.message = message

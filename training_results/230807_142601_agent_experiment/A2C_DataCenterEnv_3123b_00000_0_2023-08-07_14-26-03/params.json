@@ -1,0 +1,139 @@
+{
+  "action_space": "Box(0.0, 1.0, (3,), float32)",
+  "batch_mode": "complete_episodes",
+  "disable_env_checking": true,
+  "entropy_coeff": 0.12,
+  "env": "DataCenterEnv",
+  "env_config": {
+    "days": 366,
+    "eplus_path": "/Applications/EnergyPlus-23-1-0/",
+    "timestep": 5,
+    "verbose": 1,
+    "weather_file": "weather/Moscow.epw"
+  },
+  "exploration_config": {
+    "epsilon_timesteps": 48395280,
+    "final_epsilon": 0.01,
+    "initial_epsilon": 0.12,
+    "type": "EpsilonGreedy"
+  },
+  "framework": "torch",
+  "grad_clip": 10,
+  "horizon": 120,
+  "lr_schedule": [
+    [
+      44969520,
+      1e-15
+    ],
+    [
+      45101280,
+      1e-15
+    ],
+    [
+      45233040,
+      1e-15
+    ],
+    [
+      45364800,
+      1e-15
+    ],
+    [
+      45496560,
+      1e-15
+    ],
+    [
+      45628320,
+      5e-16
+    ],
+    [
+      45760080,
+      5e-16
+    ],
+    [
+      45891840,
+      5e-16
+    ],
+    [
+      46023600,
+      5e-16
+    ],
+    [
+      46155360,
+      5e-16
+    ],
+    [
+      46287120,
+      5e-16
+    ],
+    [
+      46418880,
+      2.5e-16
+    ],
+    [
+      46550640,
+      2.5e-16
+    ],
+    [
+      46682400,
+      2.5e-16
+    ],
+    [
+      46814160,
+      2.5e-16
+    ],
+    [
+      46945920,
+      1e-16
+    ],
+    [
+      47077680,
+      1e-16
+    ],
+    [
+      47209440,
+      1e-16
+    ],
+    [
+      47341200,
+      1e-16
+    ],
+    [
+      47472960,
+      1e-16
+    ],
+    [
+      47604720,
+      5e-17
+    ],
+    [
+      47736480,
+      5e-17
+    ],
+    [
+      47868240,
+      5e-17
+    ],
+    [
+      48000000,
+      5e-17
+    ],
+    [
+      48131760,
+      5e-17
+    ],
+    [
+      48263520,
+      5e-17
+    ]
+  ],
+  "metrics_smoothing_episodes": 1,
+  "num_cpus_per_worker": 6,
+  "num_envs_per_worker": 1,
+  "num_gpus_per_worker": 0,
+  "num_workers": 1,
+  "rollout_fragment_length": 120,
+  "sgd_minibatch_size": 64,
+  "timesteps_per_iteration": 43920,
+  "train_batch_size": 120,
+  "use_gae": true
+}

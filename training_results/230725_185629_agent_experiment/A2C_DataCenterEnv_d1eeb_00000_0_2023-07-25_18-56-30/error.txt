@@ -1,0 +1,53 @@
+Failure # 1 (occurred at 2023-07-25_18-57-10)
+[36mray::A2C.train()[39m (pid=77889, ip=127.0.0.1, actor_id=20a50617cec5ab95e8992c7b01000000, repr=A2C)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/tune/trainable/trainable.py", line 389, in train
+    raise skipped from exception_cause(skipped)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/tune/trainable/trainable.py", line 386, in train
+    result = self.step()
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/algorithm.py", line 803, in step
+    results, train_iter_ctx = self._run_one_training_iteration()
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/algorithm.py", line 2853, in _run_one_training_iteration
+    results = self.training_step()
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/a2c/a2c.py", line 174, in training_step
+    return Algorithm.training_step(self)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/algorithm.py", line 1378, in training_step
+    train_batch = synchronous_parallel_sample(
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/execution/rollout_ops.py", line 85, in synchronous_parallel_sample
+    sample_batches = worker_set.foreach_worker(
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/worker_set.py", line 722, in foreach_worker
+    handle_remote_call_result_errors(remote_results, self._ignore_worker_failures)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/worker_set.py", line 75, in handle_remote_call_result_errors
+    raise r.get()
+ray.exceptions.RayTaskError(ValueError): [36mray::RolloutWorker.apply()[39m (pid=77891, ip=127.0.0.1, actor_id=d45bd47f9686979dd0160cfa01000000, repr=<ray.rllib.evaluation.rollout_worker.RolloutWorker object at 0x125b71280>)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/utils/actor_manager.py", line 185, in apply
+    raise e
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/utils/actor_manager.py", line 176, in apply
+    return func(self, *args, **kwargs)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/execution/rollout_ops.py", line 86, in <lambda>
+    lambda w: w.sample(), local_worker=False, healthy_only=True
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/rollout_worker.py", line 915, in sample
+    batches = [self.input_reader.next()]
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/sampler.py", line 92, in next
+    batches = [self.get_data()]
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/sampler.py", line 277, in get_data
+    item = next(self._env_runner)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 323, in run
+    outputs = self.step()
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 361, in step
+    eval_results = self._do_policy_eval(to_eval=to_eval)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/evaluation/env_runner_v2.py", line 1053, in _do_policy_eval
+    eval_results[policy_id] = policy.compute_actions_from_input_dict(
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/policy/torch_policy_v2.py", line 526, in compute_actions_from_input_dict
+    return self._compute_action_helper(
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/utils/threading.py", line 24, in wrapper
+    return func(self, *a, **k)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/policy/torch_policy_v2.py", line 1171, in _compute_action_helper
+    action_dist = dist_class(dist_inputs, self.model)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/models/torch/torch_action_dist.py", line 250, in __init__
+    self.dist = torch.distributions.normal.Normal(mean, torch.exp(log_std))
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/torch/distributions/normal.py", line 56, in __init__
+    super().__init__(batch_shape, validate_args=validate_args)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/torch/distributions/distribution.py", line 62, in __init__
+    raise ValueError(
+ValueError: Expected parameter loc (Tensor of shape (1, 3)) of distribution Normal(loc: torch.Size([1, 3]), scale: torch.Size([1, 3])) to satisfy the constraint Real(), but found invalid values:
+tensor([[nan, nan, nan]])

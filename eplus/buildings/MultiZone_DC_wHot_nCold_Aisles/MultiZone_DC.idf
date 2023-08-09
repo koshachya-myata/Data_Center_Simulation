@@ -3,14 +3,14 @@ Version,
   23.1;                                   !- Version Identifier
 
 Timestep,
-  12;                                      !- Number of Timesteps per Hour
+  5;                                      !- Number of Timesteps per Hour
 
 RunPeriod,
   Run Period 1,                           !- Name
-  1,                                      !- Begin Month
+  10,                                      !- Begin Month
   1,                                      !- Begin Day of Month
   2006,                                   !- Begin Year
-  1,                                     !- End Month 12
+  10,                                     !- End Month 12
   1,                                      !- End Day of Month 31
   2007,                                   !- End Year
   Sunday,                                 !- Day of Week for Start Day
@@ -222,8 +222,8 @@ Building,
   ,                                       !- Loads Convergence Tolerance Value {W}
   ,                                       !- Temperature Convergence Tolerance Value {deltaC}
   ,                                       !- Solar Distribution
-  50,                                       !- Maximum Number of Warmup Days
-  5;                                       !- Minimum Number of Warmup Days
+  5,                                       !- Maximum Number of Warmup Days
+  1;                                       !- Minimum Number of Warmup Days
 
 Zone,
   Thermal Zone 1 hot,                     !- Name
@@ -5932,9 +5932,9 @@ ExternalInterface:Schedule,
 ExternalInterface:Schedule,
   DataCenter Humidity Setpoint Schedule,   !- Name
   Percent,                            !- Schedule Type Limits Name
-  8;
+  3;
 
 ExternalInterface:Schedule,
   AHU Supply Temp Sch,   !- Name
   Temperature,                            !- Schedule Type Limits Name
-  12.77777;
+  3;

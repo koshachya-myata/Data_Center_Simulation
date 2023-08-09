@@ -8,7 +8,8 @@ class socket_builder:
     Helper class that creates socket.cfg files for all EnergyPlus instances
 
     Arguments
-            path -- path to main folder where we need to store the socket.cfg file
+            path -- path to main folder where we need to store the \
+                socket.cfg file
 
     """
 

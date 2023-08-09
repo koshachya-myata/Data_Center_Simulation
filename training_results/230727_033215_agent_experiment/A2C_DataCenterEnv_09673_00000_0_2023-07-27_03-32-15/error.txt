@@ -1,0 +1,248 @@
+Failure # 1 (occurred at 2023-07-27_04-15-04)
+[36mray::A2C.train()[39m (pid=18060, ip=127.0.0.1, actor_id=f01713145519362620dc98d801000000, repr=A2C)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/a3c/a3c_torch_policy.py", line 76, in loss
+    dist = dist_class(logits, model)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/models/torch/torch_action_dist.py", line 250, in __init__
+    self.dist = torch.distributions.normal.Normal(mean, torch.exp(log_std))
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/torch/distributions/normal.py", line 56, in __init__
+    super().__init__(batch_shape, validate_args=validate_args)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/torch/distributions/distribution.py", line 62, in __init__
+    raise ValueError(
+ValueError: Expected parameter loc (Tensor of shape (64, 3)) of distribution Normal(loc: torch.Size([64, 3]), scale: torch.Size([64, 3])) to satisfy the constraint Real(), but found invalid values:
+tensor([[nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan]], grad_fn=<SplitBackward0>)
+
+The above exception was the direct cause of the following exception:
+
+[36mray::A2C.train()[39m (pid=18060, ip=127.0.0.1, actor_id=f01713145519362620dc98d801000000, repr=A2C)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/tune/trainable/trainable.py", line 389, in train
+    raise skipped from exception_cause(skipped)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/tune/trainable/trainable.py", line 386, in train
+    result = self.step()
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/algorithm.py", line 803, in step
+    results, train_iter_ctx = self._run_one_training_iteration()
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/algorithm.py", line 2853, in _run_one_training_iteration
+    results = self.training_step()
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/a2c/a2c.py", line 174, in training_step
+    return Algorithm.training_step(self)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/algorithm.py", line 1402, in training_step
+    train_results = multi_gpu_train_one_step(self, train_batch)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/execution/train_ops.py", line 163, in multi_gpu_train_one_step
+    results = policy.learn_on_loaded_batch(
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/policy/torch_policy_v2.py", line 783, in learn_on_loaded_batch
+    return self.learn_on_batch(batch)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/utils/threading.py", line 24, in wrapper
+    return func(self, *a, **k)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/policy/torch_policy_v2.py", line 669, in learn_on_batch
+    grads, fetches = self.compute_gradients(postprocessed_batch)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/utils/threading.py", line 24, in wrapper
+    return func(self, *a, **k)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/policy/torch_policy_v2.py", line 873, in compute_gradients
+    tower_outputs = self._multi_gpu_parallel_grad_calc([postprocessed_batch])
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/policy/torch_policy_v2.py", line 1320, in _multi_gpu_parallel_grad_calc
+    raise last_result[0] from last_result[1]
+ValueError: Expected parameter loc (Tensor of shape (64, 3)) of distribution Normal(loc: torch.Size([64, 3]), scale: torch.Size([64, 3])) to satisfy the constraint Real(), but found invalid values:
+tensor([[nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan]], grad_fn=<SplitBackward0>)
+ tracebackTraceback (most recent call last):
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/policy/torch_policy_v2.py", line 1235, in _worker
+    self.loss(model, self.dist_class, sample_batch)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/algorithms/a3c/a3c_torch_policy.py", line 76, in loss
+    dist = dist_class(logits, model)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/ray/rllib/models/torch/torch_action_dist.py", line 250, in __init__
+    self.dist = torch.distributions.normal.Normal(mean, torch.exp(log_std))
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/torch/distributions/normal.py", line 56, in __init__
+    super().__init__(batch_shape, validate_args=validate_args)
+  File "/Users/akest/miniforge3/envs/conda_env/lib/python3.9/site-packages/torch/distributions/distribution.py", line 62, in __init__
+    raise ValueError(
+ValueError: Expected parameter loc (Tensor of shape (64, 3)) of distribution Normal(loc: torch.Size([64, 3]), scale: torch.Size([64, 3])) to satisfy the constraint Real(), but found invalid values:
+tensor([[nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan],
+        [nan, nan, nan]], grad_fn=<SplitBackward0>)
+
+In tower 0 on device cpu

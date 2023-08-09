@@ -1,0 +1,139 @@
+{
+  "action_space": "Box(0.0, 1.0, (3,), float32)",
+  "batch_mode": "complete_episodes",
+  "disable_env_checking": true,
+  "entropy_coeff": 0.1,
+  "env": "DataCenterEnv",
+  "env_config": {
+    "days": 3,
+    "eplus_path": "/Applications/EnergyPlus-23-1-0/",
+    "timestep": 5,
+    "verbose": 1,
+    "weather_file": "weather/Moscow.epw"
+  },
+  "exploration_config": {
+    "epsilon_timesteps": 1401170,
+    "final_epsilon": 0.01,
+    "initial_epsilon": 0.2,
+    "type": "EpsilonGreedy"
+  },
+  "framework": "torch",
+  "grad_clip": 5,
+  "horizon": 120,
+  "lr_schedule": [
+    [
+      1400000,
+      5e-09
+    ],
+    [
+      1405400,
+      8e-09
+    ],
+    [
+      1410800,
+      2.5e-09
+    ],
+    [
+      1416200,
+      2.5e-09
+    ],
+    [
+      1421600,
+      2.5e-09
+    ],
+    [
+      1427000,
+      2.5e-09
+    ],
+    [
+      1432400,
+      1e-09
+    ],
+    [
+      1437800,
+      1e-09
+    ],
+    [
+      1443200,
+      1e-09
+    ],
+    [
+      1448600,
+      5e-10
+    ],
+    [
+      1454000,
+      5e-10
+    ],
+    [
+      1459400,
+      5e-10
+    ],
+    [
+      1464800,
+      5e-10
+    ],
+    [
+      1470200,
+      1e-10
+    ],
+    [
+      1475600,
+      1e-10
+    ],
+    [
+      1481000,
+      1e-10
+    ],
+    [
+      1486400,
+      1e-10
+    ],
+    [
+      1491800,
+      5e-11
+    ],
+    [
+      1497200,
+      5e-11
+    ],
+    [
+      1502600,
+      2.5e-11
+    ],
+    [
+      1508000,
+      2.5e-11
+    ],
+    [
+      1513400,
+      1e-11
+    ],
+    [
+      1518800,
+      1e-11
+    ],
+    [
+      1524200,
+      5e-12
+    ],
+    [
+      1529600,
+      5e-12
+    ],
+    [
+      1535000,
+      1e-12
+    ]
+  ],
+  "metrics_smoothing_episodes": 1,
+  "num_cpus_per_worker": 6,
+  "num_envs_per_worker": 1,
+  "num_gpus_per_worker": 0,
+  "num_workers": 1,
+  "rollout_fragment_length": 120,
+  "sgd_minibatch_size": 64,
+  "timesteps_per_iteration": 360,
+  "train_batch_size": 120,
+  "use_gae": true
+}

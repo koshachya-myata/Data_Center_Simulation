@@ -1,0 +1,139 @@
+{
+  "action_space": "Box(0.0, 1.0, (3,), float32)",
+  "batch_mode": "complete_episodes",
+  "disable_env_checking": true,
+  "entropy_coeff": 0.05,
+  "env": "DataCenterEnv",
+  "env_config": {
+    "days": 1,
+    "eplus_path": "/Applications/EnergyPlus-23-1-0/",
+    "timestep": 5,
+    "verbose": 1,
+    "weather_file": "weather/Moscow.epw"
+  },
+  "exploration_config": {
+    "epsilon_timesteps": 1040,
+    "final_epsilon": 0.05,
+    "initial_epsilon": 0.2,
+    "type": "EpsilonGreedy"
+  },
+  "framework": "torch",
+  "grad_clip": 10,
+  "horizon": 120,
+  "lr_schedule": [
+    [
+      0,
+      0.0005
+    ],
+    [
+      2400,
+      0.0005
+    ],
+    [
+      4800,
+      0.00025
+    ],
+    [
+      7200,
+      0.00025
+    ],
+    [
+      9600,
+      0.00025
+    ],
+    [
+      12000,
+      0.00025
+    ],
+    [
+      14400,
+      0.0001
+    ],
+    [
+      16800,
+      0.0001
+    ],
+    [
+      19200,
+      0.0001
+    ],
+    [
+      21600,
+      5e-05
+    ],
+    [
+      24000,
+      5e-05
+    ],
+    [
+      26400,
+      5e-05
+    ],
+    [
+      28800,
+      5e-05
+    ],
+    [
+      31200,
+      1e-05
+    ],
+    [
+      33600,
+      1e-05
+    ],
+    [
+      36000,
+      1e-05
+    ],
+    [
+      38400,
+      1e-05
+    ],
+    [
+      40800,
+      5e-06
+    ],
+    [
+      43200,
+      5e-06
+    ],
+    [
+      45600,
+      2.5e-06
+    ],
+    [
+      48000,
+      2.5e-06
+    ],
+    [
+      50400,
+      1e-06
+    ],
+    [
+      52800,
+      1e-06
+    ],
+    [
+      55200,
+      5e-07
+    ],
+    [
+      57600,
+      5e-07
+    ],
+    [
+      60000,
+      1e-07
+    ]
+  ],
+  "metrics_smoothing_episodes": 1,
+  "num_cpus_per_worker": 6,
+  "num_envs_per_worker": 1,
+  "num_gpus_per_worker": 0,
+  "num_workers": 1,
+  "rollout_fragment_length": 120,
+  "sgd_minibatch_size": 64,
+  "timesteps_per_iteration": 120,
+  "train_batch_size": 120,
+  "use_gae": true
+}

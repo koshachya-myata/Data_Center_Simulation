@@ -1,0 +1,91 @@
+{
+  "action_space": "Box(0.0, 1.0, (3,), float32)",
+  "batch_mode": "complete_episodes",
+  "disable_env_checking": true,
+  "entropy_coeff": 0.3,
+  "env": "DataCenterEnv",
+  "env_config": {
+    "days": 1,
+    "eplus_path": "/Applications/EnergyPlus-23-1-0/",
+    "timestep": 5,
+    "verbose": 1,
+    "weather_file": "weather/Moscow.epw"
+  },
+  "framework": "torch",
+  "grad_clip": 10,
+  "horizon": 120,
+  "lr_schedule": [
+    [
+      0,
+      0.002
+    ],
+    [
+      1800,
+      0.0019
+    ],
+    [
+      3600,
+      0.0018
+    ],
+    [
+      5400,
+      0.0017
+    ],
+    [
+      7200,
+      0.0015
+    ],
+    [
+      9000,
+      0.0014
+    ],
+    [
+      10800,
+      0.0012
+    ],
+    [
+      12600,
+      0.0011
+    ],
+    [
+      14400,
+      0.001
+    ],
+    [
+      16200,
+      0.0005
+    ],
+    [
+      18000,
+      0.0001
+    ],
+    [
+      19800,
+      5e-05
+    ],
+    [
+      21600,
+      1e-05
+    ],
+    [
+      23400,
+      5e-06
+    ],
+    [
+      25200,
+      1e-06
+    ],
+    [
+      27000,
+      5e-07
+    ]
+  ],
+  "metrics_smoothing_episodes": 1,
+  "num_cpus_per_worker": 6,
+  "num_envs_per_worker": 1,
+  "num_gpus_per_worker": 0,
+  "num_workers": 1,
+  "rollout_fragment_length": 120,
+  "timesteps_per_iteration": 120,
+  "train_batch_size": 120
+}

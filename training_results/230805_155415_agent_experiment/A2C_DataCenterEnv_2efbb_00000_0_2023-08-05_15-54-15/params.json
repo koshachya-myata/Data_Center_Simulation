@@ -1,0 +1,139 @@
+{
+  "action_space": "Box(0.0, 1.0, (3,), float32)",
+  "batch_mode": "complete_episodes",
+  "disable_env_checking": true,
+  "entropy_coeff": 0.1,
+  "env": "DataCenterEnv",
+  "env_config": {
+    "days": 10,
+    "eplus_path": "/Applications/EnergyPlus-23-1-0/",
+    "timestep": 5,
+    "verbose": 1,
+    "weather_file": "weather/Moscow.epw"
+  },
+  "exploration_config": {
+    "epsilon_timesteps": 1910940,
+    "final_epsilon": 0.01,
+    "initial_epsilon": 0.2,
+    "type": "EpsilonGreedy"
+  },
+  "framework": "torch",
+  "grad_clip": 5,
+  "horizon": 120,
+  "lr_schedule": [
+    [
+      1907040,
+      1e-08
+    ],
+    [
+      1925040,
+      8e-09
+    ],
+    [
+      1943040,
+      2.5e-09
+    ],
+    [
+      1961040,
+      2.5e-09
+    ],
+    [
+      1979040,
+      2.5e-09
+    ],
+    [
+      1997040,
+      2.5e-09
+    ],
+    [
+      2015040,
+      1e-09
+    ],
+    [
+      2033040,
+      1e-09
+    ],
+    [
+      2051040,
+      1e-09
+    ],
+    [
+      2069040,
+      5e-10
+    ],
+    [
+      2087040,
+      5e-10
+    ],
+    [
+      2105040,
+      5e-10
+    ],
+    [
+      2123040,
+      5e-10
+    ],
+    [
+      2141040,
+      1e-10
+    ],
+    [
+      2159040,
+      1e-10
+    ],
+    [
+      2177040,
+      1e-10
+    ],
+    [
+      2195040,
+      1e-10
+    ],
+    [
+      2213040,
+      5e-11
+    ],
+    [
+      2231040,
+      5e-11
+    ],
+    [
+      2249040,
+      2.5e-11
+    ],
+    [
+      2267040,
+      2.5e-11
+    ],
+    [
+      2285040,
+      1e-11
+    ],
+    [
+      2303040,
+      1e-11
+    ],
+    [
+      2321040,
+      5e-12
+    ],
+    [
+      2339040,
+      5e-12
+    ],
+    [
+      2357040,
+      1e-12
+    ]
+  ],
+  "metrics_smoothing_episodes": 1,
+  "num_cpus_per_worker": 6,
+  "num_envs_per_worker": 1,
+  "num_gpus_per_worker": 0,
+  "num_workers": 1,
+  "rollout_fragment_length": 120,
+  "sgd_minibatch_size": 64,
+  "timesteps_per_iteration": 1200,
+  "train_batch_size": 120,
+  "use_gae": true
+}

@@ -1,9 +1,9 @@
 # Data_Center_Simulation
-Here is a data center model with hot and cold aisles, as well as a RL agent (PPO) trained to manage cooling and humidity inside the data center.
+Here is a data center model with hot and cold aisles, as well as a RL agent  trained to manage cooling and humidity inside the data center.
 
 Requirements:
 
-    - Basic DS libraries, gym;
+    - Basic DS libraries, gym, Ray;
     
     - EnergyPlus ver. 23-1-0;
 
