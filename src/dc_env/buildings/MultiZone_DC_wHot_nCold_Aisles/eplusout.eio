@@ -1,0 +1,473 @@
+Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.08.22 20:15
+! <Version>, Version ID
+ Version, 23.1
+! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
+ Timesteps per Hour,  5, 12
+! <System Convergence Limits>, Minimum System TimeStep {minutes}, Max HVAC Iterations, Minimum Plant Iterations, Maximum Plant Iterations
+ System Convergence Limits, 1, 20, 2, 8
+! <Simulation Control>, Do Zone Sizing, Do System Sizing, Do Plant Sizing, Do Design Days, Do Weather Simulation, Do HVAC Sizing Simulation
+ Simulation Control, Yes, Yes, Yes, No, Yes, Yes
+! <Performance Precision Tradeoffs>, Use Coil Direct Simulation, Zone Radiant Exchange Algorithm, Override Mode, Number of Timestep In Hour, Force Euler Method, Minimum Number of Warmup Days, Force Suppress All Begin Environment Resets, Minimum System Timestep, MaxZoneTempDiff, MaxAllowedDelTemp
+ Performance Precision Tradeoffs, No, ScriptF, Normal, 5, No, 1, No, 1.0, 0.300, 2.0000E-003
+! <Output Reporting Tolerances>, Tolerance for Time Heating Setpoint Not Met, Tolerance for Zone Cooling Setpoint Not Met Time
+ Output Reporting Tolerances, 0.200, 0.200, 
+! <Site:GroundTemperature:BuildingSurface>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:BuildingSurface,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00,  18.00
+! <Site:GroundTemperature:FCfactorMethod>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:FCfactorMethod,   7.40,   0.00,  -7.60, -12.60,  -7.70,   0.30,   7.00,  14.20,  19.20,  20.90,  20.00,  15.40
+! <Site:GroundTemperature:Shallow>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Shallow,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00
+! <Site:GroundTemperature:Deep>,Jan{C},Feb{C},Mar{C},Apr{C},May{C},Jun{C},Jul{C},Aug{C},Sep{C},Oct{C},Nov{C},Dec{C}
+ Site:GroundTemperature:Deep,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00
+! <Site:GroundReflectance>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:SnowModifier>, Normal, Daylighting {dimensionless}
+ Site:GroundReflectance:SnowModifier,   1.000,   1.000
+! <Site:GroundReflectance:Snow>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:Snow:Daylighting>,Jan{dimensionless},Feb{dimensionless},Mar{dimensionless},Apr{dimensionless},May{dimensionless},Jun{dimensionless},Jul{dimensionless},Aug{dimensionless},Sep{dimensionless},Oct{dimensionless},Nov{dimensionless},Dec{dimensionless}
+ Site:GroundReflectance:Snow:Daylighting,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Environment:Weather Station>,Wind Sensor Height Above Ground {m},Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Sensor Height Above Ground {m},Wind Speed Modifier Coefficient-Internal,Temperature Modifier Coefficient-Internal
+Environment:Weather Station,10.000,0.140,270.000,1.500,1.586,9.750E-003
+! <Site:Location>, Location Name, Latitude {N+/S- Deg}, Longitude {E+/W- Deg},  Time Zone Number {GMT+/-}, Elevation {m},  Standard Pressure at Elevation {Pa}, Standard RhoAir at Elevation
+Site:Location,MOSCOW - RUS IWEC Data WMO#=276120,55.75,37.63,3.00,156.00,99465,1.1822
+! <Site Water Mains Temperature Information>,Calculation Method{},Water Mains Temperature Schedule Name{},Annual Average Outdoor Air Temperature{C},Maximum Difference In Monthly Average Outdoor Air Temperatures{deltaC},Fixed Default Water Mains Temperature{C}
+Site Water Mains Temperature Information,Correlation,NA,6.38,33.50,NA
+! <Building Information>, Building Name,North Axis {deg},Terrain,  Loads Convergence Tolerance Value,Temperature Convergence Tolerance Value,  Solar Distribution,Maximum Number of Warmup Days,Minimum Number of Warmup Days
+ Building Information,DataCenterModel_Multizone,0.000,City,4.00000E-002,0.40000,FullExterior,5,1
+! <Inside Convection Algorithm>, Algorithm {Simple | TARP | CeilingDiffuser | AdaptiveConvectionAlgorithm}
+Inside Convection Algorithm,TARP
+! <Outside Convection Algorithm>, Algorithm {SimpleCombined | TARP | MoWitt | DOE-2 | AdaptiveConvectionAlgorithm}
+Outside Convection Algorithm,TARP
+! <Sky Radiance Distribution>, Value {Anisotropic}
+Sky Radiance Distribution,Anisotropic
+! <Zone Air Solution Algorithm>, Algorithm {ThirdOrderBackwardDifference | AnalyticalSolution | EulerMethod}, Space Heat Balance Sizing, Space Heat Balance Simulation
+ Zone Air Solution Algorithm, ThirdOrderBackwardDifference, No, No
+! <Zone Air Carbon Dioxide Balance Simulation>, Simulation {Yes/No}, Carbon Dioxide Concentration
+ Zone Air Carbon Dioxide Balance Simulation, Yes,YES
+! <Zone Air Generic Contaminant Balance Simulation>, Simulation {Yes/No}, Generic Contaminant Concentration
+ Zone Air Generic Contaminant Balance Simulation, No,N/A
+! <Zone Air Mass Flow Balance Simulation>, Enforce Mass Balance, Adjust Zone Mixing and Return {AdjustMixingOnly | AdjustReturnOnly | AdjustMixingThenReturn | AdjustReturnThenMixing | None}, Adjust Zone Infiltration {AddInfiltration | AdjustInfiltration | None}, Infiltration Zones {MixingSourceZonesOnly | AllZones}
+ Zone Air Mass Flow Balance Simulation, No,N/A,N/A,N/A
+! <HVACSystemRootFindingAlgorithm>, Value {RegulaFalsi | Bisection | BisectionThenRegulaFalsi | RegulaFalsiThenBisection}
+ HVACSystemRootFindingAlgorithm, RegulaFalsi
+! <Environment:Site Atmospheric Variation>,Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Gradient Coefficient {K/m}
+Environment:Site Atmospheric Variation,0.330,460.000,6.500000E-003
+! <Surface Geometry>,Starting Corner,Vertex Input Direction,Coordinate System,Daylight Reference Point Coordinate System,Rectangular (Simple) Surface Coordinate System
+ Surface Geometry,UpperLeftCorner,Counterclockwise,RelativeCoordinateSystem,RelativeCoordinateSystem,RelativeToZoneOrigin
+! <Surface Heat Transfer Algorithm>, Value {CTF - ConductionTransferFunction | EMPD - MoisturePenetrationDepthConductionTransferFunction | CondFD - ConductionFiniteDifference | HAMT - CombinedHeatAndMoistureFiniteElement} - Description,Inside Surface Max Temperature Limit{C}, Surface Convection Coefficient Lower Limit {W/m2-K}, Surface Convection Coefficient Upper Limit {W/m2-K}
+Surface Heat Transfer Algorithm, CTF - ConductionTransferFunction,200,0.10,1000.0
+! <Shading Summary>, Number of Fixed Detached Shades, Number of Building Detached Shades, Number of Attached Shades
+ Shading Summary,0,0,0
+! <Zone Summary>, Number of Zones, Number of Zone Surfaces, Number of SubSurfaces
+ Zone Summary,12,82,0
+! <Zone Information>,Zone Name,North Axis {deg},Origin X-Coordinate {m},Origin Y-Coordinate {m},Origin Z-Coordinate {m},Centroid X-Coordinate {m},Centroid Y-Coordinate {m},Centroid Z-Coordinate {m},Type,Zone Multiplier,Zone List Multiplier,Minimum X {m},Maximum X {m},Minimum Y {m},Maximum Y {m},Minimum Z {m},Maximum Z {m},Ceiling Height {m},Volume {m3},Zone Inside Convection Algorithm {Simple-Detailed-CeilingDiffuser-TrombeWall},Zone Outside Convection Algorithm {Simple-Detailed-Tarp-MoWitt-DOE-2-BLAST}, Floor Area {m2},Exterior Gross Wall Area {m2},Exterior Net Wall Area {m2},Exterior Window Area {m2}, Number of Surfaces, Number of SubSurfaces, Number of Shading SubSurfaces,  Part of Total Building Area
+ Zone Information, THERMAL ZONE 1 HOT,0.0,0.00,0.00,0.00,1.50,9.00,4.44,1,1,1,0.00,3.00,0.00,18.00,2.44,6.44,4.00,216.00,TARP,TARP,54.00,96.00,96.00,0.00,5,0,1,Yes
+ Zone Information, THERMAL ZONE 10 COLD,0.0,0.00,0.00,0.00,27.00,9.00,4.44,1,1,1,26.00,28.00,0.00,18.00,2.44,6.44,4.00,144.00,TARP,TARP,36.00,16.00,16.00,0.00,4,0,2,Yes
+ Zone Information, THERMAL ZONE 11 HOT LAST,0.0,0.00,0.00,0.00,29.50,9.00,4.44,1,1,1,28.00,31.00,0.00,18.00,2.44,6.44,4.00,216.00,TARP,TARP,54.00,96.00,96.00,0.00,5,0,1,Yes
+ Zone Information, THERMAL ZONE 2 COLD,0.0,0.00,0.00,0.00,4.00,9.00,4.44,1,1,1,3.00,5.00,0.00,18.00,2.44,6.44,4.00,144.00,TARP,TARP,36.00,16.00,16.00,0.00,4,0,2,Yes
+ Zone Information, THERMAL ZONE 3 HOT,0.0,0.00,0.00,0.00,7.00,9.00,4.44,1,1,1,5.00,9.00,0.00,18.00,2.44,6.44,4.00,288.00,TARP,TARP,72.00,32.00,32.00,0.00,4,0,2,Yes
+ Zone Information, THERMAL ZONE 4 COLD,0.0,0.00,0.00,0.00,10.00,9.00,4.44,1,1,1,9.00,11.00,0.00,18.00,2.44,6.44,4.00,144.00,TARP,TARP,36.00,16.00,16.00,0.00,4,0,2,Yes
+ Zone Information, THERMAL ZONE 5 HOT,0.0,0.00,0.00,0.00,13.00,9.00,4.44,1,1,1,11.00,15.00,0.00,18.00,2.44,6.44,4.00,288.00,TARP,TARP,72.00,32.00,32.00,0.00,4,0,2,Yes
+ Zone Information, THERMAL ZONE 6 COLD,0.0,0.00,0.00,0.00,16.00,9.00,4.44,1,1,1,15.00,17.00,0.00,18.00,2.44,6.44,4.00,144.00,TARP,TARP,36.00,16.00,16.00,0.00,4,0,2,Yes
+ Zone Information, THERMAL ZONE 7 HOT,0.0,0.00,0.00,0.00,19.00,9.00,4.44,1,1,1,17.00,21.00,0.00,18.00,2.44,6.44,4.00,288.00,TARP,TARP,72.00,32.00,32.00,0.00,4,0,2,Yes
+ Zone Information, THERMAL ZONE 8 COLD,0.0,0.00,0.00,0.00,22.00,9.00,4.44,1,1,1,21.00,23.00,0.00,18.00,2.44,6.44,4.00,144.00,TARP,TARP,36.00,16.00,16.00,0.00,4,0,2,Yes
+ Zone Information, THERMAL ZONE 9 HOT,0.0,0.00,0.00,0.00,24.50,9.00,4.44,1,1,1,23.00,26.00,0.00,18.00,2.44,6.44,4.00,216.00,TARP,TARP,54.00,24.00,24.00,0.00,4,0,2,Yes
+ Zone Information, THERMAL ZONE SUPPLY PLENUM,0.0,0.00,0.00,0.00,15.50,9.00,1.22,1,1,1,0.00,31.00,0.00,18.00,0.00,2.44,2.44,1360.63,TARP,TARP,558.00,238.96,238.96,0.00,16,0,0,No
+! <Zone Internal Gains Nominal>,Zone Name, Floor Area {m2},# Occupants,Area per Occupant {m2/person},Occupant per Area {person/m2},Interior Lighting {W/m2},Electric Load {W/m2},Gas Load {W/m2},Other Load {W/m2},Hot Water Eq {W/m2},Steam Equipment {W/m2},Sum Loads per Area {W/m2},Outdoor Controlled Baseboard Heat
+ Zone Internal Gains Nominal, THERMAL ZONE 1 HOT,54.00,0.0,N/A,0.000,3.000,1000.000,0.000,0.000,0.000,0.000,1003.000,No
+ Zone Internal Gains Nominal, THERMAL ZONE 10 COLD,36.00,0.0,N/A,0.000,3.000,0.000,0.000,0.000,0.000,0.000,3.000,No
+ Zone Internal Gains Nominal, THERMAL ZONE 11 HOT LAST,54.00,0.0,N/A,0.000,3.000,1000.000,0.000,0.000,0.000,0.000,1003.000,No
+ Zone Internal Gains Nominal, THERMAL ZONE 2 COLD,36.00,0.0,N/A,0.000,3.000,0.000,0.000,0.000,0.000,0.000,3.000,No
+ Zone Internal Gains Nominal, THERMAL ZONE 3 HOT,72.00,0.0,N/A,0.000,3.000,1000.000,0.000,0.000,0.000,0.000,1003.000,No
+ Zone Internal Gains Nominal, THERMAL ZONE 4 COLD,36.00,0.0,N/A,0.000,3.000,0.000,0.000,0.000,0.000,0.000,3.000,No
+ Zone Internal Gains Nominal, THERMAL ZONE 5 HOT,72.00,0.0,N/A,0.000,3.000,1000.000,0.000,0.000,0.000,0.000,1003.000,No
+ Zone Internal Gains Nominal, THERMAL ZONE 6 COLD,36.00,0.0,N/A,0.000,3.000,0.000,0.000,0.000,0.000,0.000,3.000,No
+ Zone Internal Gains Nominal, THERMAL ZONE 7 HOT,72.00,0.0,N/A,0.000,3.000,1000.000,0.000,0.000,0.000,0.000,1003.000,No
+ Zone Internal Gains Nominal, THERMAL ZONE 8 COLD,36.00,0.0,N/A,0.000,3.000,0.000,0.000,0.000,0.000,0.000,3.000,No
+ Zone Internal Gains Nominal, THERMAL ZONE 9 HOT,54.00,0.0,N/A,0.000,3.000,1000.000,0.000,0.000,0.000,0.000,1003.000,No
+ Zone Internal Gains Nominal, THERMAL ZONE SUPPLY PLENUM,558.00,0.0,N/A,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,No
+! <Lights Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Lighting Level {W},Lights/Floor Area {W/m2},Lights per person {W/person},Fraction Return Air,Fraction Radiant,Fraction Short Wave,Fraction Convected,Fraction Replaceable,End-Use Category,Nominal Minimum Lighting Level {W},Nominal Maximum Lighting Level {W}
+ Lights Internal Gains Nominal, ZONE_2_COLD LIGTS_LOAD_DC,DATACENTER LIGHTING_SCH,THERMAL ZONE 2 COLD,36.00,0.0,108.000,3.000,N/A,0.000,0.700,0.200,0.100,1.000,General,108.000,108.000
+ Lights Internal Gains Nominal, ZONE_3_HOT LIGTS_LOAD_DC,DATACENTER LIGHTING_SCH,THERMAL ZONE 3 HOT,72.00,0.0,216.000,3.000,N/A,0.000,0.700,0.200,0.100,1.000,General,216.000,216.000
+ Lights Internal Gains Nominal, ZONE_6_COLD LIGTS_LOAD_DC,DATACENTER LIGHTING_SCH,THERMAL ZONE 6 COLD,36.00,0.0,108.000,3.000,N/A,0.000,0.700,0.200,0.100,1.000,General,108.000,108.000
+ Lights Internal Gains Nominal, ZONE_11_HOT_LAST LIGTS_LOAD_DC,DATACENTER LIGHTING_SCH,THERMAL ZONE 11 HOT LAST,54.00,0.0,162.000,3.000,N/A,0.000,0.700,0.200,0.100,1.000,General,162.000,162.000
+ Lights Internal Gains Nominal, ZONE_4_COLD LIGTS_LOAD_DC,DATACENTER LIGHTING_SCH,THERMAL ZONE 4 COLD,36.00,0.0,108.000,3.000,N/A,0.000,0.700,0.200,0.100,1.000,General,108.000,108.000
+ Lights Internal Gains Nominal, ZONE_10_COLD LIGTS_LOAD_DC,DATACENTER LIGHTING_SCH,THERMAL ZONE 10 COLD,36.00,0.0,108.000,3.000,N/A,0.000,0.700,0.200,0.100,1.000,General,108.000,108.000
+ Lights Internal Gains Nominal, ZONE_1_HOT_FIRST LIGTS_LOAD_DC,DATACENTER LIGHTING_SCH,THERMAL ZONE 1 HOT,54.00,0.0,162.000,3.000,N/A,0.000,0.700,0.200,0.100,1.000,General,162.000,162.000
+ Lights Internal Gains Nominal, ZONE_8_COLD LIGTS_LOAD_DC,DATACENTER LIGHTING_SCH,THERMAL ZONE 8 COLD,36.00,0.0,108.000,3.000,N/A,0.000,0.700,0.200,0.100,1.000,General,108.000,108.000
+ Lights Internal Gains Nominal, ZONE_9_HOT LIGTS_LOAD_DC,DATACENTER LIGHTING_SCH,THERMAL ZONE 9 HOT,54.00,0.0,162.000,3.000,N/A,0.000,0.700,0.200,0.100,1.000,General,162.000,162.000
+ Lights Internal Gains Nominal, ZONE_5_HOT LIGTS_LOAD_DC,DATACENTER LIGHTING_SCH,THERMAL ZONE 5 HOT,72.00,0.0,216.000,3.000,N/A,0.000,0.700,0.200,0.100,1.000,General,216.000,216.000
+ Lights Internal Gains Nominal, ZONE_7_HOT LIGTS_LOAD_DC,DATACENTER LIGHTING_SCH,THERMAL ZONE 7 HOT,72.00,0.0,216.000,3.000,N/A,0.000,0.700,0.200,0.100,1.000,General,216.000,216.000
+! <ElectricEquipment Internal Gains Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Equipment Level {W},Equipment/Floor Area {W/m2},Equipment per person {W/person},Fraction Latent,Fraction Radiant,Fraction Lost,Fraction Convected,End-Use SubCategory,Nominal Minimum Equipment Level {W},Nominal Maximum Equipment Level {W}
+ ElectricEquipment Internal Gains Nominal, ELECTRIC EQUIPMENT 5,DATACENTER EQUIPMENT_SCH,THERMAL ZONE 1 HOT,54.00,0.0,54000.000,1000.000,N/A,0.000,0.120,0.000,0.880,General,54000.000,54000.000
+ ElectricEquipment Internal Gains Nominal, ELECTRIC EQUIPMENT 2,DATACENTER EQUIPMENT_SCH,THERMAL ZONE 10 COLD,36.00,0.0,0.000,0.000,N/A,0.000,0.000,0.000,1.000,General,0.000,0.000
+ ElectricEquipment Internal Gains Nominal, ELECTRIC EQUIPMENT 3,DATACENTER EQUIPMENT_SCH,THERMAL ZONE 11 HOT LAST,54.00,0.0,54000.000,1000.000,N/A,0.000,0.120,0.000,0.880,General,54000.000,54000.000
+ ElectricEquipment Internal Gains Nominal, ELECTRIC EQUIPMENT 4,DATACENTER EQUIPMENT_SCH,THERMAL ZONE 2 COLD,36.00,0.0,0.000,0.000,N/A,0.000,0.000,0.000,1.000,General,0.000,0.000
+ ElectricEquipment Internal Gains Nominal, ELECTRIC EQUIPMENT 6,DATACENTER EQUIPMENT_SCH,THERMAL ZONE 3 HOT,72.00,0.0,72000.000,1000.000,N/A,0.000,0.120,0.000,0.880,General,72000.000,72000.000
+ ElectricEquipment Internal Gains Nominal, ELECTRIC EQUIPMENT 7,DATACENTER EQUIPMENT_SCH,THERMAL ZONE 4 COLD,36.00,0.0,0.000,0.000,N/A,0.000,0.000,0.000,1.000,General,0.000,0.000
+ ElectricEquipment Internal Gains Nominal, ELECTRIC EQUIPMENT 8,DATACENTER EQUIPMENT_SCH,THERMAL ZONE 5 HOT,72.00,0.0,72000.000,1000.000,N/A,0.000,0.120,0.000,0.880,General,72000.000,72000.000
+ ElectricEquipment Internal Gains Nominal, ELECTRIC EQUIPMENT 9,DATACENTER EQUIPMENT_SCH,THERMAL ZONE 6 COLD,36.00,0.0,0.000,0.000,N/A,0.000,0.000,0.000,1.000,General,0.000,0.000
+ ElectricEquipment Internal Gains Nominal, ELECTRIC EQUIPMENT 10,DATACENTER EQUIPMENT_SCH,THERMAL ZONE 7 HOT,72.00,0.0,72000.000,1000.000,N/A,0.000,0.120,0.000,0.880,General,72000.000,72000.000
+ ElectricEquipment Internal Gains Nominal, ELECTRIC EQUIPMENT 11,DATACENTER EQUIPMENT_SCH,THERMAL ZONE 8 COLD,36.00,0.0,0.000,0.000,N/A,0.000,0.000,0.000,1.000,General,0.000,0.000
+ ElectricEquipment Internal Gains Nominal, ELECTRIC EQUIPMENT 12,DATACENTER EQUIPMENT_SCH,THERMAL ZONE 9 HOT,54.00,0.0,54000.000,1000.000,N/A,0.000,0.120,0.000,0.880,General,54000.000,54000.000
+! <Shadowing/Sun Position Calculations Annual Simulations>, Shading Calculation Method, Shading Calculation Update Frequency Method, Shading Calculation Update Frequency {days}, Maximum Figures in Shadow Overlap Calculations {}, Polygon Clipping Algorithm, Pixel Counting Resolution, Sky Diffuse Modeling Algorithm, Output External Shading Calculation Results, Disable Self-Shading Within Shading Zone Groups, Disable Self-Shading From Shading Zone Groups to Other Zones
+Shadowing/Sun Position Calculations Annual Simulations,PolygonClipping,Periodic,20,15000,SutherlandHodgman,512,SimpleSkyDiffuseModeling,No,No,No
+! <CrossMixing Airflow Stats Nominal>,Name,Schedule Name,Zone Name, Zone Floor Area {m2}, # Zone Occupants,Design Volume Flow Rate {m3/s},Volume Flow Rate/Floor Area {m3/s-m2},Volume Flow Rate/person Area {m3/s-person},ACH - Air Changes per Hour,From/Source Zone,Delta Temperature {C}
+ CrossMixing Airflow Stats Nominal, Air Boundary Mixing Zones 1 and 4,Constant-1.0,THERMAL ZONE 1 HOT,54.00,0.0,6.000,0.111,N/A,100.000,THERMAL ZONE 2 COLD,0.00
+ CrossMixing Airflow Stats Nominal, Air Boundary Mixing Zones 11 and 2,Constant-1.0,THERMAL ZONE 9 HOT,54.00,0.0,6.000,0.111,N/A,100.000,THERMAL ZONE 10 COLD,0.00
+ CrossMixing Airflow Stats Nominal, Air Boundary Mixing Zones 2 and 3,Constant-1.0,THERMAL ZONE 10 COLD,36.00,0.0,6.000,0.167,N/A,150.000,THERMAL ZONE 11 HOT LAST,0.00
+ CrossMixing Airflow Stats Nominal, Air Boundary Mixing Zones 4 and 5,Constant-1.0,THERMAL ZONE 2 COLD,36.00,0.0,6.000,0.167,N/A,150.000,THERMAL ZONE 3 HOT,0.00
+ CrossMixing Airflow Stats Nominal, Air Boundary Mixing Zones 5 and 6,Constant-1.0,THERMAL ZONE 3 HOT,72.00,0.0,6.000,8.333E-002,N/A,75.000,THERMAL ZONE 4 COLD,0.00
+ CrossMixing Airflow Stats Nominal, Air Boundary Mixing Zones 6 and 7,Constant-1.0,THERMAL ZONE 4 COLD,36.00,0.0,6.000,0.167,N/A,150.000,THERMAL ZONE 5 HOT,0.00
+ CrossMixing Airflow Stats Nominal, Air Boundary Mixing Zones 7 and 8,Constant-1.0,THERMAL ZONE 5 HOT,72.00,0.0,6.000,8.333E-002,N/A,75.000,THERMAL ZONE 6 COLD,0.00
+ CrossMixing Airflow Stats Nominal, Air Boundary Mixing Zones 8 and 9,Constant-1.0,THERMAL ZONE 6 COLD,36.00,0.0,6.000,0.167,N/A,150.000,THERMAL ZONE 7 HOT,0.00
+ CrossMixing Airflow Stats Nominal, Air Boundary Mixing Zones 9 and 10,Constant-1.0,THERMAL ZONE 7 HOT,72.00,0.0,6.000,8.333E-002,N/A,75.000,THERMAL ZONE 8 COLD,0.00
+ CrossMixing Airflow Stats Nominal, Air Boundary Mixing Zones 10 and 11,Constant-1.0,THERMAL ZONE 8 COLD,36.00,0.0,6.000,0.167,N/A,150.000,THERMAL ZONE 9 HOT,0.00
+! <AirFlow Model>, Simple
+ AirFlow Model, Simple
+! <RoomAir Model>, Zone Name, Mixing/Mundt/UCSDDV/UCSDCV/UCSDUFI/UCSDUFE/User Defined
+RoomAir Model,THERMAL ZONE 1 HOT,Mixing/Well-Stirred
+RoomAir Model,THERMAL ZONE 10 COLD,Mixing/Well-Stirred
+RoomAir Model,THERMAL ZONE 11 HOT LAST,Mixing/Well-Stirred
+RoomAir Model,THERMAL ZONE 2 COLD,Mixing/Well-Stirred
+RoomAir Model,THERMAL ZONE 3 HOT,Mixing/Well-Stirred
+RoomAir Model,THERMAL ZONE 4 COLD,Mixing/Well-Stirred
+RoomAir Model,THERMAL ZONE 5 HOT,Mixing/Well-Stirred
+RoomAir Model,THERMAL ZONE 6 COLD,Mixing/Well-Stirred
+RoomAir Model,THERMAL ZONE 7 HOT,Mixing/Well-Stirred
+RoomAir Model,THERMAL ZONE 8 COLD,Mixing/Well-Stirred
+RoomAir Model,THERMAL ZONE 9 HOT,Mixing/Well-Stirred
+RoomAir Model,THERMAL ZONE SUPPLY PLENUM,Mixing/Well-Stirred
+! <AirflowNetwork Model:Control>, No Multizone or Distribution/Multizone with Distribution/Multizone without Distribution/Multizone with Distribution only during Fan Operation
+AirflowNetwork Model:Control,NoMultizoneOrDistribution
+! <Zone Volume Capacitance Multiplier>, Sensible Heat Capacity Multiplier, Moisture Capacity Multiplier, Carbon Dioxide Capacity Multiplier, Generic Contaminant Capacity Multiplier
+Zone Volume Capacitance Multiplier,   1.000 ,   1.000,   1.000,   1.000
+! <Load Timesteps in Zone Design Calculation Averaging Window>, Value
+ Load Timesteps in Zone Design Calculation Averaging Window,    5
+! <Heating Sizing Factor Information>, Sizing Factor ID, Value
+ Heating Sizing Factor Information, Global,   1.2500    
+ Heating Sizing Factor Information, Zone THERMAL ZONE 10 COLD,   1.2500    
+ Heating Sizing Factor Information, Zone THERMAL ZONE 2 COLD,   1.2500    
+ Heating Sizing Factor Information, Zone THERMAL ZONE 4 COLD,   1.2500    
+ Heating Sizing Factor Information, Zone THERMAL ZONE 6 COLD,   1.2500    
+ Heating Sizing Factor Information, Zone THERMAL ZONE 8 COLD,   1.2500    
+! <Cooling Sizing Factor Information>, Sizing Factor ID, Value
+ Cooling Sizing Factor Information, Global,   1.1500    
+ Cooling Sizing Factor Information, Zone THERMAL ZONE 10 COLD,   1.1500    
+ Cooling Sizing Factor Information, Zone THERMAL ZONE 2 COLD,   1.1500    
+ Cooling Sizing Factor Information, Zone THERMAL ZONE 4 COLD,   1.1500    
+ Cooling Sizing Factor Information, Zone THERMAL ZONE 6 COLD,   1.1500    
+ Cooling Sizing Factor Information, Zone THERMAL ZONE 8 COLD,   1.1500    
+! <Zone Sizing Information>, Zone Name, Load Type, Calc Des Load {W}, User Des Load {W}, Calc Des Air Flow Rate {m3/s}, User Des Air Flow Rate {m3/s}, Design Day Name, Date/Time of Peak, Temperature at Peak {C}, Humidity Ratio at Peak {kgWater/kgDryAir}, Floor Area {m2}, # Occupants, Calc Outdoor Air Flow Rate {m3/s}, Calc DOAS Heat Addition Rate {W}
+ Zone Sizing Information, THERMAL ZONE 10 COLD, Cooling, 81205.90060, 93386.78569, 30.28558, 34.82842, MOSCOW ANN CLG .4% CONDNS DB=>MWB, 7/21 14:24:00, 28.40000, 1.16389E-002, 36.00000, 0.00000, 1.09728E-002, 0.00000
+ Zone Sizing Information, THERMAL ZONE 10 COLD, Heating, 0.00000, 0.00000, 0.00000, 1.09728E-002, ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB, 1/21 03:00:00, -26.20000, 3.61342E-004, 36.00000, 0.00000, 1.09728E-002, 0.00000
+ Zone Sizing Information, THERMAL ZONE 2 COLD, Cooling, 89489.72255, 102913.18093, 33.37502, 38.38127, MOSCOW ANN CLG .4% CONDNS DB=>MWB, 7/21 16:24:00, 27.63640, 1.16376E-002, 36.00000, 0.00000, 1.09728E-002, 0.00000
+ Zone Sizing Information, THERMAL ZONE 2 COLD, Heating, 0.00000, 0.00000, 0.00000, 1.09728E-002, ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB, 1/21 09:48:00, -26.20000, 3.61342E-004, 36.00000, 0.00000, 1.09728E-002, 0.00000
+ Zone Sizing Information, THERMAL ZONE 4 COLD, Cooling, 71381.41711, 82088.62967, 26.62156, 30.61479, MOSCOW ANN CLG .4% CONDNS DB=>MWB, 7/21 15:12:00, 28.30040, 1.16388E-002, 36.00000, 0.00000, 1.09728E-002, 0.00000
+ Zone Sizing Information, THERMAL ZONE 4 COLD, Heating, 0.00000, 0.00000, 0.00000, 1.09728E-002, ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB, 1/21 04:12:00, -26.20000, 3.61342E-004, 36.00000, 0.00000, 1.09728E-002, 0.00000
+ Zone Sizing Information, THERMAL ZONE 6 COLD, Cooling, 71381.41711, 82088.62967, 26.62156, 30.61479, MOSCOW ANN CLG .4% CONDNS DB=>MWB, 7/21 15:12:00, 28.30040, 1.16388E-002, 36.00000, 0.00000, 1.09728E-002, 0.00000
+ Zone Sizing Information, THERMAL ZONE 6 COLD, Heating, 0.00000, 0.00000, 0.00000, 1.09728E-002, ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB, 1/21 21:00:00, -26.20000, 3.61342E-004, 36.00000, 0.00000, 1.09728E-002, 0.00000
+ Zone Sizing Information, THERMAL ZONE 8 COLD, Cooling, 63044.28425, 72500.92688, 23.51224, 27.03908, MOSCOW ANN CLG .4% CONDNS DB=>MWB, 7/21 15:12:00, 28.30040, 1.16388E-002, 36.00000, 0.00000, 1.09728E-002, 0.00000
+ Zone Sizing Information, THERMAL ZONE 8 COLD, Heating, 0.00000, 0.00000, 0.00000, 1.09728E-002, ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB, 1/21 01:12:00, -26.20000, 3.61342E-004, 36.00000, 0.00000, 1.09728E-002, 0.00000
+! <System Sizing Information>, System Name, Load Type, Peak Load Kind, User Design Capacity, Calc Des Air Flow Rate [m3/s], User Des Air Flow Rate [m3/s], Design Day Name, Date/Time of Peak
+ System Sizing Information, CRAH, Cooling, Sensible, 427109.79, 161.46264, 161.46264, MOSCOW ANN CLG .4% CONDNS DB=>MWB, 7/21 00:00:00
+ System Sizing Information, CRAH, Heating, Sensible, 2540.39, 5.48640E-002, 5.48640E-002, ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB, 1/21 00:12:00
+! <Component Sizing Information>, Component Type, Component Name, Input Field Description, Value
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 11, Design Size Maximum Air Flow Rate [m3/s], 34.82842
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 11, Design Size Constant Minimum Air Flow Fraction, 7.87633E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 11, User-Specified Constant Minimum Air Flow Fraction, 0.10000
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 11, Design Size Minimum Air Flow Rate [m3/s], 3.48284
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 4, Design Size Maximum Air Flow Rate [m3/s], 38.38127
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 4, Design Size Constant Minimum Air Flow Fraction, 7.14724E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 4, User-Specified Constant Minimum Air Flow Fraction, 0.10000
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 4, Design Size Minimum Air Flow Rate [m3/s], 3.83813
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 6, Design Size Maximum Air Flow Rate [m3/s], 30.61479
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 6, Design Size Constant Minimum Air Flow Fraction, 8.96037E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 6, User-Specified Constant Minimum Air Flow Fraction, 0.10000
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 6, Design Size Minimum Air Flow Rate [m3/s], 3.06148
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 8, Design Size Maximum Air Flow Rate [m3/s], 30.61479
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 8, Design Size Constant Minimum Air Flow Fraction, 8.96037E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 8, User-Specified Constant Minimum Air Flow Fraction, 0.10000
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 8, Design Size Minimum Air Flow Rate [m3/s], 3.06148
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 10, Design Size Maximum Air Flow Rate [m3/s], 27.03908
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 10, Design Size Constant Minimum Air Flow Fraction, 1.01453E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 10, User-Specified Constant Minimum Air Flow Fraction, 0.10000
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:NoReheat, DATACENTER ZN VAV TERMINAL 10, Design Size Minimum Air Flow Rate [m3/s], 2.70391
+ Component Sizing Information, AirLoopHVAC, CRAH, Sum of Air Terminal Maximum Heating Flow Rates [m3/s], 16.14784
+ Component Sizing Information, AirLoopHVAC, CRAH, Sum of Air Terminal Minimum Heating Flow Rates [m3/s], 16.14784
+ Component Sizing Information, AirLoopHVAC, CRAH, Sum of Air Terminal Maximum Flow Rates [m3/s], 161.47836
+ Component Sizing Information, AirLoopHVAC, CRAH, Adjusted Heating Design Air Flow Rate [m3/s], 16.14784
+ Component Sizing Information, AirLoopHVAC, CRAH, Adjusted Cooling Design Air Flow Rate [m3/s], 161.46264
+ Component Sizing Information, AirLoopHVAC, CRAH, Adjusted Main Design Air Flow Rate [m3/s], 161.46264
+ Component Sizing Information, AirLoopHVAC, CRAH, User Heating Air Flow Ratio [], 0.30000
+ Component Sizing Information, AirLoopHVAC, CRAH, Calculated Heating Air Flow Ratio [], 0.10001
+ Component Sizing Information, AirLoopHVAC, CRAH, Design Supply Air Flow Rate [m3/s], 161.46264
+!<Controller:MechanicalVentilation>,Name,Availability Schedule Name,Demand Controlled Ventilation {Yes/No},System Outdoor Air Method,Zone Maximum Outdoor Air Fraction,Number of Zones,Zone Name,DSOA Name,DSZAD Name
+ Controller:MechanicalVentilation,CRAH VENT CONTROLLER,DATACENTER MINOA_MOTORIZEDDAMPER_SCHED,No,ZoneSum,1.00,5,THERMAL ZONE 10 COLD,LARGEDATACENTERHIGHITE STANDALONEDATACENTER VENTILATION,,THERMAL ZONE 2 COLD,LARGEDATACENTERHIGHITE STANDALONEDATACENTER VENTILATION,,THERMAL ZONE 4 COLD,LARGEDATACENTERHIGHITE STANDALONEDATACENTER VENTILATION,,THERMAL ZONE 6 COLD,LARGEDATACENTERHIGHITE STANDALONEDATACENTER VENTILATION,,THERMAL ZONE 8 COLD,LARGEDATACENTERHIGHITE STANDALONEDATACENTER VENTILATION,
+ Component Sizing Information, Controller:OutdoorAir, CRAH OA CONTROLLER, Maximum Outdoor Air Flow Rate [m3/s], 161.46264
+ Component Sizing Information, Controller:OutdoorAir, CRAH OA CONTROLLER, Minimum Outdoor Air Flow Rate [m3/s], 5.48640E-002
+ Component Sizing Information, Coil:Cooling:Water, CRAH WATER CLG COIL, Design Size Design Inlet Air Temperature [C], 15.00455
+ Component Sizing Information, Coil:Cooling:Water, CRAH WATER CLG COIL, Design Size Design Inlet Water Temperature [C], 6.66667
+ Component Sizing Information, Coil:Cooling:Water, CRAH WATER CLG COIL, Design Size Design Outlet Air Temperature [C], 10.92014
+ Component Sizing Information, Coil:Cooling:Water, CRAH WATER CLG COIL, Design Size Design Inlet Air Humidity Ratio [kgWater/kgDryAir], 8.50107E-003
+ Component Sizing Information, Coil:Cooling:Water, CRAH WATER CLG COIL, Design Size Design Outlet Air Humidity Ratio [kgWater/kgDryAir], 8.50000E-003
+ Component Sizing Information, Coil:Cooling:Water, CRAH WATER CLG COIL, Design Size Design Coil Load [W], 796245.89833
+ Component Sizing Information, Coil:Cooling:Water, CRAH WATER CLG COIL, Design Size Design Water Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, Coil:Cooling:Water, CRAH WATER CLG COIL, Design Size Design Air Flow Rate [m3/s], 161.46264
+! <Water Cooling Coil Capacity Information>,Component Type,Name,Nominal Total Capacity {W},Nominal Sensible Capacity {W},Nominal Latent Capacity {W},Nominal Sensible Heat Ratio, Nominal Coil UA Value {W/C}, Nominal Coil Surface Area {m2}
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,CRAH WATER CLG COIL,1753927.93,1753927.93,4.66E-010,1.00,262790.03,2665.36
+ Component Sizing Information, Humidifier:Steam:Electric, CRAH ELECTRIC STEAM HUMIDIFIER, Design Size Nominal Capacity Volume [m3/s], 1.55916E-003
+ Component Sizing Information, Humidifier:Steam:Electric, CRAH ELECTRIC STEAM HUMIDIFIER, Design Size Rated Power [W], 4042541.07931
+ Component Sizing Information, Fan:VariableVolume, CRAH FAN, Design Size Maximum Flow Rate [m3/s], 161.46264
+ Component Sizing Information, Controller:WaterCoil, CRAH WATER CLG COIL CONTROLLER, Maximum Actuated Flow [m3/s], 3.38071E-002
+ Component Sizing Information, Controller:WaterCoil, CRAH WATER CLG COIL CONTROLLER, Controller Convergence Tolerance, 1.40855E-005
+ Component Sizing Information, Pump:VariableSpeed, CHILLED WATER LOOP SECONDARY PUMP, Initial Design Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, Pump:VariableSpeed, CHILLED WATER LOOP SECONDARY PUMP, Initial Design Power Consumption [W], 6169.20480
+ Component Sizing Information, PlantLoop, CHILLED WATER LOOP, Initial Maximum Loop Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, PlantLoop, CHILLED WATER LOOP, Initial Plant Loop Volume [m3], 4.05685
+ Component Sizing Information, Pump:ConstantSpeed, CHILLED WATER LOOP PRIMARY PUMP, Initial Design Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, Pump:ConstantSpeed, CHILLED WATER LOOP PRIMARY PUMP, Initial Design Power Consumption [W], 2103.13800
+ Component Sizing Information, HeatExchanger:FluidToFluid, INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER, Initial Loop Supply Side Design Fluid Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, HeatExchanger:FluidToFluid, INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER, Initial Loop Demand Side Design Fluid Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, HeatExchanger:FluidToFluid, INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER, Initial Heat Exchanger U-Factor Times Area Value [W/C], 46383.25621
+ Component Sizing Information, HeatExchanger:FluidToFluid, INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER, Initial Loop-to-loop Temperature Difference Used to Size Heat Exchanger U-Factor Times Area Value [C], 17.16667
+ Component Sizing Information, Chiller:Electric:EIR, 90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON, Initial Design Size Reference Chilled Water Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, Chiller:Electric:EIR, 90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON, Initial Design Size Reference Capacity [W], 796245.89833
+ Component Sizing Information, Chiller:Electric:EIR, 90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON, Initial Design Size Reference Condenser Fluid Flow Rate [m3/s], 3.97517E-002
+ Component Sizing Information, PlantLoop, CONDENSER WATER LOOP, Initial Maximum Loop Flow Rate [m3/s], 7.35588E-002
+ Component Sizing Information, PlantLoop, CONDENSER WATER LOOP, Initial Plant Loop Volume [m3], 8.82706
+ Component Sizing Information, Pump:ConstantSpeed, CONDENSER WATER LOOP CONSTANT PUMP, Initial Design Flow Rate [m3/s], 7.35588E-002
+ Component Sizing Information, Pump:ConstantSpeed, CONDENSER WATER LOOP CONSTANT PUMP, Initial Design Power Consumption [W], 14685.32858
+ Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Initial Design Water Flow Rate [m3/s], 7.35588E-002
+ Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Initial Design Air Flow Rate [m3/s], 345.04332
+ Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Initial U-Factor Times Area Value at Design Air Flow Rate [W/C], 68135.76121
+ Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Initial Free Convection Regime Air Flow Rate [m3/s], 34.50433
+ Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Initial Free Convection U-Factor Times Area Value [W/K], 6813.57612
+ Component Sizing Information, PlantEquipmentOperation:ComponentSetPoint, CHILLED WATER LOOP SETPOINT OPERATION SCHEME, Design Water Flow Rate [m3/s] Equipment # 7, 7.35588E-002
+ Component Sizing Information, PlantEquipmentOperation:ComponentSetPoint, CHILLED WATER LOOP SETPOINT OPERATION SCHEME, Design Water Flow Rate [m3/s] Equipment # 7, 7.35588E-002
+! <Environment>,Environment Name,Environment Type, Start Date, End Date, Start DayOfWeek, Duration {#days}, Source:Start DayOfWeek,  Use Daylight Saving, Use Holidays, Apply Weekend Holiday Rule,  Use Rain Values, Use Snow Values, Sky Temperature Model
+! <Environment:Special Days>, Special Day Name, Special Day Type, Source, Start Date, Duration {#days}
+! <Environment:Daylight Saving>, Daylight Saving Indicator, Source, Start Date, End Date
+! <Environment:WarmupDays>, NumberofWarmupDays
+Environment,RUN PERIOD 1,WeatherFileRunPeriod,10/01/2006,10/01/2007,Sunday,366,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
+Environment:Daylight Saving,Yes,InputFile,03/12,11/05
+! <Environment:Design Day Data>, Max Dry-Bulb Temp {C}, Temp Range {dC}, Temp Range Ind Type, Hum Ind Type, Hum Ind Value at Max Temp, Hum Ind Units, Pressure {Pa}, Wind Direction {deg CW from N}, Wind Speed {m/s}, Clearness, Rain, Snow
+! <Environment:Design Day Misc>,DayOfYear,ASHRAE A Coeff,ASHRAE B Coeff,ASHRAE C Coeff,Solar Constant-Annual Variation,Eq of Time {minutes}, Solar Declination Angle {deg}, Solar Model
+Environment:Design Day Data,28.40,8.30,DefaultMultipliers,Wetbulb,20.10,{C},99465,150,1.6,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:WarmupDays,  5
+! <Warmup Convergence Information>,Zone Name,Environment Type/Name,Average Warmup Temperature Difference {deltaC},Std Dev Warmup Temperature Difference {deltaC},Max Temperature Pass/Fail Convergence,Min Temperature Pass/Fail Convergence,Average Warmup Load Difference {W},Std Dev Warmup Load Difference {W},Heating Load Pass/Fail Convergence,Cooling Load Pass/Fail Convergence
+ Warmup Convergence Information,THERMAL ZONE 1 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,0.1169091637,0.1347802727,Fail,Fail,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 10 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,0.1210284998,0.1495386459,Fail,Fail,4.0465633342E-003,1.4511512919E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 11 HOT LAST,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,0.1166384302,0.1341467360,Fail,Fail,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 2 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,0.1214036075,0.1507309941,Fail,Fail,3.7187258661E-003,1.3290032941E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 3 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,0.1185002256,0.1376208848,Fail,Fail,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 4 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,0.1207823903,0.1486196093,Fail,Fail,4.4309787726E-003,1.5788167234E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 5 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,0.1180638526,0.1370376369,Fail,Fail,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 6 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,0.1206831925,0.1483528971,Fail,Fail,4.4509752472E-003,1.6002010711E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 7 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,0.1177604994,0.1366358371,Fail,Fail,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 8 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,0.1202713074,0.1471449037,Fail,Fail,4.8868759066E-003,1.7476985096E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 9 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,0.1182908636,0.1372482373,Fail,Fail,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE SUPPLY PLENUM,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,0.1341590111,0.2000071231,Fail,Fail,0.1075817804,0.2755852698,Fail,Pass
+Environment:Design Day Data,24.00,8.30,DefaultMultipliers,Dewpoint,19.30,{C},99465,150,1.6,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:WarmupDays,  4
+ Warmup Convergence Information,THERMAL ZONE 1 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1,0.1062625718,6.2608066712E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 10 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1,0.1069178859,6.7243759163E-002,Pass,Pass,3.0988367949E-003,1.2250680608E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 11 HOT LAST,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1,0.1065897888,6.2198104269E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 2 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1,0.1070942795,6.7612650488E-002,Pass,Pass,2.8810677138E-003,1.1330973002E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 3 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1,0.1071555482,6.4483307343E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 4 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1,0.1067808038,6.7160958577E-002,Pass,Pass,3.3882443072E-003,1.3419342301E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 5 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1,0.1070404428,6.4083763964E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 6 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1,0.1067401535,6.7009656890E-002,Pass,Pass,3.3824529814E-003,1.3420657032E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 7 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1,0.1069273150,6.3815534971E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 8 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1,0.1064774441,6.6759669378E-002,Pass,Pass,3.7162462539E-003,1.4717210051E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 9 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1,0.1068807355,6.4317561509E-002,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE SUPPLY PLENUM,SizingPeriod: MOSCOW ANN CLG .4% CONDNS DP=>MDB HVAC Sizing Pass 1,0.1130562158,8.6604327443E-002,Pass,Pass,9.3078988809E-002,0.3223734392,Pass,Pass
+Environment:Design Day Data,26.60,8.30,DefaultMultipliers,Enthalpy,62300.00,{J/kgDryAir},99465,150,1.6,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:WarmupDays,  5
+ Warmup Convergence Information,THERMAL ZONE 1 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1,1.7706218108E-003,9.6620325310E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 10 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1,3.9349746486E-005,2.4698141864E-005,Pass,Pass,2.8517701446E-004,1.7948072663E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 11 HOT LAST,SizingPeriod: MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1,1.8637431715E-003,1.2217371460E-003,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 2 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1,4.1341719212E-005,2.6170925850E-005,Pass,Pass,2.5939886823E-004,1.4603668076E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 3 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1,7.1514987586E-004,4.1272364546E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 4 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1,3.7130474637E-005,2.2795612114E-005,Pass,Pass,2.2747301287E-004,1.3039364467E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 5 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1,7.1511158150E-004,4.1261872606E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 6 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1,3.6905069827E-005,2.2837147286E-005,Pass,Pass,2.2745922168E-004,1.3040028554E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 7 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1,7.1509028389E-004,4.1256710321E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 8 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1,3.4680338501E-005,2.0992474529E-005,Pass,Pass,2.3835890194E-004,1.3656371686E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 9 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1,5.4575822555E-004,3.1508587937E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE SUPPLY PLENUM,SizingPeriod: MOSCOW ANN CLG .4% CONDNS ENTH=>MDB HVAC Sizing Pass 1,2.6639677195E-002,2.9047975072E-002,Pass,Pass,1.9652365533E-002,1.4091450704E-002,Pass,Pass
+Environment:Design Day Data,26.40,8.30,DefaultMultipliers,Wetbulb,21.20,{C},99465,150,1.6,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:WarmupDays,  5
+ Warmup Convergence Information,THERMAL ZONE 1 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1,1.7715207440E-003,9.6777668202E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 10 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1,4.0078265132E-005,2.4825945504E-005,Pass,Pass,2.8539713050E-004,1.7958292749E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 11 HOT LAST,SizingPeriod: MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1,1.8647990297E-003,1.2229583247E-003,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 2 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1,4.2119852581E-005,2.6305873360E-005,Pass,Pass,2.5982180589E-004,1.4569036479E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 3 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1,7.1546935133E-004,4.1389208734E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 4 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1,3.7794039941E-005,2.2906377285E-005,Pass,Pass,2.2752096471E-004,1.3068834001E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 5 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1,7.1544918520E-004,4.1370813282E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 6 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1,3.7570698886E-005,2.2954770437E-005,Pass,Pass,2.2751417797E-004,1.3068240460E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 7 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1,7.1543823027E-004,4.1361239308E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 8 COLD,SizingPeriod: MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1,3.5283568635E-005,2.1093478950E-005,Pass,Pass,2.3841267682E-004,1.3686944506E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 9 HOT,SizingPeriod: MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1,5.4591078257E-004,3.1634174069E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE SUPPLY PLENUM,SizingPeriod: MOSCOW ANN CLG .4% CONDNS WB=>MDB HVAC Sizing Pass 1,2.6861909602E-002,2.8748832684E-002,Pass,Pass,2.0040035624E-002,1.4089947658E-002,Pass,Pass
+Environment:Design Day Data,-23.10,0.00,DefaultMultipliers,Wetbulb,-23.10,{C},99465,290,1.4,0.00,No,No
+Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
+Environment:WarmupDays,  3
+ Warmup Convergence Information,THERMAL ZONE 1 HOT,SizingPeriod: MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,1.5420825150E-007,1.2236553920E-007,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 10 COLD,SizingPeriod: MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,6.1598726120E-012,4.8908236436E-014,Pass,Pass,2.9871737834E-008,2.3295132495E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 11 HOT LAST,SizingPeriod: MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,1.5423004311E-007,1.2238247805E-007,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 2 COLD,SizingPeriod: MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,6.3610894330E-012,5.0536474041E-014,Pass,Pass,2.8612247672E-008,2.2310957440E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 3 HOT,SizingPeriod: MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,8.0647369257E-008,6.4342679210E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 4 COLD,SizingPeriod: MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,5.6470087865E-012,4.4884793572E-014,Pass,Pass,2.7711273808E-008,2.1618335149E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 5 HOT,SizingPeriod: MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,8.0647569719E-008,6.4342691673E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 6 COLD,SizingPeriod: MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,5.7954530064E-012,4.5970619810E-014,Pass,Pass,2.7711353787E-008,2.1618339552E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 7 HOT,SizingPeriod: MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,8.0647693945E-008,6.4342702918E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 8 COLD,SizingPeriod: MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,5.3139714851E-012,4.2182397488E-014,Pass,Pass,2.9196645453E-008,2.2780589689E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 9 HOT,SizingPeriod: MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,6.2425333051E-008,4.9792727783E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE SUPPLY PLENUM,SizingPeriod: MOSCOW ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,3.4050510774E-007,2.6266756251E-007,Pass,Pass,7.7791757104E-007,6.0730420550E-007,Pass,Pass
+Environment:Design Day Data,-8.20,0.00,DefaultMultipliers,Wetbulb,-8.20,{C},99465,290,8.0,0.00,No,No
+Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
+Environment:WarmupDays,  3
+ Warmup Convergence Information,THERMAL ZONE 1 HOT,SizingPeriod: MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB HVAC Sizing Pass 1,1.3937364738E-007,1.0952492805E-007,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 10 COLD,SizingPeriod: MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB HVAC Sizing Pass 1,1.2878587086E-015,1.1457731115E-015,Pass,Pass,2.6162841145E-008,2.0571720201E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 11 HOT LAST,SizingPeriod: MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB HVAC Sizing Pass 1,1.3938792597E-007,1.0953615900E-007,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 2 COLD,SizingPeriod: MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB HVAC Sizing Pass 1,1.0954200510E-015,1.1508300520E-015,Pass,Pass,2.5079841615E-008,1.9718845521E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 3 HOT,SizingPeriod: MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB HVAC Sizing Pass 1,7.2898276719E-008,5.7308455813E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 4 COLD,SizingPeriod: MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB HVAC Sizing Pass 1,9.3258734069E-016,9.9862488504E-016,Pass,Pass,2.4261454332E-008,1.9080695237E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 5 HOT,SizingPeriod: MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB HVAC Sizing Pass 1,7.2898286430E-008,5.7308465591E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 6 COLD,SizingPeriod: MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB HVAC Sizing Pass 1,1.3914795242E-015,1.2806069540E-015,Pass,Pass,2.4261457879E-008,1.9080698855E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 7 HOT,SizingPeriod: MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB HVAC Sizing Pass 1,7.2898295933E-008,5.7308475216E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 8 COLD,SizingPeriod: MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB HVAC Sizing Pass 1,1.0066022090E-015,9.9257222377E-016,Pass,Pass,2.5535237279E-008,2.0084672917E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 9 HOT,SizingPeriod: MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB HVAC Sizing Pass 1,5.6283778053E-008,4.4259707094E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE SUPPLY PLENUM,SizingPeriod: MOSCOW ANN HTG WIND 99.6% CONDNS WS=>MCDB HVAC Sizing Pass 1,2.9619621043E-007,2.3292179357E-007,Pass,Pass,6.5156958333E-007,5.1236375202E-007,Pass,Pass
+Environment:Design Day Data,-22.70,0.00,DefaultMultipliers,Dewpoint,-25.80,{C},99465,290,1.4,0.00,No,No
+Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
+Environment:WarmupDays,  3
+ Warmup Convergence Information,THERMAL ZONE 1 HOT,SizingPeriod: MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB HVAC Sizing Pass 1,1.3412914856E-007,1.2204441489E-007,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 10 COLD,SizingPeriod: MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB HVAC Sizing Pass 1,5.0651468205E-011,4.0169381595E-013,Pass,Pass,2.9918498344E-008,2.3258761983E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 11 HOT LAST,SizingPeriod: MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB HVAC Sizing Pass 1,1.3414966039E-007,1.2205986588E-007,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 2 COLD,SizingPeriod: MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB HVAC Sizing Pass 1,5.2306011374E-011,4.1517803933E-013,Pass,Pass,2.8662919788E-008,2.2276521762E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 3 HOT,SizingPeriod: MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB HVAC Sizing Pass 1,6.7118860455E-008,6.4126130670E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 4 COLD,SizingPeriod: MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB HVAC Sizing Pass 1,4.6433642117E-011,3.6838845617E-013,Pass,Pass,2.7719383839E-008,2.1584149501E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 5 HOT,SizingPeriod: MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB HVAC Sizing Pass 1,6.7120352772E-008,6.4126233996E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 6 COLD,SizingPeriod: MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB HVAC Sizing Pass 1,4.7654236113E-011,3.7788582920E-013,Pass,Pass,2.7720013812E-008,2.1584157940E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 7 HOT,SizingPeriod: MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB HVAC Sizing Pass 1,6.7121254362E-008,6.4126299426E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 8 COLD,SizingPeriod: MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB HVAC Sizing Pass 1,4.3695284428E-011,3.4671543713E-013,Pass,Pass,2.9193985682E-008,2.2744142107E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 9 HOT,SizingPeriod: MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB HVAC Sizing Pass 1,5.2179213010E-008,4.9634618400E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE SUPPLY PLENUM,SizingPeriod: MOSCOW ANN HUM_N 99.6% CONDNS DP=>MCDB HVAC Sizing Pass 1,3.6817228365E-007,2.6250440775E-007,Pass,Pass,7.7275550863E-007,6.0583634131E-007,Pass,Pass
+Environment:Design Day Data,31.20,10.60,DefaultMultipliers,Wetbulb,23.10,{C},96634,200,6.7,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:WarmupDays,  5
+ Warmup Convergence Information,THERMAL ZONE 1 HOT,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,1.6956977007E-003,9.0587376679E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 10 COLD,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,4.4016943891E-005,2.6016431620E-005,Pass,Pass,2.6327096178E-004,1.6066187789E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 11 HOT LAST,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,1.7940767201E-003,1.1526559377E-003,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 2 COLD,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,4.6303903840E-005,2.7503583934E-005,Pass,Pass,2.3912663315E-004,1.2986226806E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 3 HOT,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,6.7109616857E-004,3.7365887544E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 4 COLD,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,4.1455654361E-005,2.4003300893E-005,Pass,Pass,2.0686955900E-004,1.1417665573E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 5 HOT,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,6.7108636097E-004,3.7338495052E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 6 COLD,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,4.1200678360E-005,2.4098301694E-005,Pass,Pass,2.0686285368E-004,1.1415811852E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 7 HOT,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,6.7108102123E-004,3.7324223097E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 8 COLD,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,3.8642578702E-005,2.2157013013E-005,Pass,Pass,2.1654759623E-004,1.1947520146E-004,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 9 HOT,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,5.1074004931E-004,2.8499082160E-004,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE SUPPLY PLENUM,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN CLG .4% CONDNS DB=>MWB HVAC Sizing Pass 1,3.0420315229E-002,2.9868786489E-002,Pass,Pass,2.1505022499E-002,1.3821432511E-002,Pass,Pass
+Environment:Design Day Data,-26.20,0.00,DefaultMultipliers,Wetbulb,-26.20,{C},96634,310,5.7,0.00,No,No
+Environment:Design Day Misc, 21,1229.0,0.1415,5.7310E-002,1.0,-11.15,-20.1,ASHRAEClearSky
+Environment:WarmupDays,  3
+ Warmup Convergence Information,THERMAL ZONE 1 HOT,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,1.3782135542E-007,1.2601285276E-007,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 10 COLD,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,5.4213152486E-011,4.3767166335E-013,Pass,Pass,3.0219634324E-008,2.3459759577E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 11 HOT LAST,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,1.3785459299E-007,1.2603812944E-007,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 2 COLD,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,5.6015059258E-011,4.5258270890E-013,Pass,Pass,2.8942136253E-008,2.2461469590E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 3 HOT,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,6.9214584405E-008,6.6491125591E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 4 COLD,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,4.9739249756E-011,4.0171374185E-013,Pass,Pass,2.8042328114E-008,2.1806415235E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 5 HOT,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,6.9216140168E-008,6.6491240876E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 6 COLD,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,5.1024710383E-011,4.1179357714E-013,Pass,Pass,2.8042976511E-008,2.1806420454E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 7 HOT,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,6.9217086078E-008,6.6491321407E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 8 COLD,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,4.6800563425E-011,3.7798679901E-013,Pass,Pass,2.9548204804E-008,2.2989901076E-008,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 9 HOT,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,5.3904322517E-008,5.1545537673E-008,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE SUPPLY PLENUM,SizingPeriod: ROCHESTER INTERNATIONAL ARPT ANN HTG 99.6% CONDNS DB HVAC Sizing Pass 1,3.7326552159E-007,2.6502941721E-007,Pass,Pass,7.8614374106E-007,6.1566724780E-007,Pass,Pass
+! <Plant Coincident Sizing Algorithm>,Plant Loop Name,Sizing Pass {#},Measured Mass Flow{kg/s},Measured Demand {W},Demand Calculated Mass Flow{kg/s},Sizes Changed {Yes/No},Previous Volume Flow Rate {m3/s},New Volume Flow Rate {m3/s},Demand Check Applied {Yes/No},Sizing Factor {},Normalized Change {},Specific Heat{J/kg-K},Density {kg/m3}
+Plant Coincident Sizing Algorithm,CONDENSER WATER LOOP,1,73.5512941,911350.16,39.0771235,Yes,7.355880E-002,8.459262E-002,No,1.1500,0.150000,4197.9300,999.8980
+Environment:Design Day Data,28.40,8.30,DefaultMultipliers,Wetbulb,20.10,{C},99465,150,1.6,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+ Component Sizing Information, PlantLoop, CHILLED WATER LOOP, Maximum Loop Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, PlantLoop, CHILLED WATER LOOP, Plant Loop Volume [m3], 4.05685
+ Component Sizing Information, PlantLoop, CONDENSER WATER LOOP, Maximum Loop Flow Rate [m3/s], 8.45926E-002
+ Component Sizing Information, PlantLoop, CONDENSER WATER LOOP, Plant Loop Volume [m3], 10.15111
+ Component Sizing Information, Pump:VariableSpeed, CHILLED WATER LOOP SECONDARY PUMP, Design Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, Pump:VariableSpeed, CHILLED WATER LOOP SECONDARY PUMP, Design Power Consumption [W], 6169.20480
+ Component Sizing Information, HeatExchanger:FluidToFluid, INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER, Loop Supply Side Design Fluid Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, HeatExchanger:FluidToFluid, INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER, Loop Demand Side Design Fluid Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, HeatExchanger:FluidToFluid, INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER, Heat Exchanger U-Factor Times Area Value [W/C], 46383.25621
+ Component Sizing Information, HeatExchanger:FluidToFluid, INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER, Loop-to-loop Temperature Difference Used to Size Heat Exchanger U-Factor Times Area Value [C], 17.16667
+ Component Sizing Information, Chiller:Electric:EIR, 90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON, Design Size Reference Chilled Water Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, Chiller:Electric:EIR, 90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON, Design Size Reference Capacity [W], 796245.89833
+ Component Sizing Information, Chiller:Electric:EIR, 90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON, Design Size Reference Condenser Fluid Flow Rate [m3/s], 3.97517E-002
+! <Chiller Standard Rating Information>, Component Type, Component Name, IPLV in SI Units {W/W}, IPLV in IP Units {Btu/W-h}
+ Chiller Standard Rating Information, Chiller:Electric:EIR, 90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON, 7.43, 25.21
+ Component Sizing Information, Pump:ConstantSpeed, CHILLED WATER LOOP PRIMARY PUMP, Design Flow Rate [m3/s], 3.38071E-002
+ Component Sizing Information, Pump:ConstantSpeed, CHILLED WATER LOOP PRIMARY PUMP, Design Power Consumption [W], 2103.13800
+ Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Design Water Flow Rate [m3/s], 8.45926E-002
+ Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Design Air Flow Rate [m3/s], 345.04332
+ Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, U-Factor Times Area Value at Design Air Flow Rate [W/C], 78889.13235
+ Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Free Convection Regime Air Flow Rate [m3/s], 34.50433
+ Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Free Convection U-Factor Times Area Value [W/K], 7888.91323
+ Component Sizing Information, Pump:ConstantSpeed, CONDENSER WATER LOOP CONSTANT PUMP, Design Flow Rate [m3/s], 8.45926E-002
+ Component Sizing Information, Pump:ConstantSpeed, CONDENSER WATER LOOP CONSTANT PUMP, Design Power Consumption [W], 16888.12787
+Environment:Design Day Data,24.00,8.30,DefaultMultipliers,Dewpoint,19.30,{C},99465,150,1.6,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:Design Day Data,26.60,8.30,DefaultMultipliers,Enthalpy,62300.00,{J/kgDryAir},99465,150,1.6,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:Design Day Data,26.40,8.30,DefaultMultipliers,Wetbulb,21.20,{C},99465,150,1.6,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:Design Day Data,-23.10,0.00,DefaultMultipliers,Wetbulb,-23.10,{C},99465,290,1.4,0.00,No,No
+Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
+Environment:Design Day Data,-8.20,0.00,DefaultMultipliers,Wetbulb,-8.20,{C},99465,290,8.0,0.00,No,No
+Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
+Environment:Design Day Data,-22.70,0.00,DefaultMultipliers,Dewpoint,-25.80,{C},99465,290,1.4,0.00,No,No
+Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
+Environment:Design Day Data,31.20,10.60,DefaultMultipliers,Wetbulb,23.10,{C},96634,200,6.7,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:Design Day Data,-26.20,0.00,DefaultMultipliers,Wetbulb,-26.20,{C},96634,310,5.7,0.00,No,No
+Environment:Design Day Misc, 21,1229.0,0.1415,5.7310E-002,1.0,-11.15,-20.1,ASHRAEClearSky
+Environment,RUN PERIOD 1,WeatherFileRunPeriod,10/01/2006,10/01/2007,Sunday,366,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
+Environment:Design Day Data,28.40,8.30,DefaultMultipliers,Wetbulb,20.10,{C},99465,150,1.6,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:Design Day Data,24.00,8.30,DefaultMultipliers,Dewpoint,19.30,{C},99465,150,1.6,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:Design Day Data,26.60,8.30,DefaultMultipliers,Enthalpy,62300.00,{J/kgDryAir},99465,150,1.6,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:Design Day Data,26.40,8.30,DefaultMultipliers,Wetbulb,21.20,{C},99465,150,1.6,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:Design Day Data,-23.10,0.00,DefaultMultipliers,Wetbulb,-23.10,{C},99465,290,1.4,0.00,No,No
+Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
+Environment:Design Day Data,-8.20,0.00,DefaultMultipliers,Wetbulb,-8.20,{C},99465,290,8.0,0.00,No,No
+Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
+Environment:Design Day Data,-22.70,0.00,DefaultMultipliers,Dewpoint,-25.80,{C},99465,290,1.4,0.00,No,No
+Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
+Environment:Design Day Data,31.20,10.60,DefaultMultipliers,Wetbulb,23.10,{C},96634,200,6.7,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:Design Day Data,-26.20,0.00,DefaultMultipliers,Wetbulb,-26.20,{C},96634,310,5.7,0.00,No,No
+Environment:Design Day Misc, 21,1229.0,0.1415,5.7310E-002,1.0,-11.15,-20.1,ASHRAEClearSky
+Environment,RUN PERIOD 1,WeatherFileRunPeriod,10/01/2006,10/01/2007,Sunday,366,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
+Environment:Daylight Saving,Yes,InputFile,03/12,11/05
+Environment:WarmupDays,  3
+ Warmup Convergence Information,THERMAL ZONE 1 HOT,RunPeriod: RUN PERIOD 1,1.9025119813E-002,0.1453283850,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 10 COLD,RunPeriod: RUN PERIOD 1,1.8828331323E-002,0.1886664038,Pass,Pass,6.5805137392E-004,2.8544509043E-003,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 11 HOT LAST,RunPeriod: RUN PERIOD 1,1.9022305376E-002,0.1471049633,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 2 COLD,RunPeriod: RUN PERIOD 1,1.8818989829E-002,0.1860940549,Pass,Pass,6.2983658360E-004,2.7379818063E-003,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 3 HOT,RunPeriod: RUN PERIOD 1,1.8951055108E-002,0.1532686269,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 4 COLD,RunPeriod: RUN PERIOD 1,1.8842100755E-002,0.1915842921,Pass,Pass,6.6464525680E-004,2.8868597978E-003,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 5 HOT,RunPeriod: RUN PERIOD 1,1.8958139269E-002,0.1552898547,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 6 COLD,RunPeriod: RUN PERIOD 1,1.8842087720E-002,0.1915742419,Pass,Pass,6.5788023739E-004,2.8609886220E-003,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 7 HOT,RunPeriod: RUN PERIOD 1,1.8961237787E-002,0.1562881233,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 8 COLD,RunPeriod: RUN PERIOD 1,1.8854491940E-002,0.1943229187,Pass,Pass,7.2169648394E-004,3.1480053877E-003,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 9 HOT,RunPeriod: RUN PERIOD 1,1.8890884333E-002,0.1567849505,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE SUPPLY PLENUM,RunPeriod: RUN PERIOD 1,6.9411126851E-003,2.9077839876E-002,Pass,Pass,2.4292405387E-003,7.0848456838E-003,Pass,Pass
+! <Program Control Information:Threads/Parallel Sims>, Threading Supported,Maximum Number of Threads, Env Set Threads (OMP_NUM_THREADS), EP Env Set Threads (EP_OMP_NUM_THREADS), IDF Set Threads, Number of Threads Used (Interior Radiant Exchange), Number Nominal Surfaces, Number Parallel Sims
+Program Control:Threads/Parallel Sims, No,1, N/A, N/A, N/A, N/A, N/A, N/A
+End of Data
