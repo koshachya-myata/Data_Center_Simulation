@@ -1,8 +1,10 @@
 from src.models.constant_model import constant_agent
-from src.models.train_agent import train_agent
-from src.models.test_agent import test_agent
+from src.models.ray_agent.train_agent import train_agent
+from src.models.ray_agent.test_agent import test_agent
+from src.models.baseline.SAC_model import train_baseline
 import os
 import sys
+from datetime import datetime
 
 pwd = os.getcwd()
 args = sys.argv
@@ -17,6 +19,8 @@ start_ts = 58508880
 
 lr_step = 25
 
+dt = datetime.now().strftime("_%y%m%d_%H%M%S")
+
 if __name__ == '__main__':
     print('MAIN')
     if process_arg == 1 or process_arg == 4:
@@ -28,3 +32,8 @@ if __name__ == '__main__':
     if process_arg == 3 or process_arg == 4:
         print('Test a ray agent')
         test_agent(checkpoint_path=checkpoint_path)
+    if process_arg == 5:
+        train_baseline(
+            save_pth=os.path.join(pwd, 'models', 'SAC_baseline' + dt),
+            load_pth=os.path.join(pwd, 'models', 'SAC_baseline_230910_212037'),
+            tensorboard_log=os.path.join(pwd, 'models', 'TB_SAC_baseline'))

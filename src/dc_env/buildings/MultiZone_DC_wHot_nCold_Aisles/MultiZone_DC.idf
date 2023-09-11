@@ -11,8 +11,8 @@ RunPeriod,
   1,                                      !- Begin Day of Month
   2006,                                   !- Begin Year
   10,                                     !- End Month 12
-  1,                                      !- End Day of Month 31
-  2007,                                   !- End Year
+  6,                                      !- End Day of Month 31
+  2006,                                   !- End Year
   Sunday,                                 !- Day of Week for Start Day
   No,                                     !- Use Weather File Holidays and Special Days
   No,                                     !- Use Weather File Daylight Saving Period

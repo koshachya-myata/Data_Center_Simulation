@@ -10,6 +10,24 @@ from ..eplus_controll.eplus_packet_contoller import (
 import platform
 
 
+def denormalize(num, a_min, a_max, norm_type=2):
+    res = num
+    if norm_type == 1:
+        res = num * (a_max - a_min) + a_min
+    if norm_type == 2:
+        res = (num + 1) / 2 * (a_max - a_min) + a_min
+    return res
+
+
+def normalize(num, a_min, a_max, norm_type=2):
+    res = num
+    if norm_type == 1:
+        res = (num - a_min) / (a_max - a_min)
+    if norm_type == 2:
+        res = (num - a_min) / (a_max - a_min) * 2 - 1
+    return res
+
+
 class DataCenterEnv(gym.Env):
     def __init__(self, config):
         super(DataCenterEnv, self).__init__()
@@ -64,8 +82,21 @@ class DataCenterEnv(gym.Env):
         # observation_space_ub = [50] * 11 + [2500] + [100] +
         #                       [60, 100] + [25, 360]
 
-        observation_space_lb = [0] * 3 + [0] + [-50]  # 3T + rh + O(t)
-        observation_space_ub = [50] * 3 + [100] + [60]
+        observation_space_lb = [0] * 3 + [0] + [0]  # 3T + rh + O(t)
+        observation_space_ub = [1] * 3 + [1] + [1]
+        
+        # We prefer to normalize observation space
+        # We use this boundaries:
+        # observation_space_lb = [0] * 3 + [0] + [-50]  # 3T + rh + O(t)
+        # observation_space_ub = [50] * 3 + [100] + [60]
+
+        self.obs_boundaries = [
+            [0, 50],
+            [0, 50],
+            [0, 50],
+            [0, 100],
+            [-50, 60],
+        ]
 
         self.observation_space = spaces.Box(
             np.array(observation_space_lb),
@@ -84,22 +115,25 @@ class DataCenterEnv(gym.Env):
 
         # Normalized action space
         acts_len = 3
-        self.action_space = spaces.Box(np.array([0] * acts_len),
+        self.action_space = spaces.Box(np.array([-1] * acts_len),
                                        np.array([1] * acts_len),
                                        dtype=np.float32)
 
-    def construct_inputs(self, action):  # action is readonly
+    def construct_inputs(self, action, norm_type=2):  # action is readonly
+
         """
         USE IF INPUTS IS NORMALIZED
+        norm_type: 
+            if 0 => dont denormalize
+            if 1 => from [0, 1]
+            if 2 => from [-1, 1] (prefer)
         """
         # convert $x \in  [0, 1]$ to $x \in
         # [action_min_value, action_max_value]$
-        inp1 = action[0] * (self.clg_max - self.clg_min) + \
-            (self.clg_min)  # cooling
-        inp2 = action[1] * (self.rh_max - self.rh_min) + \
-            (self.rh_min)  # rh
-        inp3 = action[2] * (self.ahu_temp_max - self.ahu_temp_min) + \
-            (self.ahu_temp_min)  # ahu
+        inp1 = denormalize(action[0], self.clg_min, self.clg_max, norm_type)
+        inp2 = denormalize(action[1], self.rh_min, self.rh_max, norm_type)
+        inp3 = denormalize(action[2], self.ahu_temp_min, self.ahu_temp_max,
+                           norm_type)
         action_values = [inp1, inp2, inp3]
 
         # clip actions to range
@@ -114,7 +148,6 @@ class DataCenterEnv(gym.Env):
         return action_values
 
     def construct_reward(self, action):
-
         def temp_penalty(self, hot_aisle_coeff=0.5, cold_aisle_coeff=1,
                          reward_if_not_cold=False):
             res = 0
@@ -201,7 +234,7 @@ class DataCenterEnv(gym.Env):
             self.ep.write(input_packet)
             # output is empty in the final step
             output_packet = self.ep.read()
-            last_output = decode_packet_simple(output_packet)
+            _ = decode_packet_simple(output_packet)  # last_output
             is_sim_finised = True
             self.ep.close()
             self.ep = None
@@ -262,6 +295,9 @@ class DataCenterEnv(gym.Env):
         # print('NEW STATE', res)
         res = [self.outputs[i] for i in [2, 6, 10]]
         res += [self.outputs[17], self.outputs[22]]
+        for i in range(len(res)):
+            res[i] = normalize(res[i], self.obs_boundaries[i][0],
+                               self.obs_boundaries[i][1], norm_type=1)
 
         return res
 

@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.08.22 20:15
+Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.09.11 08:41
 ! <Version>, Version ID
  Version, 23.1
 ! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
@@ -250,7 +250,7 @@ Water Cooling Coil Capacity Information,Coil:Cooling:Water,CRAH WATER CLG COIL,1
 ! <Environment:Special Days>, Special Day Name, Special Day Type, Source, Start Date, Duration {#days}
 ! <Environment:Daylight Saving>, Daylight Saving Indicator, Source, Start Date, End Date
 ! <Environment:WarmupDays>, NumberofWarmupDays
-Environment,RUN PERIOD 1,WeatherFileRunPeriod,10/01/2006,10/01/2007,Sunday,366,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
+Environment,RUN PERIOD 1,WeatherFileRunPeriod,10/01/2006,10/06/2006,Sunday,6,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
 Environment:Daylight Saving,Yes,InputFile,03/12,11/05
 ! <Environment:Design Day Data>, Max Dry-Bulb Temp {C}, Temp Range {dC}, Temp Range Ind Type, Hum Ind Type, Hum Ind Value at Max Temp, Hum Ind Units, Pressure {Pa}, Wind Direction {deg CW from N}, Wind Speed {m/s}, Clearness, Rain, Snow
 ! <Environment:Design Day Misc>,DayOfYear,ASHRAE A Coeff,ASHRAE B Coeff,ASHRAE C Coeff,Solar Constant-Annual Variation,Eq of Time {minutes}, Solar Declination Angle {deg}, Solar Model
@@ -415,59 +415,4 @@ Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
  Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Design Air Flow Rate [m3/s], 345.04332
  Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, U-Factor Times Area Value at Design Air Flow Rate [W/C], 78889.13235
  Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Free Convection Regime Air Flow Rate [m3/s], 34.50433
- Component Sizing Information, CoolingTower:SingleSpeed, CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP, Free Convection U-Factor Times Area Value [W/K], 7888.91323
- Component Sizing Information, Pump:ConstantSpeed, CONDENSER WATER LOOP CONSTANT PUMP, Design Flow Rate [m3/s], 8.45926E-002
- Component Sizing Information, Pump:ConstantSpeed, CONDENSER WATER LOOP CONSTANT PUMP, Design Power Consumption [W], 16888.12787
-Environment:Design Day Data,24.00,8.30,DefaultMultipliers,Dewpoint,19.30,{C},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,26.60,8.30,DefaultMultipliers,Enthalpy,62300.00,{J/kgDryAir},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,26.40,8.30,DefaultMultipliers,Wetbulb,21.20,{C},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,-23.10,0.00,DefaultMultipliers,Wetbulb,-23.10,{C},99465,290,1.4,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
-Environment:Design Day Data,-8.20,0.00,DefaultMultipliers,Wetbulb,-8.20,{C},99465,290,8.0,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
-Environment:Design Day Data,-22.70,0.00,DefaultMultipliers,Dewpoint,-25.80,{C},99465,290,1.4,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
-Environment:Design Day Data,31.20,10.60,DefaultMultipliers,Wetbulb,23.10,{C},96634,200,6.7,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,-26.20,0.00,DefaultMultipliers,Wetbulb,-26.20,{C},96634,310,5.7,0.00,No,No
-Environment:Design Day Misc, 21,1229.0,0.1415,5.7310E-002,1.0,-11.15,-20.1,ASHRAEClearSky
-Environment,RUN PERIOD 1,WeatherFileRunPeriod,10/01/2006,10/01/2007,Sunday,366,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
-Environment:Design Day Data,28.40,8.30,DefaultMultipliers,Wetbulb,20.10,{C},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,24.00,8.30,DefaultMultipliers,Dewpoint,19.30,{C},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,26.60,8.30,DefaultMultipliers,Enthalpy,62300.00,{J/kgDryAir},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,26.40,8.30,DefaultMultipliers,Wetbulb,21.20,{C},99465,150,1.6,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,-23.10,0.00,DefaultMultipliers,Wetbulb,-23.10,{C},99465,290,1.4,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
-Environment:Design Day Data,-8.20,0.00,DefaultMultipliers,Wetbulb,-8.20,{C},99465,290,8.0,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
-Environment:Design Day Data,-22.70,0.00,DefaultMultipliers,Dewpoint,-25.80,{C},99465,290,1.4,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
-Environment:Design Day Data,31.20,10.60,DefaultMultipliers,Wetbulb,23.10,{C},96634,200,6.7,0.00,No,No
-Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
-Environment:Design Day Data,-26.20,0.00,DefaultMultipliers,Wetbulb,-26.20,{C},96634,310,5.7,0.00,No,No
-Environment:Design Day Misc, 21,1229.0,0.1415,5.7310E-002,1.0,-11.15,-20.1,ASHRAEClearSky
-Environment,RUN PERIOD 1,WeatherFileRunPeriod,10/01/2006,10/01/2007,Sunday,366,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
-Environment:Daylight Saving,Yes,InputFile,03/12,11/05
-Environment:WarmupDays,  3
- Warmup Convergence Information,THERMAL ZONE 1 HOT,RunPeriod: RUN PERIOD 1,1.9025119813E-002,0.1453283850,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
- Warmup Convergence Information,THERMAL ZONE 10 COLD,RunPeriod: RUN PERIOD 1,1.8828331323E-002,0.1886664038,Pass,Pass,6.5805137392E-004,2.8544509043E-003,Pass,Pass
- Warmup Convergence Information,THERMAL ZONE 11 HOT LAST,RunPeriod: RUN PERIOD 1,1.9022305376E-002,0.1471049633,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
- Warmup Convergence Information,THERMAL ZONE 2 COLD,RunPeriod: RUN PERIOD 1,1.8818989829E-002,0.1860940549,Pass,Pass,6.2983658360E-004,2.7379818063E-003,Pass,Pass
- Warmup Convergence Information,THERMAL ZONE 3 HOT,RunPeriod: RUN PERIOD 1,1.8951055108E-002,0.1532686269,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
- Warmup Convergence Information,THERMAL ZONE 4 COLD,RunPeriod: RUN PERIOD 1,1.8842100755E-002,0.1915842921,Pass,Pass,6.6464525680E-004,2.8868597978E-003,Pass,Pass
- Warmup Convergence Information,THERMAL ZONE 5 HOT,RunPeriod: RUN PERIOD 1,1.8958139269E-002,0.1552898547,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
- Warmup Convergence Information,THERMAL ZONE 6 COLD,RunPeriod: RUN PERIOD 1,1.8842087720E-002,0.1915742419,Pass,Pass,6.5788023739E-004,2.8609886220E-003,Pass,Pass
- Warmup Convergence Information,THERMAL ZONE 7 HOT,RunPeriod: RUN PERIOD 1,1.8961237787E-002,0.1562881233,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
- Warmup Convergence Information,THERMAL ZONE 8 COLD,RunPeriod: RUN PERIOD 1,1.8854491940E-002,0.1943229187,Pass,Pass,7.2169648394E-004,3.1480053877E-003,Pass,Pass
- Warmup Convergence Information,THERMAL ZONE 9 HOT,RunPeriod: RUN PERIOD 1,1.8890884333E-002,0.1567849505,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
- Warmup Convergence Information,THERMAL ZONE SUPPLY PLENUM,RunPeriod: RUN PERIOD 1,6.9411126851E-003,2.9077839876E-002,Pass,Pass,2.4292405387E-003,7.0848456838E-003,Pass,Pass
-! <Program Control Information:Threads/Parallel Sims>, Threading Supported,Maximum Number of Threads, Env Set Threads (OMP_NUM_THREADS), EP Env Set Threads (EP_OMP_NUM_THREADS), IDF Set Threads, Number of Threads Used (Interior Radiant Exchange), Number Nominal Surfaces, Number Parallel Sims
-Program Control:Threads/Parallel Sims, No,1, N/A, N/A, N/A, N/A, N/A, N/A
-End of Data
+ Component Sizing Information, C
