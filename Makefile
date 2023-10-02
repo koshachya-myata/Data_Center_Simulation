@@ -22,22 +22,27 @@ endif
 
 ## Process a constant agent on data center model
 process_const_model:
-	$(PYTHON_INTERPRETER) main.py 1
+	$(PYTHON_INTERPRETER) main.py constant
 
 ## Train RL-agent
-train_agent:
-	$(PYTHON_INTERPRETER) main.py 2
+train_ray_agent:
+	$(PYTHON_INTERPRETER) main.py train_ray
 
 ## Test RL-agent
-test_agent: 
-	$(PYTHON_INTERPRETER) main.py 3
+test_ray_agent: 
+	$(PYTHON_INTERPRETER) main.py test_ray
 
-## Make full pipeline
-full_pipeline: test_environment
-	$(PYTHON_INTERPRETER) main.py 4
+train_sb3:
+	$(PYTHON_INTERPRETER) main.py train_sb3
+
+raise_server:test_env
+	$(PYTHON_INTERPRETER) main.py raise_server
+
+simulate_inference:
+	$(PYTHON_INTERPRETER) main.py simulate_inference
 
 ## Install Python Dependencies
-requirements: test_environment
+requirements: test_env
 	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
 

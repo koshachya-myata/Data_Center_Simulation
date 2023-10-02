@@ -1,28 +1,12 @@
-from src.dc_env.data_center_env import DataCenterEnv
+from src.dc_env.data_center_env import DataCenterEplusEnv
 import platform
 import pandas as pd
 import os
 
-os_type = platform.system()
+from src.dc_env.make_config import make_config
+SIM_DAYS = 366
+env_config, horizon, pwd = make_config(sim_days=SIM_DAYS)
 
-pwd_del = '/'
-if os_type == "Linux":
-    eplus_path = "/usr/local/EnergyPlus-23-1-0/"
-elif os_type == "nt":  # windows
-    print('Windows support may not work')
-    eplus_path = "C:\\EnergyPlusV23-1-0\\"
-    pwd_del = '\\'
-else:  # mac
-    eplus_path = "/Applications/EnergyPlus-23-1-0/"
-config = {
-    "eplus_path": eplus_path,
-    "weather_file": 'weather' + pwd_del + 'Moscow.epw',
-    'days': 366,
-    'timestep': 5,
-    'verbose': 1,
-}
-pwd = os.getcwd()
-print(pwd)
 
 def constant_agent(cooling_setpoint_coeff=0.17647,
                    hum_set_point=0.29599,
@@ -37,7 +21,7 @@ def constant_agent(cooling_setpoint_coeff=0.17647,
         file_path (str): _description_
     """
 
-    env = DataCenterEnv(config)
+    env = DataCenterEplusEnv(env_config)
     env.reset(seed=42)
 
     is_sim_finised = False

@@ -11,7 +11,7 @@ RunPeriod,
   1,                                      !- Begin Day of Month
   2006,                                   !- Begin Year
   10,                                     !- End Month 12
-  6,                                      !- End Day of Month 31
+  8,                                      !- End Day of Month 31
   2006,                                   !- End Year
   Sunday,                                 !- Day of Week for Start Day
   No,                                     !- Use Weather File Holidays and Special Days
@@ -421,7 +421,7 @@ ElectricEquipment,
   DataCenter Equipment_SCH,               !- Schedule Name
   Watts/Area,                             !- Design Level Calculation Method
   ,                                       !- Design Level {W}
-  1000,                                   !- Watts per Zone Floor Area {W/m2}
+  750,                                   !- Watts per Zone Floor Area {W/m2}
   ,                                       !- Watts per Person {W/person}
   ,                                       !- Fraction Latent
   0.12,                                   !- Fraction Radiant
@@ -981,7 +981,7 @@ ElectricEquipment,
   DataCenter Equipment_SCH,               !- Schedule Name
   Watts/Area,                             !- Design Level Calculation Method
   ,                                       !- Design Level {W}
-  1000,                                   !- Watts per Zone Floor Area {W/m2}
+  750,                                   !- Watts per Zone Floor Area {W/m2}
   ,                                       !- Watts per Person {W/person}
   ,                                       !- Fraction Latent
   0.12,                                   !- Fraction Radiant

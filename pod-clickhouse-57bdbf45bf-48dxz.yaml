@@ -1,0 +1,130 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2023-10-01T01:47:17Z"
+  generateName: clickhouse-57bdbf45bf-
+  labels:
+    app: clickhouse
+    pod-template-hash: 57bdbf45bf
+    project: test
+  name: clickhouse-57bdbf45bf-48dxz
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: clickhouse-57bdbf45bf
+    uid: 3a91f3aa-5f4b-4654-9a13-92d49398f57c
+  resourceVersion: "924"
+  uid: d53081bf-ec01-4602-b484-b00df25634d3
+spec:
+  containers:
+  - image: aggrik/clickhouse:latest
+    imagePullPolicy: IfNotPresent
+    name: clickhouse
+    resources:
+      limits:
+        cpu: "1"
+        memory: 1Gi
+      requests:
+        cpu: "1"
+        memory: 1Gi
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /etc/clickhouse-server
+      name: configmap-clickhouse-cfg
+    - mountPath: /var/lib/clickhouse
+      name: clickhouse-data
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-8qb27
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: docker-desktop
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - configMap:
+      defaultMode: 493
+      name: config-clickhouse
+    name: configmap-clickhouse-cfg
+  - emptyDir: {}
+    name: clickhouse-data
+  - name: kube-api-access-8qb27
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2023-10-01T01:47:17Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2023-10-01T01:47:18Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2023-10-01T01:47:18Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2023-10-01T01:47:17Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://60ecd0ac5cc7719e0d322407faa020b3eb345c050ff2c67411b21a382b6f43fb
+    image: aggrik/clickhouse:latest
+    imageID: docker-pullable://aggrik/clickhouse@sha256:f805da6d7d788373b8b1307460cfe0c7ac74e11cdf2a7ba87dd46545bbc3164d
+    lastState:
+      terminated:
+        containerID: docker://1c96df4b43d08ebae284760340ee54e51f2a2a09ba080fe016bdb115a14e8d40
+        exitCode: 0
+        finishedAt: "2023-10-01T01:50:59Z"
+        reason: Completed
+        startedAt: "2023-10-01T01:50:48Z"
+    name: clickhouse
+    ready: true
+    restartCount: 2
+    started: true
+    state:
+      running:
+        startedAt: "2023-10-01T01:50:59Z"
+  hostIP: 192.168.65.4
+  phase: Running
+  podIP: 10.1.0.8
+  podIPs:
+  - ip: 10.1.0.8
+  qosClass: Guaranteed
+  startTime: "2023-10-01T01:47:17Z"

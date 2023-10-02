@@ -1375,4 +1375,58 @@
   90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Condenser Heat Transfer Energy
   INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER:Fluid Heat Exchanger Heat Transfer Energy
 
- For Meter=Chillers:EnergyTransfer [J], ResourceType=Ene
+ For Meter=Chillers:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Chillers, contents are:
+  90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Evaporator Cooling Energy
+
+ For Meter=HeatRejection:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=HeatRejection, contents are:
+  90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Condenser Heat Transfer Energy
+
+ For Meter=General:HeatRejection:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=HeatRejection, contents are:
+  90.1-2013 WATERCOOLED  CENTRIFUGAL CHILLER 0 1231TONS 0.6KW/TON:Chiller Condenser Heat Transfer Energy
+
+ For Meter=Freecooling:EnergyTransfer [J], ResourceType=EnergyTransfer, EndUse=Freecooling, contents are:
+  INTEGRATED WATERSIDE ECONOMIZER HEAT EXCHANGER:Fluid Heat Exchanger Heat Transfer Energy
+
+ For Meter=HeatRejection:Electricity [J], ResourceType=Electricity, EndUse=HeatRejection, contents are:
+  CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Fan Electricity Energy
+
+ For Meter=General:HeatRejection:Electricity [J], ResourceType=Electricity, EndUse=HeatRejection, contents are:
+  CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Fan Electricity Energy
+
+ For Meter=Water:Plant [m3], ResourceType=Water, Group=Plant, contents are:
+  CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Make Up Water Volume
+
+ For Meter=HeatRejection:Water [m3], ResourceType=Water, EndUse=HeatRejection, contents are:
+  CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Make Up Water Volume
+
+ For Meter=General:HeatRejection:Water [m3], ResourceType=Water, EndUse=HeatRejection, contents are:
+  CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Make Up Water Volume
+
+ For Meter=MainsWater:Plant [m3], ResourceType=MainsWater, Group=Plant, contents are:
+  CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Make Up Mains Water Volume
+
+ For Meter=HeatRejection:MainsWater [m3], ResourceType=MainsWater, EndUse=HeatRejection, contents are:
+  CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Make Up Mains Water Volume
+
+ For Meter=General:HeatRejection:MainsWater [m3], ResourceType=MainsWater, EndUse=HeatRejection, contents are:
+  CENTRIFUGAL FAN CYCLING OPEN COOLING TOWER 40.2 GPM/HP:Cooling Tower Make Up Mains Water Volume
+
+ For Meter=Pumps:Electricity [J], ResourceType=Electricity, EndUse=Pumps, contents are:
+  CHILLED WATER LOOP SECONDARY PUMP:Pump Electricity Energy
+  CHILLED WATER LOOP PRIMARY PUMP:Pump Electricity Energy
+  CONDENSER WATER LOOP CONSTANT PUMP:Pump Electricity Energy
+
+ For Meter=General:Pumps:Electricity [J], ResourceType=Electricity, EndUse=Pumps, contents are:
+  CHILLED WATER LOOP SECONDARY PUMP:Pump Electricity Energy
+  CHILLED WATER LOOP PRIMARY PUMP:Pump Electricity Energy
+  CONDENSER WATER LOOP CONSTANT PUMP:Pump Electricity Energy
+
+ For Meter=Carbon Equivalent:Facility [kg], ResourceType=Carbon Equivalent, contents are:
+  Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass
+
+ For Meter=CarbonEquivalentEmissions:Carbon Equivalent [kg], ResourceType=Carbon Equivalent, EndUse=CarbonEquivalentEmissions, contents are:
+  Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass
+  Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass

@@ -27,68 +27,14 @@ def normalize(num, a_min, a_max, norm_type=2):
         res = (num - a_min) / (a_max - a_min) * 2 - 1
     return res
 
-
 class DataCenterEnv(gym.Env):
-    def __init__(self, config):
+    def __init__(self):
         super(DataCenterEnv, self).__init__()
-        os_type = platform.system()
-        pwd_del = '/'
-        if os_type == "nt":  # windows
-            pwd_del = '\\'
-
-        cur_dir = os.path.dirname(__file__)
-        self.idf_file = cur_dir + pwd_del + "buildings" + pwd_del + \
-            "MultiZone_DC_wHot_nCold_Aisles" + pwd_del + "MultiZone_DC.idf"
-
-        self.weather_file = cur_dir + pwd_del + config["weather_file"]
-
-        if "eplus_path" in config:
-            self.eplus_path = config["eplus_path"]
-        else:
-            self.eplus_path = "/Applications/EnergyPlus-23-1-0/"
-
-        # EnergyPlus number of timesteps in an hour
-        self.epTimeStep = config["timestep"]
-
-        if "verbose" in config:
-            self.verbose = config['verbose']
-        else:
-            self.verbose = 1
-
-        # EnergyPlus number of simulation days
-        if "days" in config:
-            self.simDays = config["days"]
-        else:
-            self.simDays = 1
-
-        # Number of steps per day
-        self.DAYSTEPS = int(24 * self.epTimeStep)
-        print('simDays', self.simDays)
-        # Total number of steps
-        self.MAXSTEPS = int(self.simDays * self.DAYSTEPS)
-        print('MAXSTEPS', self.MAXSTEPS
-              )
-        # Time difference between each step in seconds
-        self.deltaT = (60 / self.epTimeStep) * 60
+        observation_space_lb = [0] * 3 + [0] + [0] + [-1] * 2 # 3T + rh + O(t) + prev[Col, Ahu]
+        observation_space_ub = [1] * 3 + [1] + [1] + [1] * 2
 
         self.outputs = []
         self.inputs = []
-        self.kStep = 0
-        self.ep = None
-        # self.clip_obs = True
-
-        # Z (T + co2 + rh), O (T + rh + W (speed + dir))
-        # observation_space_lb = [0] * 11 + [0] + [0] + [-50, 0] + [0, 0]
-        # observation_space_ub = [50] * 11 + [2500] + [100] +
-        #                       [60, 100] + [25, 360]
-
-        observation_space_lb = [0] * 3 + [0] + [0]  # 3T + rh + O(t)
-        observation_space_ub = [1] * 3 + [1] + [1]
-        
-        # We prefer to normalize observation space
-        # We use this boundaries:
-        # observation_space_lb = [0] * 3 + [0] + [-50]  # 3T + rh + O(t)
-        # observation_space_ub = [50] * 3 + [100] + [60]
 
         self.obs_boundaries = [
             [0, 50],
@@ -118,9 +64,56 @@ class DataCenterEnv(gym.Env):
         self.action_space = spaces.Box(np.array([-1] * acts_len),
                                        np.array([1] * acts_len),
                                        dtype=np.float32)
+        
+        self.prev_actions = None
+
+    def construct_info(self):
+        info = {
+            'cooling_setpoint': self.inputs[0],
+            'Humidity_setpoint': self.inputs[1],
+            'AHU_Supply_Temp': self.inputs[2],
+
+            'Facility_Total_Electricity_Demand_Rate': self.outputs[0],
+            'Temp_Z_1': self.outputs[1],
+            'Temp_Z_2': self.outputs[2],
+            'Temp_Z_3': self.outputs[3],
+            'Temp_Z_4': self.outputs[4],
+            'Temp_Z_5': self.outputs[5],
+            'Temp_Z_6': self.outputs[6],
+            'Temp_Z_7': self.outputs[7],
+            'Temp_Z_8': self.outputs[8],
+            'Temp_Z_9': self.outputs[9],
+            'Temp_Z_10': self.outputs[10],
+            'Temp_Z_11': self.outputs[11],
+
+            'CO2_Z_1': self.outputs[12],
+            'RH_Z_1': self.outputs[13],
+
+            'CO2_Z_5': self.outputs[14],
+            'RH_Z_5': self.outputs[15],
+
+            'CO2_Z_6': self.outputs[16],
+            'RH_Z_6': self.outputs[17],
+
+            'CO2_Z_7': self.outputs[18],
+            'RH_Z_7': self.outputs[19],
+
+            'CO2_Z_11': self.outputs[20],
+            'RH_Z_11': self.outputs[21],
+
+
+            'Outdoor_Air_Drybulb_Temperature': self.outputs[22],
+            'Outdoor_Air_Wetbulb_Temperature': self.outputs[23],
+            'Outdoor_Air_Relative_Humidity': self.outputs[24],
+            'Wind_Speed': self.outputs[25],
+            'Wind_Direction': self.outputs[26],
+
+            'Thermal_Zone_Supply_Plenum': self.outputs[27]
+            }
+        return info
+    
 
     def construct_inputs(self, action, norm_type=2):  # action is readonly
-
         """
         USE IF INPUTS IS NORMALIZED
         norm_type: 
@@ -204,15 +197,11 @@ class DataCenterEnv(gym.Env):
 
             return res * coeff
 
-        # print('Getted action:', action)
         energy_reward = -energy_penalty(self, energy_coeff=0.00002)
         action_reward = -action_penalty(self, action, force_action=True)
         rh_reward = -rh_penalty(self)
         temp_reward = -temp_penalty(self, reward_if_not_cold=True)
-        # print('Energy penalty', energy_reward)
-        # print('Action penalty', action_reward)
-        # print('RH penalty', rh_reward)
-        # print('Temperature penalty', temp_reward)
+
         reward = (
             energy_reward
             + action_reward
@@ -221,6 +210,81 @@ class DataCenterEnv(gym.Env):
         )
         # print('REWARD:', reward)
         return reward if reward else 0
+
+    def construct_next_state(self):
+        res = [self.outputs[i] for i in [2, 6, 10]]
+        res += [self.outputs[17], self.outputs[22]]
+        for i in range(len(res)):
+            res[i] = normalize(res[i], self.obs_boundaries[i][0],
+                               self.obs_boundaries[i][1], norm_type=1)
+        if self.prev_actions is not None:
+            res += [self.prev_actions[0]]
+            res += [self.prev_actions[2]]
+        else:
+            res += [0.1, 0.12]  # some std setpoints
+
+        return res
+
+    def realize_action(self, action):
+        pass
+
+    def step(self, action):
+        self.prev_actions = action.copy()
+        action = self.construct_inputs(action)
+        next_state, reward, is_sim_finised, truncated, info = \
+            self.realize_action(action)
+        reward = self.construct_reward(action)
+        return next_state, reward, is_sim_finised, truncated, info
+
+    def reset(self, seed=None, options=None):
+        pass
+
+
+class DataCenterEplusEnv(DataCenterEnv):
+    def __init__(self, config):
+        super().__init__()
+        os_type = platform.system()
+        pwd_del = '/'
+        if os_type == "nt":  # windows
+            pwd_del = '\\'
+
+        cur_dir = os.path.dirname(__file__)
+        self.idf_file = cur_dir + pwd_del + "buildings" + pwd_del + \
+            "MultiZone_DC_wHot_nCold_Aisles" + pwd_del + "MultiZone_DC.idf"
+
+        self.weather_file = cur_dir + pwd_del + config["weather_file"]
+
+        if "eplus_path" in config:
+            self.eplus_path = config["eplus_path"]
+        else:
+            self.eplus_path = "/Applications/EnergyPlus-23-1-0/"
+
+        # EnergyPlus number of timesteps in an hour
+        self.epTimeStep = config["timestep"]
+
+        if "verbose" in config:
+            self.verbose = config['verbose']
+        else:
+            self.verbose = 1
+
+        # EnergyPlus number of simulation days
+        if "days" in config:
+            self.simDays = config["days"]
+        else:
+            self.simDays = 1
+
+        # Number of steps per day
+        self.DAYSTEPS = int(24 * self.epTimeStep)
+        print('simDays', self.simDays)
+        # Total number of steps
+        self.MAXSTEPS = int(self.simDays * self.DAYSTEPS)
+        print('MAXSTEPS', self.MAXSTEPS
+              )
+        # Time difference between each step in seconds
+        self.deltaT = (60 / self.epTimeStep) * 60
+
+        self.kStep = 0
+        self.ep = None
 
     def increment_step_counter(self, time):
         self.kStep += 1
@@ -241,80 +305,20 @@ class DataCenterEnv(gym.Env):
         return is_sim_finised
 
     def construct_info(self, time):
-        info = {
-            'day': int(self.kStep / self.DAYSTEPS) + 1,
-            'time': time,
-            'cooling_setpoint': self.inputs[0],
-            'Humidity_setpoint': self.inputs[1],
-            'AHU_Supply_Temp': self.inputs[2],
-
-            'Facility_Total_Electricity_Demand_Rate': self.outputs[0],
-            'Temp_Z_1': self.outputs[1],
-            'Temp_Z_2': self.outputs[2],
-            'Temp_Z_3': self.outputs[3],
-            'Temp_Z_4': self.outputs[4],
-            'Temp_Z_5': self.outputs[5],
-            'Temp_Z_6': self.outputs[6],
-            'Temp_Z_7': self.outputs[7],
-            'Temp_Z_8': self.outputs[8],
-            'Temp_Z_9': self.outputs[9],
-            'Temp_Z_10': self.outputs[10],
-            'Temp_Z_11': self.outputs[11],
-
-            'CO2_Z_1': self.outputs[12],
-            'RH_Z_1': self.outputs[13],
-
-            'CO2_Z_5': self.outputs[14],
-            'RH_Z_5': self.outputs[15],
-
-            'CO2_Z_6': self.outputs[16],
-            'RH_Z_6': self.outputs[17],
-
-            'CO2_Z_7': self.outputs[18],
-            'RH_Z_7': self.outputs[19],
-
-            'CO2_Z_11': self.outputs[20],
-            'RH_Z_11': self.outputs[21],
-
-
-            'Outdoor_Air_Drybulb_Temperature': self.outputs[22],
-            'Outdoor_Air_Wetbulb_Temperature': self.outputs[23],
-            'Outdoor_Air_Relative_Humidity': self.outputs[24],
-            'Wind_Speed': self.outputs[25],
-            'Wind_Direction': self.outputs[26],
-
-            'Thermal Zone Supply Plenum': self.outputs[27]
-            }
+        info = super().construct_info()
+        info['day'] = int(self.kStep / self.DAYSTEPS) + 1
+        info['time'] = time
         return info
 
-    def construct_next_state(self):
-        # res = [self.outputs[i] for i in range(1, 12)]
-        # res += [self.outputs[16], self.outputs[17], self.outputs[22],
-        #   self.outputs[24],
-        #         self.outputs[25], self.outputs[26]]
-        # print('NEW STATE', res)
-        res = [self.outputs[i] for i in [2, 6, 10]]
-        res += [self.outputs[17], self.outputs[22]]
-        for i in range(len(res)):
-            res[i] = normalize(res[i], self.obs_boundaries[i][0],
-                               self.obs_boundaries[i][1], norm_type=1)
-
-        return res
-
-    def step(self, action):
-        # print('ACTION:', action)
+    def realize_action(self, action):
         time = self.kStep * self.deltaT
-        dayTime = time % (60 * 60 * 24)
-
-        if dayTime == 0:
+        day_time = time % (60 * 60 * 24)
+        if day_time == 0:
             day_num = int(self.kStep / self.DAYSTEPS) + 1
             if self.verbose >= 1:
                 print("=" * int(50 * day_num / self.simDays + 1) +
                       "Day: ", day_num)
 
-#        if action[0] != 1 and action[0] != 0:
-#            print(action)
-        action = self.construct_inputs(action)  # also set it in self.input
         if self.verbose >= 3:
             print('NEW ACTION', action)
         input_packet = encode_packet_simple(self.inputs, time)
@@ -349,7 +353,7 @@ class DataCenterEnv(gym.Env):
             self.ep = None
 
         if self.verbose >= 1:
-            print("Starting a new simulation..")
+            print("Starting a new simulation.")
         self.kStep = 0
         idf_dir = os.path.dirname(self.idf_file)
         builder = socket_builder(idf_dir)

@@ -1,5 +1,5 @@
 import platform
-from src.dc_env.data_center_env import DataCenterEnv
+from src.dc_env.data_center_env import DataCenterEplusEnv
 import os
 import numpy as np
 from datetime import datetime
@@ -8,30 +8,11 @@ from gymnasium import spaces
 import ray
 import ray.tune as tune
 
-os_type = platform.system()
-pwd_del = '/'
-if os_type == "Linux":
-    eplus_path = "/usr/local/EnergyPlus-23-1-0/"
-elif os_type == "nt":  # windows
-    print('Windows support may not work')
-    eplus_path = "C:\\EnergyPlus-23-1-0\\"
-    pwd_del = '\\'
-else:  # mac
-    eplus_path = "/Applications/EnergyPlus-23-1-0/"
-
+from src.dc_env.make_config import make_config
 SIM_DAYS = 366
-#    366 for 1 Jan to 1 Jan
-TIMESTEP = 5
-env_config = {
-    "eplus_path": eplus_path,
-    "weather_file": 'weather' + pwd_del + 'Moscow.epw',
-    'days': SIM_DAYS,
-    'timestep': TIMESTEP,
-    'verbose': 1
-}
+env_config, horizon, pwd = make_config(sim_days=SIM_DAYS)
 
 pwd = os.getcwd()
-print('PWD:', pwd)
 
 acts_len = 3
 
@@ -43,7 +24,7 @@ def train_agent(restore_path=None,
     # TO DO: CHANGE THE LIMITS OF ACTORS ACTIONS ?
     # TEST FOR COMPLEX ENV DAYS
     ray.init()
-    tune.register_env("DataCenterEnv", DataCenterEnv)
+    tune.register_env("DataCenterEnv", DataCenterEplusEnv)
     horizon = int(1 * 24 * TIMESTEP)
     nw = 1
     num_samples = 1

@@ -3,7 +3,7 @@ Here is a data center model with hot and cold aisles, as well as a RL agent  tra
 
 Requirements:
 
-    - Basic DS libraries, gym, Ray;
+    - Basic DS libraries, gym, Ray/SB3;
     
     - EnergyPlus ver. 23-1-0;
 

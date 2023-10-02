@@ -1,7 +1,7 @@
 import platform
 import random
 import pandas as pd
-from environment import DataCenterEnv
+from src.dc_env.data_center_env import DataCenterEplusEnv
 import os
 import numpy as np
 import torch
@@ -12,38 +12,21 @@ import ray.tune as tune
 from ray.rllib.algorithms.ppo import PPO
 from ray.rllib.algorithms.algorithm import Algorithm
 
-os_type = platform.system()
-pwd_del = '/'
-if os_type == "Linux":
-    eplus_path = "/usr/local/EnergyPlus-23-1-0/"
-elif os_type == "nt":  # windows
-    print('Windows support may not work')
-    eplus_path = "C:\\EnergyPlus-23-1-0\\"
-    pwd_del = '\\'
-else:  # mac
-    eplus_path = "/Applications/EnergyPlus-23-1-0/"
+from src.dc_env.make_config import make_config
+SIM_DAYS = 366
+env_config, horizon, pwd = make_config(sim_days=SIM_DAYS)
 
-SIM_DAYS = 366  # 366 for 1 Jan to 1 Jan
-
-env_config = {
-    "eplus_path": eplus_path,
-    "weather_file": 'weather' + pwd_del + 'Moscow.epw',
-    'days': SIM_DAYS,
-    'timestep': 5,
-    'verbose': 0
-}
 checkpoint_path = "/training_results/230714_234506_PPO_agent_experiment/PPO_DataCenterEnv_516b2_00000_0_2023-07-14_23-45-07/checkpoint_000005"
 
 full_path = False
 
 
 pwd = os.getcwd()
-print('PWD:', pwd)
 
 
 if __name__ == "__main__":
     ray.init()
-    tune.register_env("DataCenterEnv", DataCenterEnv)
+    tune.register_env("DataCenterEnv", DataCenterEplusEnv)
     horizon = int(1 * 24 * 12) # ONE DAY horizon == 288
 
     trainer = Algorithm.from_checkpoint(full_path if full_path else pwd + checkpoint_path)
