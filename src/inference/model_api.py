@@ -11,7 +11,7 @@ app = Flask(__name__)
 pwd = os.getcwd()
 
 TENSORBOARD_LOG = None
-MODEL_PATH = os.path.join(pwd, 'models', 'PPO_baseline_230923_233833')
+MODEL_PATH = os.path.join(pwd, 'models', 'new_PPO_baseline_231019_133911')
 
 model = PPO.load(MODEL_PATH,
                  custom_objects={

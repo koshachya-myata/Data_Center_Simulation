@@ -14,7 +14,7 @@ This repository offers a comprehensive simulation of a data center (DC) environm
 
 - **Database Integration (ClickHouse)**: Code is provided to create a database and table in ClickHouse.
 
-- **Superset Dashboard**: An archive with a Superset dashboard is available, providing intuitive visualizations and analytics for simulations or inference. Archive must be exported to superset
+- **Superset Dashboard**: An archive with a Superset dashboard is available, providing intuitive visualizations and analytics for simulations or inference. Archive must be exported to superset. Archive in `external/DC_dashboard.zip`.
 
 ### Requirements:
 

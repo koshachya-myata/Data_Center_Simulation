@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.10.22 02:15,
+Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.10.22 04:19,
    ************* Beginning Zone Sizing Calculations
    ** Warning ** RunPeriod: object=RUN PERIOD 1, start weekday (SUNDAY) does not match the start year (2006), corrected to SATURDAY.
    ** Warning ** ProcessScheduleInput: Schedule:Day:Interval="ECONOMIZER MAX OA FRACTION 70 PCT DEFAULT", Blank Schedule Type Limits Name input -- will not be validated.
@@ -40,67 +40,4 @@ Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.10.22 02:15,
    **   ~~~   ** Using default zone air distribution effectiveness of 1.0 for heating and cooling.
    ** Warning ** GetOAControllerInputs: Controller:MechanicalVentilation="CRAH VENT CONTROLLER"
    **   ~~~   ** Cannot locate a matching DesignSpecification:ZoneAirDistribution object for Zone="THERMAL ZONE 6 COLD".
-   **   ~~~   ** Using default zone air distribution effectiveness of 1.0 for heating and cooling.
-   ** Warning ** GetOAControllerInputs: Controller:MechanicalVentilation="CRAH VENT CONTROLLER"
-   **   ~~~   ** Cannot locate a matching DesignSpecification:ZoneAirDistribution object for Zone="THERMAL ZONE 8 COLD".
-   **   ~~~   ** Using default zone air distribution effectiveness of 1.0 for heating and cooling.
-   ** Warning ** Controller:MechanicalVentilation = "CRAH VENT CONTROLLER", Zone="THERMAL ZONE 10 COLD".
-   **   ~~~   ** No "PEOPLE" object has been specified in the idf for this zone, but the ventilation rate is > 0 in this Controller:MechanicalVentilation Object.
-   **   ~~~   ** Check ventilation rate in Controller:MechanicalVentilation object.  Simulation will continue.
-   ** Warning ** Controller:MechanicalVentilation = "CRAH VENT CONTROLLER", Zone="THERMAL ZONE 2 COLD".
-   **   ~~~   ** No "PEOPLE" object has been specified in the idf for this zone, but the ventilation rate is > 0 in this Controller:MechanicalVentilation Object.
-   **   ~~~   ** Check ventilation rate in Controller:MechanicalVentilation object.  Simulation will continue.
-   ** Warning ** Controller:MechanicalVentilation = "CRAH VENT CONTROLLER", Zone="THERMAL ZONE 4 COLD".
-   **   ~~~   ** No "PEOPLE" object has been specified in the idf for this zone, but the ventilation rate is > 0 in this Controller:MechanicalVentilation Object.
-   **   ~~~   ** Check ventilation rate in Controller:MechanicalVentilation object.  Simulation will continue.
-   ** Warning ** Controller:MechanicalVentilation = "CRAH VENT CONTROLLER", Zone="THERMAL ZONE 6 COLD".
-   **   ~~~   ** No "PEOPLE" object has been specified in the idf for this zone, but the ventilation rate is > 0 in this Controller:MechanicalVentilation Object.
-   **   ~~~   ** Check ventilation rate in Controller:MechanicalVentilation object.  Simulation will continue.
-   ** Warning ** Controller:MechanicalVentilation = "CRAH VENT CONTROLLER", Zone="THERMAL ZONE 8 COLD".
-   **   ~~~   ** No "PEOPLE" object has been specified in the idf for this zone, but the ventilation rate is > 0 in this Controller:MechanicalVentilation Object.
-   **   ~~~   ** Check ventilation rate in Controller:MechanicalVentilation object.  Simulation will continue.
-   ** Warning ** In calculating the design coil UA for Coil:Cooling:Water CRAH WATER CLG COIL
-   **   ~~~   ** the coil bypass factor is unrealistically large;
-   **   ~~~   ** The initial design conditions are: Tair,in = 18.0087
-   **   ~~~   **                                    Wair,in = 8.502660E-003
-   **   ~~~   **                                    Twater,in = 6.6667
-   **   ~~~   **                                    Tair,out = 9.7334
-   **   ~~~   **                                    Wair,out = 8.500000E-003
-   ************* Testing Individual Branch Integrity
-   ************* All Branches passed integrity testing
-   ************* Testing Individual Supply Air Path Integrity
-   ************* All Supply Air Paths passed integrity testing
-   ************* Testing Individual Return Air Path Integrity
-   ************* All Return Air Paths passed integrity testing
-   ************* No node connection errors were found.
-   ************* Beginning Simulation
-   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= "U.S. AVG  COMMERCIAL-ELECTRICITY" has no energy cost. 
-   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.
-   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= "U.S. AVG  COMMERCIAL-DISTILLATE OIL" has no energy cost. 
-   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.
-   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= "U.S. AVG  COMMERCIAL-RESIDUAL OIL" has no energy cost. 
-   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.
-   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= "U.S. AVG  COMMERCIAL-NATURAL GAS" has no energy cost. 
-   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.
-   ** Warning ** The resource referenced by LifeCycleCost:UsePriceEscalation= "U.S. AVG  COMMERCIAL-COAL" has no energy cost. 
-   **   ~~~   ** ... It is likely that the wrong resource is used. The resource should match the meter used in Utility:Tariff.
-   ************* Simulation Error Summary *************
-   ** Warning ** The following Report Variables were requested but not generated -- check.rdd file
-   **   ~~~   ** Either the IDF did not contain these elements, the variable name is misspelled,
-   **   ~~~   ** or the requested variable is an advanced output which requires Output : Diagnostics, DisplayAdvancedReportVariables;
-   ************* Key=whole_building_power, VarName=FACILITY TOTAL ELECTRICITY DEMAND RATE, Frequency=TimeStep
-   ************* There are 4 unused schedules in input.
-   ************* There are 46 unused week schedules in input.
-   ************* There are 33 unused day schedules in input.
-   ************* Use Output:Diagnostics,DisplayUnusedSchedules; to see them.
-   *************
-   ************* ===== Final Error Summary =====
-   ************* The following error categories occurred.  Consider correcting or noting.
-   ************* Nominally Unused Constructions
-   ************* ..The nominally unused constructions warning is provided to alert you to potential conditions that can cause
-   ************* ..extra time during simulation. Each construction is calculated by the algorithm indicated in the HeatBalanceAlgorithm
-   ************* ..object. You may remove the constructions indicated (when you use the DisplayExtraWarnings option).
-   *************
-   ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
-   ************* EnergyPlus Sizing Error Summary. During Sizing: 14 Warning; 0 Severe Errors.
-   ************* EnergyPlus Completed Successfully-- 31 Warning; 0 Severe Errors; Elapsed Time=00hr 01min 43.58sec
+   **   ~~~   ** Using default zone air distribution effectiven
