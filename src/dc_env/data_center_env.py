@@ -11,7 +11,6 @@ from ..eplus_controll.SocketBuilder import SocketBuilder
 from gymnasium import spaces
 from ..eplus_controll.eplus_packet_contoller import (
                         encode_packet_simple, decode_packet_simple)
-import platform
 
 
 ObsType = TypeVar("ObsType")
@@ -66,7 +65,7 @@ def normalize(num: float, a_min: float, a_max: float, norm_type=2) -> float:
     return res
 
 
-def convert_J_to_W(joules: float, timestamp_per_hour: int) -> float:
+def convert_joules_to_watts(joules: float, timestamp_per_hour: int) -> float:
     """
     Convert Joules to Watts for process with timestamp_per_hour frequency.
 
@@ -174,7 +173,10 @@ class DataCenterEnv(ABC, gym.Env):
             'Wind_Direction': self.outputs[26],
 
             'Thermal_Zone_Supply_Plenum': self.outputs[27],
-            'Air_System_Total_Cooling_Energy': convert_J_to_W(self.outputs[28], self.timestamps_in_hour)
+            'Air_System_Total_Cooling_Energy': convert_joules_to_watts(
+                                            self.outputs[28],
+                                            self.timestamps_in_hour
+                                        )
             }
         return info
 
@@ -244,7 +246,10 @@ class DataCenterEnv(ABC, gym.Env):
             return res
 
         def energy_penalty(self, energy_coeff=0.00001):
-            return convert_J_to_W(self.outputs[28], self.timestamps_in_hour) * energy_coeff
+            return convert_joules_to_watts(
+                        self.outputs[28],
+                        self.timestamps_in_hour
+                    ) * energy_coeff
 
         def rh_penalty(self, lb_coeff=0.5, ub_coeff=1):
             res = 0
@@ -380,21 +385,17 @@ class DataCenterEplusEnv(DataCenterEnv):
             config (config: dict[str, Any]): _description_
         """
         super().__init__()
-        os_type = platform.system()
-        pwd_del = '/'
-        if os_type == "nt":  # windows
-            pwd_del = '\\'
 
         cur_dir = os.path.dirname(__file__)
-        self.idf_file = cur_dir + pwd_del + "buildings" + pwd_del + \
-            "MultiZone_DC_wHot_nCold_Aisles" + pwd_del + "MultiZone_DC.idf"
+        self.idf_file = os.path.join(cur_dir, 'buildings',
+                                     'MultiZone_DC_wHot_nCold_Aisles',
+                                     'MultiZone_DC.idf')
 
-        self.weather_file = cur_dir + pwd_del + config["weather_file"]
-
+        self.weather_file = os.path.join(cur_dir, config["weather_file"])
         if "eplus_path" in config:
             self.eplus_path = config["eplus_path"]
         else:
-            self.eplus_path = "/Applications/EnergyPlus-23-1-0/"
+            self.eplus_path = "/Applications/EnergyPlus-23-1-0/energyplus"
 
         # EnergyPlus number of timesteps in an hour
         self.epTimeStep = config["timestep"]
@@ -506,7 +507,7 @@ class DataCenterEplusEnv(DataCenterEnv):
             print('END STEP. REWARD: ', reward)
             print('END STEP. is_sim_finised: ', is_sim_finised)
             print('END STEP INFO: ', self.construct_info(time))
-        return next_state, reward, is_sim_finised, truncated,\
+        return next_state, reward, is_sim_finised, truncated, \
             self.construct_info(time)
 
     def reset(self, seed: Union[int, None] = None,
@@ -528,18 +529,18 @@ class DataCenterEplusEnv(DataCenterEnv):
         super().reset(seed=seed)
         if self.ep:
             if self.verbose >= 1:
-                print("Closing the old simulation and socket.")
+                print('Closing the old simulation and socket.')
             self.ep.close()
             self.ep = None
 
         if self.verbose >= 1:
-            print("Starting a new simulation.")
+            print('Starting a new simulation.')
         self.kStep = 0
         idf_dir = os.path.dirname(self.idf_file)
         builder = SocketBuilder(idf_dir)
         configs = builder.build()
         self.ep = EplusController(
-            "localhost",
+            'localhost',
             configs[0],
             self.idf_file,
             self.weather_file,

@@ -80,9 +80,6 @@ target/
 # Spyder
 .spyproject/
 
-# exclude data from source control by default
-/data/
-
 # Mac OS-specific storage files
 
 # vim

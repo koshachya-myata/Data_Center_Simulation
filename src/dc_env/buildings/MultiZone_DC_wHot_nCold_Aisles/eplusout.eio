@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.10.22 04:19
+Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.10.22 19:45
 ! <Version>, Version ID
  Version, 23.1
 ! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
@@ -845,4 +845,30 @@ Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
 Environment:Design Day Data,26.40,8.30,DefaultMultipliers,Wetbulb,21.20,{C},99465,150,1.6,0.00,No,No
 Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
 Environment:Design Day Data,-23.10,0.00,DefaultMultipliers,Wetbulb,-23.10,{C},99465,290,1.4,0.00,No,No
-Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,
+Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
+Environment:Design Day Data,-8.20,0.00,DefaultMultipliers,Wetbulb,-8.20,{C},99465,290,8.0,0.00,No,No
+Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
+Environment:Design Day Data,-22.70,0.00,DefaultMultipliers,Dewpoint,-25.80,{C},99465,290,1.4,0.00,No,No
+Environment:Design Day Misc, 52,1214.6,0.1445,6.0579E-002,1.0,-13.80,-10.8,ASHRAEClearSky
+Environment:Design Day Data,31.20,10.60,DefaultMultipliers,Wetbulb,23.10,{C},96634,200,6.7,0.00,No,No
+Environment:Design Day Misc,202,1084.4,0.2082,0.1365,1.0,-6.23,20.6,ASHRAETau
+Environment:Design Day Data,-26.20,0.00,DefaultMultipliers,Wetbulb,-26.20,{C},96634,310,5.7,0.00,No,No
+Environment:Design Day Misc, 21,1229.0,0.1415,5.7310E-002,1.0,-11.15,-20.1,ASHRAEClearSky
+Environment,RUN PERIOD 1,WeatherFileRunPeriod,07/01/2006,07/30/2006,Saturday,30,Use RunPeriod Specified Day,No,No,No,Yes,Yes,Clark and Allen
+Environment:Daylight Saving,Yes,InputFile,03/12,11/05
+Environment:WarmupDays,  3
+ Warmup Convergence Information,THERMAL ZONE 1 HOT,RunPeriod: RUN PERIOD 1,0.1315670214,0.3571006167,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 10 COLD,RunPeriod: RUN PERIOD 1,0.1973263380,0.4937248157,Pass,Pass,1.9063057706E-002,1.5608078298E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 11 HOT LAST,RunPeriod: RUN PERIOD 1,0.1353118851,0.3553051397,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 2 COLD,RunPeriod: RUN PERIOD 1,0.1883086003,0.4964568512,Pass,Pass,1.5950147608E-002,1.3129922165E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 3 HOT,RunPeriod: RUN PERIOD 1,0.1482801647,0.4157306304,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 4 COLD,RunPeriod: RUN PERIOD 1,0.1812888905,0.4994428308,Pass,Pass,1.3709775501E-002,1.0798307981E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 5 HOT,RunPeriod: RUN PERIOD 1,0.1465163620,0.4169534607,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 6 COLD,RunPeriod: RUN PERIOD 1,0.1812888412,0.4994434145,Pass,Pass,1.3710972014E-002,1.0798319452E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 7 HOT,RunPeriod: RUN PERIOD 1,0.1485509097,0.4155587146,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 8 COLD,RunPeriod: RUN PERIOD 1,0.1893624105,0.4960939068,Pass,Pass,1.6074056870E-002,1.2734900380E-002,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE 9 HOT,RunPeriod: RUN PERIOD 1,0.1529866639,0.4170179409,Pass,Pass,0.0000000000,0.0000000000,Pass,Pass
+ Warmup Convergence Information,THERMAL ZONE SUPPLY PLENUM,RunPeriod: RUN PERIOD 1,0.5520117568,0.5353737485,Pass,Pass,0.1281479121,0.3083274623,Pass,Pass
+! <Program Control Information:Threads/Parallel Sims>, Threading Supported,Maximum Number of Threads, Env Set Threads (OMP_NUM_THREADS), EP Env Set Threads (EP_OMP_NUM_THREADS), IDF Set Threads, Number of Threads Used (Interior Radiant Exchange), Number Nominal Surfaces, Number Parallel Sims
+Program Control:Threads/Parallel Sims, No,1, N/A, N/A, N/A, N/A, N/A, N/A
+End of Data

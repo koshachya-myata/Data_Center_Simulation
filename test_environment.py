@@ -10,10 +10,9 @@ def test_dev_env():
     """Test development environment."""
     system_major = sys.version_info.major
 
-    eplus_script = ENERGYPLUS_PATH + "energyplus"
-    if not os.path.isfile(eplus_script):
+    if not os.path.isfile(ENERGYPLUS_PATH):
         FileNotFoundError('The script for energyplus 23.1.0 was not found, '
-                          'path specified in config.py is: ' + eplus_script)
+                          'path specified in config.py is: ' + ENERGYPLUS_PATH)
     if REQUIRED_PYTHON == "python":
         required_major = 2
     elif REQUIRED_PYTHON == "python3":

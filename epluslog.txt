@@ -1,5 +1,5 @@
 EnergyPlus Starting
-EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.10.22 04:19
+EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.10.22 19:45
 Initializing Response Factors
 Calculating CTFs for "TYPICAL IEAD ROOF R-31.25"
 Calculating CTFs for "TYPICAL INSULATED CARPETED 8IN SLAB FLOOR"
@@ -248,3 +248,9 @@ Warming up {2}
 Warming up {3}
 Starting Simulation at 07/01/2006 for RUN PERIOD 1
 ExternalInterface starts first data exchange.
+Updating Shadowing Calculations, Start Date=07/21/2006
+Continuing Simulation at 07/21/2006 for RUN PERIOD 1
+Writing tabular output file results using HTML format.
+Computing Life Cycle Costs and Reporting
+Writing final SQL reports
+EnergyPlus Run Time=00hr 01min 36.14sec

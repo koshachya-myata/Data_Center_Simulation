@@ -1,4 +1,4 @@
-"""Simulate/make agent inference."""
+"""Simulate/do agent inference."""
 
 from datetime import datetime, timedelta
 from src.dc_env.data_center_env import DataCenterEplusEnv

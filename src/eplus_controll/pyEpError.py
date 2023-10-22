@@ -1,5 +1,5 @@
 class pyEpError(Exception):
-    """Base class for pyEp Errors"""
+    """Base class for pyEp Errors."""
 
     def __init__(self, message):
         super(pyEpError, self).__init__(message)
@@ -18,7 +18,7 @@ class VersionError(pyEpError):
 
 
 class EpWriteError(pyEpError):
-    """Error thrown when appempting to write to a closed E+ instance"""
+    """Error thrown when appempting to write to a closed E+ instance."""
 
     def __init__(self, message=None):
         if message is None:
@@ -29,12 +29,12 @@ class EpWriteError(pyEpError):
 
 
 class EpReadError(pyEpError):
-    """Error thrown when appempting to read from a closed E+ instance"""
+    """Error thrown when appempting to read from a closed E+ instance."""
 
     def __init__(self, message=None):
         if message is None:
-            message = "Error attempting to read from closed EnergyPlus socket. \
-                Perhaps the simulation is already finished?"
+            message = "Error attempting to read from closed EnergyPlus socket.\
+                 Perhaps the simulation is already finished?"
         super(EpReadError, self).__init__(message)
         self.message = message
 
@@ -45,6 +45,6 @@ class MissingEpPathError(pyEpError):
     def __init__(self, message=None):
         if message is None:
             message = "EnergyPlus path not specified. Set the default path \
-                with set_eplus_dir()"
+                in config.py or use set_eplus_dir() function."
         super(MissingEpPathError, self).__init__(message)
         self.message = message

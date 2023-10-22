@@ -1,7 +1,7 @@
 """Make config dict for EnergyPlus."""
 from typing import Union
 import os
-from config import ENERGYPLUS_PATH, TIMESTAMPS, SIM_DAYS, PWD_DELIM
+from config import ENERGYPLUS_PATH, TIMESTAMPS, SIM_DAYS
 from config import VERBOSE
 
 
@@ -25,7 +25,7 @@ def make_config(sim_days: Union[int, None] = None) -> tuple[dict[str,
         sim_days = SIM_DAYS
     env_config = {
         "eplus_path": ENERGYPLUS_PATH,
-        "weather_file": 'weather' + PWD_DELIM + 'Moscow.epw',
+        "weather_file": os.path.join('weather', 'Moscow.epw'),
         'days': sim_days,
         'timestep': TIMESTAMPS,
         'verbose': VERBOSE

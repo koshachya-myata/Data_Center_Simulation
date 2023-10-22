@@ -13,9 +13,9 @@ args = sys.argv
 process_arg = args[1].lower()
 print('Process argument:', process_arg)
 restore_path = os.path.join(pwd, 'models',
-                            '230808_181425_agent_experiment/A2C_DataCenterEnv_4399f_00000_0_2023-08-08_18-14-26/checkpoint_004805')
+                            '230808_181425_agent_experiment', 'A2C_DataCenterEnv_4399f_00000_0_2023-08-08_18-14-26', 'checkpoint_004805')
 checkpoint_path = os.path.join(pwd, 'models',
-                               '230808_181425_agent_experiment/A2C_DataCenterEnv_4399f_00000_0_2023-08-08_18-14-26/checkpoint_004805')
+                               '230808_181425_agent_experiment', 'A2C_DataCenterEnv_4399f_00000_0_2023-08-08_18-14-26', 'checkpoint_004805')
 start_iter = 4805
 start_ts = 58508880
 CWD = os.getcwd()

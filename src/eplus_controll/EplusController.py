@@ -34,29 +34,30 @@ class EplusController:
             global eplus_dir
             if eplus_dir is None:
                 raise pyEpError.MissingEpPathError
-            eplus_path = eplus_dir
+            if os.name == 'nt':
+                eplus_path = os.path.join(eplus_dir, 'energyplus.exe')
+            else:
+                eplus_path = os.path.join(eplus_dir, 'energyplus')
         idf_dir = os.path.dirname(idf_file)
         os.chdir(idf_dir)
 
-        if os.name == "nt":  # for windows
+        if os.name == 'nt':  # for windows
             print('Windows support may not work')
-            eplus_script = eplus_path + "energyplus"
             idf_path = os.path.join(os.path.dirname(__file__), idf_file)
             weather_path = os.path.join(os.path.dirname(__file__), weather)
-            self.p = subprocess.Popen([eplus_script, "-w", weather_path,
+            self.p = subprocess.Popen([eplus_path, '-w', weather_path,
                                        idf_path], stdout=log_file)
 
         else:  # for linux/mac
-            eplus_script = eplus_path + "energyplus"
             idf_path = os.path.join(os.path.dirname(__file__), idf_file)
             weather_path = os.path.join(os.path.dirname(__file__), weather)
-            self.p = subprocess.Popen([eplus_script, "-w", weather_path,
+            self.p = subprocess.Popen([eplus_path, '-w', weather_path,
                                        idf_path], stdout=log_file)
 
-        print("Using EnergyPlus executable: " + eplus_script)
-        print("Using IDF file: " + idf_file)
-        print("Creating EnergyPlus Process: " + eplus_script + " -w " +
-              weather + " " + idf_path)
+        print('Using EnergyPlus executable: ' + eplus_path)
+        print('Using IDF file: ' + idf_file)
+        print('Creating EnergyPlus Process: ' + eplus_path + ' -w ' +
+              weather + ' ' + idf_path)
 
     def init_socket(self, ip: str, port: Union[str, int]):
         """
@@ -69,17 +70,17 @@ class EplusController:
         s = socket.socket()
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.bind((ip, port))
-        print("Started waiting for connection on %s %s" % (ip, port))
+        print('Started waiting for connection on %s %s' % (ip, port))
         s.listen(1)
         remote, address = s.accept()
         self.remote = remote
-        print("Got connection from Host " + str(address[0]) +
-              " Port " + str(address[1]))
+        print('Got connection from Host ' + str(address[0]) +
+              ' Port ' + str(address[1]))
 
     def close(self):
         """Close EnergyPluis process."""
-        print("Closing EnergyPlus process")
-        self.write("2 1\n")
+        print('Closing EnergyPlus process')
+        self.write('2 1\n')
         self.remote.shutdown(socket.SHUT_RDWR)
         self.remote.close()
 
@@ -90,17 +91,17 @@ class EplusController:
         Returns:
             str: packet data.
         """
-        data = ""
+        data = ''
         try:
             while True:
                 packet = self.remote.recv(1024)
-                packet = packet.decode("utf-8")
+                packet = packet.decode('utf-8')
                 data = data + packet
                 if "\n" in packet:  # \n is end flag
                     break
 
         except socket.error:
-            print("Socket Error")
+            print('Socket Error')
             raise pyEpError.EpReadError
 
         return data
@@ -112,28 +113,24 @@ class EplusController:
         Args:
             packet (str): packet data.
         """
-        packet = packet.encode("utf-8")
+        packet = packet.encode('utf-8')
         self.remote.send(packet)
 
 
 def set_bcvtb_home():
     """Set BCVTB_HOME environ path."""
-    path = os.path.dirname(os.path.abspath(__file__)) + "/bcvtb"
-    os.environ["BCVTB_HOME"] = path  # visible in this process + all children
-    print("Setting BCVTB_HOME to ", path)
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'bcvtb')
+    os.environ['BCVTB_HOME'] = path  # visible in this process + all children
+    print('Setting BCVTB_HOME to ', path)
 
 
 def set_eplus_dir(path: str):
     """
-    Set eplus_dir = path.
+    Set global eplus_dir to  path.
 
     Args:
         path (str): path.
     """
     global eplus_dir
-
-    if path is not None:
-        if not path.endswith("/"):
-            path = path + "/"
 
     eplus_dir = path
