@@ -22,10 +22,12 @@ This repository offers a comprehensive simulation of a data center (DC) environm
 
 - EnergyPlus version 23-1-0 is required for the data center simulation.
 
-### Compatibility:
-
-This repository is designed to work on various platforms, but extensive testing has been done primarily on MacOS. Windows compatibility may require additional adjustments.
+To perform inference or analyze your simulation results, you'll need to set up [Superset](https://superset.apache.org/) and [ClickHouse](https://clickhouse.tech/). Please ensure that both are installed and running. If you haven't already set up these tools, you can find detailed instructions and example configurations in our [repository](https://github.com/YARIK-AI/ML).
 
 ### Usage
 
 `make help` for view existing commands.
+
+### Compatibility:
+
+This repository is designed to work on various platforms, but extensive testing has been done primarily on MacOS. Windows compatibility may require additional adjustments.
