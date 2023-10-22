@@ -26,4 +26,6 @@ This repository offers a comprehensive simulation of a data center environment u
 
 This repository is designed to work on various platforms, but extensive testing has been done primarily on MacOS. Windows compatibility may require additional adjustments.
 
-'make help' for view existing commands ю
+### USAGE
+
+`make help` for view existing commands.
