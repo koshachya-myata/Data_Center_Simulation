@@ -13,8 +13,8 @@ from ray.rllib.algorithms.ppo import PPO
 from ray.rllib.algorithms.algorithm import Algorithm
 
 from src.dc_env.make_config import make_config
-SIM_DAYS = 366
-env_config, horizon, pwd = make_config(sim_days=SIM_DAYS)
+
+env_config, horizon, pwd = make_config()
 
 checkpoint_path = "/training_results/230714_234506_PPO_agent_experiment/PPO_DataCenterEnv_516b2_00000_0_2023-07-14_23-45-07/checkpoint_000005"
 
@@ -27,7 +27,7 @@ pwd = os.getcwd()
 if __name__ == "__main__":
     ray.init()
     tune.register_env("DataCenterEnv", DataCenterEplusEnv)
-    horizon = int(1 * 24 * 12) # ONE DAY horizon == 288
+    horizon = int(1 * 24 * 12)  # ONE DAY horizon == 288
 
     trainer = Algorithm.from_checkpoint(full_path if full_path else pwd + checkpoint_path)
     print('LR:', trainer.config['lr'])

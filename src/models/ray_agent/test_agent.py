@@ -7,15 +7,15 @@ import ray
 import ray.tune as tune
 
 from src.dc_env.make_config import make_config
-SIM_DAYS = 366
-env_config, horizon, pwd = make_config(sim_days=SIM_DAYS)
+
+env_config, horizon, pwd = make_config()
 
 pwd = os.getcwd()
 
 
 def test_agent(checkpoint_path, file_name='ray_agent_data.parquet'):
     ray.init()
-    env = DataCenterEnv(env_config)
+    env = DataCenterEplusEnv(env_config)
     tune.register_env("DataCenterEnv", DataCenterEplusEnv)
 
     agent = Algorithm.from_checkpoint(checkpoint_path)

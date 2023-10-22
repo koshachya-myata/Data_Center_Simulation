@@ -7,11 +7,11 @@ Timestep,
 
 RunPeriod,
   Run Period 1,                           !- Name
-  10,                                      !- Begin Month
+  7,                                      !- Begin Month
   1,                                      !- Begin Day of Month
   2006,                                   !- Begin Year
-  10,                                     !- End Month 12
-  8,                                      !- End Day of Month 31
+  7,                                     !- End Month 12
+  30,                                      !- End Day of Month 31
   2006,                                   !- End Year
   Sunday,                                 !- Day of Week for Start Day
   No,                                     !- Use Weather File Holidays and Special Days
@@ -222,7 +222,7 @@ Building,
   ,                                       !- Loads Convergence Tolerance Value {W}
   ,                                       !- Temperature Convergence Tolerance Value {deltaC}
   ,                                       !- Solar Distribution
-  5,                                       !- Maximum Number of Warmup Days
+  365,                                       !- Maximum Number of Warmup Days
   1;                                       !- Minimum Number of Warmup Days
 
 Zone,
@@ -421,7 +421,7 @@ ElectricEquipment,
   DataCenter Equipment_SCH,               !- Schedule Name
   Watts/Area,                             !- Design Level Calculation Method
   ,                                       !- Design Level {W}
-  750,                                   !- Watts per Zone Floor Area {W/m2}
+  500,                                   !- Watts per Zone Floor Area {W/m2}
   ,                                       !- Watts per Person {W/person}
   ,                                       !- Fraction Latent
   0.12,                                   !- Fraction Radiant
@@ -649,7 +649,7 @@ Schedule:Day:Interval,
   Temperature,                            !- Schedule Type Limits Name
   No,                                     !- Interpolate to Timestep
   24:00,                                  !- Time 1 {hh:mm}
-  10.4022803442029;                       !- Value Until Time 1
+  -25;                                     !- Value Until Time 1
 
 Schedule:Week:Daily,
   DataCenter HTGSETP_SCH Week Rule - Jan1-Dec31, !- Name
@@ -680,14 +680,14 @@ Schedule:Day:Interval,
   Temperature,                            !- Schedule Type Limits Name
   No,                                     !- Interpolate to Timestep
   24:00,                                  !- Time 1 {hh:mm}
-  6.48932744565217;                       !- Value Until Time 1
+  -25.0;                       !- Value Until Time 1
 
 Schedule:Day:Interval,
   DataCenter HTGSETP_SCH Winter Design Day, !- Name
   Temperature,                            !- Schedule Type Limits Name
   No,                                     !- Interpolate to Timestep
   24:00,                                  !- Time 1 {hh:mm}
-  8.64145153985507;                       !- Value Until Time 1
+  -25.0;                                  !- Value Until Time 1
 
 ZoneControl:Humidistat,
   Zone Control Humidistat 2,              !- Name
@@ -754,7 +754,7 @@ Sizing:Zone,
   12.777778,                              !- Zone Cooling Design Supply Air Temperature {C}
   11.11,                                  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
   SupplyAirTemperature,                   !- Zone Heating Design Supply Air Temperature Input Method
-  12.777778,                              !- Zone Heating Design Supply Air Temperature {C}
+  35,                              !- Zone Heating Design Supply Air Temperature {C}
   11.11,                                  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
   0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
   0.008,                                  !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -763,7 +763,7 @@ Sizing:Zone,
   ,                                       !- Zone Cooling Sizing Factor
   DesignDay,                              !- Cooling Design Air Flow Method
   0,                                      !- Cooling Design Air Flow Rate {m3/s}
-  0.000762,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  0.001,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
   0,                                      !- Cooling Minimum Air Flow {m3/s}
   0,                                      !- Cooling Minimum Air Flow Fraction
   DesignDay,                              !- Heating Design Air Flow Method
@@ -981,7 +981,7 @@ ElectricEquipment,
   DataCenter Equipment_SCH,               !- Schedule Name
   Watts/Area,                             !- Design Level Calculation Method
   ,                                       !- Design Level {W}
-  750,                                   !- Watts per Zone Floor Area {W/m2}
+  500,                                   !- Watts per Zone Floor Area {W/m2}
   ,                                       !- Watts per Person {W/person}
   ,                                       !- Fraction Latent
   0.12,                                   !- Fraction Radiant
@@ -1212,7 +1212,7 @@ Sizing:Zone,
   12.777778,                              !- Zone Cooling Design Supply Air Temperature {C}
   11.11,                                  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
   SupplyAirTemperature,                   !- Zone Heating Design Supply Air Temperature Input Method
-  12.777778,                              !- Zone Heating Design Supply Air Temperature {C}
+  35,                              !- Zone Heating Design Supply Air Temperature {C}
   11.11,                                  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
   0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
   0.008,                                  !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -1221,7 +1221,7 @@ Sizing:Zone,
   ,                                       !- Zone Cooling Sizing Factor
   DesignDay,                              !- Cooling Design Air Flow Method
   0,                                      !- Cooling Design Air Flow Rate {m3/s}
-  0.000762,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  0.001,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
   0,                                      !- Cooling Minimum Air Flow {m3/s}
   0,                                      !- Cooling Minimum Air Flow Fraction
   DesignDay,                              !- Heating Design Air Flow Method
@@ -1618,7 +1618,7 @@ Sizing:Zone,
   12.777778,                              !- Zone Cooling Design Supply Air Temperature {C}
   11.11,                                  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
   SupplyAirTemperature,                   !- Zone Heating Design Supply Air Temperature Input Method
-  12.777778,                              !- Zone Heating Design Supply Air Temperature {C}
+  35,                              !- Zone Heating Design Supply Air Temperature {C}
   11.11,                                  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
   0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
   0.008,                                  !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -1627,7 +1627,7 @@ Sizing:Zone,
   ,                                       !- Zone Cooling Sizing Factor
   DesignDay,                              !- Cooling Design Air Flow Method
   0,                                      !- Cooling Design Air Flow Rate {m3/s}
-  0.000762,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  0.001,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
   0,                                      !- Cooling Minimum Air Flow {m3/s}
   0,                                      !- Cooling Minimum Air Flow Fraction
   DesignDay,                              !- Heating Design Air Flow Method
@@ -2015,7 +2015,7 @@ Sizing:Zone,
   12.777778,                              !- Zone Cooling Design Supply Air Temperature {C}
   11.11,                                  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
   SupplyAirTemperature,                   !- Zone Heating Design Supply Air Temperature Input Method
-  12.777778,                              !- Zone Heating Design Supply Air Temperature {C}
+  35,                              !- Zone Heating Design Supply Air Temperature {C}
   11.11,                                  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
   0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
   0.008,                                  !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -2024,7 +2024,7 @@ Sizing:Zone,
   ,                                       !- Zone Cooling Sizing Factor
   DesignDay,                              !- Cooling Design Air Flow Method
   0,                                      !- Cooling Design Air Flow Rate {m3/s}
-  0.000762,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  0.001,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
   0,                                      !- Cooling Minimum Air Flow {m3/s}
   0,                                      !- Cooling Minimum Air Flow Fraction
   DesignDay,                              !- Heating Design Air Flow Method
@@ -2412,7 +2412,7 @@ Sizing:Zone,
   12.777778,                              !- Zone Cooling Design Supply Air Temperature {C}
   11.11,                                  !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
   SupplyAirTemperature,                   !- Zone Heating Design Supply Air Temperature Input Method
-  12.777778,                              !- Zone Heating Design Supply Air Temperature {C}
+  35,                              !- Zone Heating Design Supply Air Temperature {C}
   11.11,                                  !- Zone Heating Design Supply Air Temperature Difference {deltaC}
   0.0085,                                 !- Zone Cooling Design Supply Air Humidity Ratio {kgWater/kgDryAir}
   0.008,                                  !- Zone Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
@@ -2421,14 +2421,14 @@ Sizing:Zone,
   ,                                       !- Zone Cooling Sizing Factor
   DesignDay,                              !- Cooling Design Air Flow Method
   0,                                      !- Cooling Design Air Flow Rate {m3/s}
-  0.000762,                               !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
-  0,                                      !- Cooling Minimum Air Flow {m3/s}
-  0,                                      !- Cooling Minimum Air Flow Fraction
+  0.001,                                  !- Cooling Minimum Air Flow per Zone Floor Area {m3/s-m2}
+  0.1,                                      !- Cooling Minimum Air Flow {m3/s}
+  0.1,                                      !- Cooling Minimum Air Flow Fraction
   DesignDay,                              !- Heating Design Air Flow Method
   0,                                      !- Heating Design Air Flow Rate {m3/s}
-  0.002032,                               !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
-  0.1415762,                              !- Heating Maximum Air Flow {m3/s}
-  0.3,                                    !- Heating Maximum Air Flow Fraction
+  0,                                     !- Heating Maximum Air Flow per Zone Floor Area {m3/s-m2}
+  0.000001,                              !- Heating Maximum Air Flow {m3/s}
+  0.01,                                    !- Heating Maximum Air Flow Fraction
   ,                                       !- Design Specification Zone Air Distribution Object Name
   No,                                     !- Account for Dedicated Outdoor Air System
   ,                                       !- Dedicated Outdoor Air System Control Strategy
@@ -2891,7 +2891,7 @@ SimulationControl,
   No,                                     !- Run Simulation for Sizing Periods
   Yes,                                    !- Run Simulation for Weather File Run Periods
   Yes,                                    !- Do HVAC Sizing Simulation for Sizing Periods
-  1;                                      !- Maximum Number of HVAC Sizing Simulation Passes
+  3;                                      !- Maximum Number of HVAC Sizing Simulation Passes
 
 ConvergenceLimits,
   1;                                      !- Minimum System Timestep {minutes}
@@ -2919,8 +2919,8 @@ SurfaceConvectionAlgorithm:Outside,
   TARP;                                   !- Algorithm
 
 Sizing:Parameters,
-  1.25,                                   !- Heating Sizing Factor
-  1.15;                                   !- Cooling Sizing Factor
+  1,                                   !- Heating Sizing Factor
+  1.285;                                   !- Cooling Sizing Factor
 
 ZoneAirHeatBalanceAlgorithm,
   ThirdOrderBackwardDifference,           !- Algorithm
@@ -3286,7 +3286,7 @@ Construction,
 Construction:AirBoundary,
   Construction Air Boundary 1,            !- Name
   SimpleMixing,                           !- Air Exchange Method
-  150,                                    !- Simple Mixing Air Changes per Hour {1/hr}
+  50,                                    !- Simple Mixing Air Changes per Hour {1/hr}
   ;                                       !- Simple Mixing Schedule Name
 
 Construction:FfactorGroundFloor,
@@ -4533,8 +4533,8 @@ Sizing:System,
   0.008,                                  !- Preheat Design Humidity Ratio {kgWater/kgDryAir}
   27.0000000000001,                       !- Precool Design Temperature {C}
   0.008,                                  !- Precool Design Humidity Ratio {kgWater/kgDryAir}
-  12.7777777777778,                       !- Central Cooling Design Supply Air Temperature {C}
-  12.7777777777778,                       !- Central Heating Design Supply Air Temperature {C}
+  11.333333,                                     !- Central Cooling Design Supply Air Temperature {C}
+  35,                                      !- Central Heating Design Supply Air Temperature {C}
   Coincident,                             !- Type of Zone Sum to Use
   No,                                     !- 100% Outdoor Air in Cooling
   No,                                     !- 100% Outdoor Air in Heating
@@ -4542,7 +4542,7 @@ Sizing:System,
   0.008,                                  !- Central Heating Design Supply Air Humidity Ratio {kgWater/kgDryAir}
   DesignDay,                              !- Cooling Supply Air Flow Rate Method
   0,                                      !- Cooling Supply Air Flow Rate {m3/s}
-  0.0099676501,                           !- Cooling Supply Air Flow Rate Per Floor Area {m3/s-m2}
+  0.03,                                   !- Cooling Supply Air Flow Rate Per Floor Area {m3/s-m2}
   1,                                      !- Cooling Fraction of Autosized Cooling Supply Air Flow Rate
   3.9475456e-05,                          !- Cooling Supply Air Flow Rate Per Unit Cooling Capacity {m3/s-W}
   DesignDay,                              !- Heating Supply Air Flow Rate Method
@@ -4555,11 +4555,11 @@ Sizing:System,
   1,                                      !- Zone Maximum Outdoor Air Fraction {dimensionless}
   CoolingDesignCapacity,                  !- Cooling Design Capacity Method
   Autosize,                               !- Cooling Design Capacity {W}
-  234.7,                                  !- Cooling Design Capacity Per Floor Area {W/m2}
+  850,                                  !- Cooling Design Capacity Per Floor Area {W/m2}
   1,                                      !- Fraction of Autosized Cooling Design Capacity
   HeatingDesignCapacity,                  !- Heating Design Capacity Method
   Autosize,                               !- Heating Design Capacity {W}
-  157,                                    !- Heating Design Capacity Per Floor Area {W/m2}
+  25,                                    !- Heating Design Capacity Per Floor Area {W/m2}
   1,                                      !- Fraction of Autosized Heating Design Capacity
   OnOff,                                  !- Central Cooling Capacity Control Method
   Autosize;                               !- Occupant Diversity
@@ -4578,7 +4578,7 @@ Controller:WaterCoil,
   CRAH Water Clg Coil Inlet Water Node,   !- Actuator Node Name
   Autosize,                               !- Controller Convergence Tolerance {deltaC}
   Autosize,                               !- Maximum Actuated Flow {m3/s}
-  0;                                      !- Minimum Actuated Flow {m3/s}
+  0.01;                                      !- Minimum Actuated Flow {m3/s}
 
 AvailabilityManagerAssignmentList,
   CRAHAvailability Manager List,          !- Name
@@ -4734,13 +4734,13 @@ SetpointManager:SingleZone:Humidity:Minimum,
 Fan:VariableVolume,
   CRAH Fan,                               !- Name
   Always On Discrete,                     !- Availability Schedule Name
-  0.6201,                                 !- Fan Total Efficiency
+  0.72,                                    !- Fan Total Efficiency
   1389.9161178,                           !- Pressure Rise {Pa}
   AutoSize,                               !- Maximum Flow Rate {m3/s}
   Fraction,                               !- Fan Power Minimum Flow Rate Input Method
-  0.1,                                    !- Fan Power Minimum Flow Fraction
-  0,                                      !- Fan Power Minimum Air Flow Rate {m3/s}
-  0.954,                                  !- Motor Efficiency
+  0,                                    !- Fan Power Minimum Flow Fraction
+  0.01,                                      !- Fan Power Minimum Air Flow Rate {m3/s}
+  0.94,                                   !- Motor Efficiency
   1,                                      !- Motor In Airstream Fraction
   0.027828,                               !- Fan Power Coefficient 1
   0.026583,                               !- Fan Power Coefficient 2
@@ -4902,7 +4902,7 @@ Pump:ConstantSpeed,
   Autosize,                               !- Design Flow Rate {m3/s}
   44836.0038,                             !- Design Pump Head {Pa}
   Autosize,                               !- Design Power Consumption {W}
-  0.924,                                  !- Motor Efficiency
+  0.95,                                  !- Motor Efficiency
   0,                                      !- Fraction of Motor Inefficiencies to Fluid Stream
   Intermittent,                           !- Pump Control Type
   ,                                       !- Pump Flow Rate Schedule Name
@@ -5086,7 +5086,7 @@ Pump:VariableSpeed,
   Autosize,                               !- Design Maximum Flow Rate {m3/s}
   134508.0114,                            !- Design Pump Head {Pa}
   Autosize,                               !- Design Power Consumption {W}
-  0.945,                                  !- Motor Efficiency
+  0.93,                                  !- Motor Efficiency
   0,                                      !- Fraction of Motor Inefficiencies to Fluid Stream
   0,                                      !- Coefficient 1 of the Part Load Performance Curve
   0.0205,                                 !- Coefficient 2 of the Part Load Performance Curve
@@ -5297,7 +5297,7 @@ CoolingTower:SingleSpeed,
   Centrifugal Fan Cycling Open Cooling Tower 40.2 gpm/hp Outlet Water Node, !- Water Outlet Node Name
   Autosize,                               !- Design Water Flow Rate {m3/s}
   Autosize,                               !- Design Air Flow Rate {m3/s}
-  128709.485828453,                       !- Design Fan Power {W}
+  Autosize,                       !- Design Fan Power {W}
   Autosize,                               !- Design U-Factor Times Area Value {W/K}
   Autosize,                               !- Free Convection Regime Air Flow Rate {m3/s}
   0.1,                                    !- Free Convection Regime Air Flow Rate Sizing Factor
@@ -5324,11 +5324,11 @@ CoolingTower:SingleSpeed,
   ,                                       !- Supply Water Storage Tank Name
   ,                                       !- Outdoor Air Inlet Node Name
   FanCycling,                             !- Capacity Control
-  2,                                      !- Number of Cells
+  4,                                      !- Number of Cells
   MinimalCell,                            !- Cell Control
   0.33,                                   !- Cell Minimum  Water Flow Rate Fraction
   2.5,                                    !- Cell Maximum Water Flow Rate Fraction
-  1,                                      !- Sizing Factor
+  4,                                      !- Sizing Factor
   General;                                !- End-Use Subcategory
 
 Branch,
@@ -5916,6 +5916,9 @@ Output:Variable,*,Site Wind Direction,Timestep;
 
 Output:Variable,*,Site Outdoor Air Relative Humidity,Timestep;
 
+Output:Variable,*,Air System Total Cooling Energy,Timestep;
+
+
 
 
 ! External Interface
@@ -5927,14 +5930,14 @@ ExternalInterface,
 ExternalInterface:Schedule,
   DataCenter CLGSETP_SCH,   !- Name
   Temperature,                            !- Schedule Type Limits Name
-  15;
+  18;
 
 ExternalInterface:Schedule,
   DataCenter Humidity Setpoint Schedule,   !- Name
   Percent,                            !- Schedule Type Limits Name
-  3;
+  30;
 
 ExternalInterface:Schedule,
   AHU Supply Temp Sch,   !- Name
   Temperature,                            !- Schedule Type Limits Name
-  3;
+  10;

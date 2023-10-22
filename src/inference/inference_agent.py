@@ -1,20 +1,15 @@
-import platform
-import os
-import numpy as np
-from datetime import datetime
-from gymnasium import spaces
-from stable_baselines3.common.evaluation import evaluate_policy
-from stable_baselines3.common.env_checker import check_env
-from stable_baselines3 import SAC
-from stable_baselines3 import PPO
-import pandas as pd
+"""Simulate/make agent inference."""
+
+from datetime import datetime, timedelta
 from src.dc_env.data_center_env import DataCenterEplusEnv
 from src.inference.model_api import get_model_prediction
 from src.inference.DBApi import DBApi
 from src.dc_env.make_config import make_config
+from typing import Union
 
 
 def init_db(table_name='DC_log', drop_if_exists=False):
+    """Initialze database for DC using DBApi class."""
     db = DBApi(host='localhost',
                port='32023',
                database='datacenter',
@@ -27,10 +22,12 @@ def init_db(table_name='DC_log', drop_if_exists=False):
     create_table_sql = f"""
     CREATE TABLE IF NOT EXISTS {db.database}.{table_name}
     (
+    timestamp DateTime,
     cooling_setpoint Float32,
     humidity_setpoint Float32,
     ahu_supply_temp Float32,
     facility_total_electricity_demand_rate Float32,
+    air_system_total_cooling_energy Float32,
     temp_z_1 Float32,
     temp_z_2 Float32,
     temp_z_3 Float32,
@@ -65,14 +62,20 @@ def init_db(table_name='DC_log', drop_if_exists=False):
     _ = db.run_sql(create_table_sql)
     return db
 
-def insert_to_table(db, info, table_name='DC_log'):
+
+def insert_to_table(db, info, table_name='DC_log', iter=0):
+    """Insert to df.table_name DC info."""
     info = {key: round(value, 6) for key, value in info.items()}
+    dt = timedelta(minutes=iter * 30)  # for simulate
+    now = (datetime.now() + dt).replace(microsecond=0)
     insert_sql = f"""
     INSERT INTO {db.database}.{table_name} (*) VALUES (
+            '{now}',
             {info['cooling_setpoint']},
             {info['Humidity_setpoint']},
             {info['AHU_Supply_Temp']},
             {info['Facility_Total_Electricity_Demand_Rate']},
+            {info['Air_System_Total_Cooling_Energy']},
             {info['Temp_Z_1']},
             {info['Temp_Z_2']},
             {info['Temp_Z_3']},
@@ -106,7 +109,17 @@ def insert_to_table(db, info, table_name='DC_log'):
     return res
 
 
-def simulate_agent_inference(init_obs, sim_days=8):
+def simulate_agent_inference(init_obs: list[float],
+                             sim_days: Union[int, None] = None):
+    """
+    Simulate RL-agent DC control inference.
+
+    None in sim_days means value in config.py
+    Args:
+        init_obs (list[float]): First observation.
+        sim_days (int, None, optional): Simulation days. Defaults to None.
+    """
+    iter = 0
     env_config, horizon, pwd = make_config(sim_days=sim_days)
     db = init_db(drop_if_exists=True)
     env = DataCenterEplusEnv(env_config)  # change env for real inference
@@ -115,7 +128,8 @@ def simulate_agent_inference(init_obs, sim_days=8):
     is_sim_finised = is_turncated = False
     while not is_sim_finised and not is_turncated:
         obs, reward, is_sim_finised, is_turncated, info = env.step(action)
-        insert_to_table(db, info, 'DC_log')
+        insert_to_table(db, info, 'DC_log', iter)
         action = get_model_prediction(observation=obs.tolist())
+        iter += 1
     print('Sumulation Finished')
     db.close_connection()

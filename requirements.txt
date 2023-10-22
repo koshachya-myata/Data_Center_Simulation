@@ -3,6 +3,7 @@ gymnasium-notices==0.0.1
 numpy==1.24.3
 pandas==2.0.1
 ray==2.5.1
+stable-baselines3==2.1.0
 scipy==1.10.1
 seaborn==0.12.2
 tensorboardX==2.6.1

@@ -1,16 +1,39 @@
+"""Data center environment classes."""
+
+from typing import Dict, Any, TypeVar, SupportsFloat, Union
+from abc import ABC, abstractmethod
 import os
 
 import gymnasium as gym
 import numpy as np
-from ..eplus_controll import Eplus_contoller
-from ..eplus_controll.socket_builder import socket_builder
+from ..eplus_controll import EplusController
+from ..eplus_controll.SocketBuilder import SocketBuilder
 from gymnasium import spaces
 from ..eplus_controll.eplus_packet_contoller import (
                         encode_packet_simple, decode_packet_simple)
 import platform
 
 
-def denormalize(num, a_min, a_max, norm_type=2):
+ObsType = TypeVar("ObsType")
+ActType = TypeVar("ActType")
+
+
+def denormalize(num: float, a_min: float, a_max: float, norm_type=2) -> float:
+    """
+    Denormalze num, using a_min and a_max.
+
+    If norm_type is 1: denormalize num from [0, 1].
+    If norm_type is 2: denormalize num from [-1, 1].
+
+    Args:
+        num (float): Number to denormalize
+        a_min (float): Action lower border.
+        a_max (float): Action upper border.
+        norm_type (int, optional): Normalize type. Defaults to 2.
+
+    Returns:
+        float: denormalized number.
+    """
     res = num
     if norm_type == 1:
         res = num * (a_max - a_min) + a_min
@@ -19,7 +42,22 @@ def denormalize(num, a_min, a_max, norm_type=2):
     return res
 
 
-def normalize(num, a_min, a_max, norm_type=2):
+def normalize(num: float, a_min: float, a_max: float, norm_type=2) -> float:
+    """
+    Normalize num using a_min and and a_max.
+
+    If norm_type is 1: normalize num to [0, 1].
+    If norm_type is 2: normalize num to [-1, 1].
+
+    Args:
+        num (float): Number to normalize.
+        a_min (float): Action lower border.
+        a_max (float): Action upper border.
+        norm_type (int, optional): Normalize type. Defaults to 2.
+
+    Returns:
+        float: normalized number.
+    """
     res = num
     if norm_type == 1:
         res = (num - a_min) / (a_max - a_min)
@@ -27,10 +65,29 @@ def normalize(num, a_min, a_max, norm_type=2):
         res = (num - a_min) / (a_max - a_min) * 2 - 1
     return res
 
-class DataCenterEnv(gym.Env):
+
+def convert_J_to_W(joules: float, timestamp_per_hour: int) -> float:
+    """
+    Convert Joules to Watts for process with timestamp_per_hour frequency.
+
+    Args:
+        joules (float): Joules.
+        timestamp_per_hour (int): process per hour frequency.
+
+    Returns:
+        float: Watts.
+    """
+    return joules / (60 / timestamp_per_hour * 60)
+
+
+class DataCenterEnv(ABC, gym.Env):
+    """Defines common logic for data center environment classes."""
+
     def __init__(self):
+        """Initiate the gym environment and basic class properties."""
         super(DataCenterEnv, self).__init__()
-        observation_space_lb = [0] * 3 + [0] + [0] + [-1] * 2 # 3T + rh + O(t) + prev[Col, Ahu]
+        # 3T + rh + O(t) + prev[Col, Ahu]
+        observation_space_lb = [0] * 3 + [0] + [0] + [-1] * 2
         observation_space_ub = [1] * 3 + [1] + [1] + [1] * 2
 
         self.outputs = []
@@ -59,15 +116,23 @@ class DataCenterEnv(gym.Env):
         self.ahu_temp_min = 4
         self.ahu_temp_max = 16
 
+        self.timestamps_in_hour = 5 
+
         # Normalized action space
         acts_len = 3
         self.action_space = spaces.Box(np.array([-1] * acts_len),
                                        np.array([1] * acts_len),
                                        dtype=np.float32)
-        
+
         self.prev_actions = None
 
-    def construct_info(self):
+    def construct_info(self) -> Dict[str, Any]:
+        """
+        Construct basic log info.
+
+        Returns:
+            Dict[str, float]: dictionary with info.
+        """
         info = {
             'cooling_setpoint': self.inputs[0],
             'Humidity_setpoint': self.inputs[1],
@@ -108,18 +173,28 @@ class DataCenterEnv(gym.Env):
             'Wind_Speed': self.outputs[25],
             'Wind_Direction': self.outputs[26],
 
-            'Thermal_Zone_Supply_Plenum': self.outputs[27]
+            'Thermal_Zone_Supply_Plenum': self.outputs[27],
+            'Air_System_Total_Cooling_Energy': convert_J_to_W(self.outputs[28], self.timestamps_in_hour)
             }
         return info
-    
 
-    def construct_inputs(self, action, norm_type=2):  # action is readonly
+    def construct_inputs(self, action: list[float],
+                         norm_type=2) -> list[float]:
         """
-        USE IF INPUTS IS NORMALIZED
-        norm_type: 
+        Translate input into the correct format for actions.
+
+        Set in self.inputs clipped actions.
+        Return without clipping.
+        norm_type:
             if 0 => dont denormalize
             if 1 => from [0, 1]
             if 2 => from [-1, 1] (prefer)
+
+        Args:
+            norm_type (int, optional): Normalize type. Defaults to 2.
+
+        Returns:
+            list[float]: correct actions without clipping.
         """
         # convert $x \in  [0, 1]$ to $x \in
         # [action_min_value, action_max_value]$
@@ -140,7 +215,15 @@ class DataCenterEnv(gym.Env):
         self.inputs = [inp1_ranged, inp2_ranged, inp3_ranged]
         return action_values
 
-    def construct_reward(self, action):
+    def construct_reward(self, action: list[float]) -> float:
+        """
+        Construct reward based on actions, input, DC info.
+
+        Args:
+            action (list[float]): actions.
+        Returns:
+            float: reward
+        """
         def temp_penalty(self, hot_aisle_coeff=0.5, cold_aisle_coeff=1,
                          reward_if_not_cold=False):
             res = 0
@@ -152,16 +235,16 @@ class DataCenterEnv(gym.Env):
                     if temp > 50:
                         res += (temp - 44) * hot_aisle_coeff * 2
                 else:  # COLD AISLE
-                    if temp > 25:
-                        res += (temp - 25) * cold_aisle_coeff
+                    if temp > 24.5:
+                        res += (temp - 24.5) * cold_aisle_coeff
                     if temp > 35:
-                        res += (temp - 25) * cold_aisle_coeff * 3
-                    if reward_if_not_cold and temp >= 16.5 and temp < 25:
+                        res += (temp - 24.5) * cold_aisle_coeff * 3
+                    if reward_if_not_cold and temp >= 16.5 and temp < 24.5:
                         res -= 0.5
             return res
 
         def energy_penalty(self, energy_coeff=0.00001):
-            return self.outputs[0] * energy_coeff
+            return convert_J_to_W(self.outputs[28], self.timestamps_in_hour) * energy_coeff
 
         def rh_penalty(self, lb_coeff=0.5, ub_coeff=1):
             res = 0
@@ -200,7 +283,7 @@ class DataCenterEnv(gym.Env):
         energy_reward = -energy_penalty(self, energy_coeff=0.00002)
         action_reward = -action_penalty(self, action, force_action=True)
         rh_reward = -rh_penalty(self)
-        temp_reward = -temp_penalty(self, reward_if_not_cold=True)
+        temp_reward = -temp_penalty(self, reward_if_not_cold=False)
 
         reward = (
             energy_reward
@@ -211,7 +294,13 @@ class DataCenterEnv(gym.Env):
         # print('REWARD:', reward)
         return reward if reward else 0
 
-    def construct_next_state(self):
+    def construct_next_state(self) -> list[float]:
+        """
+        Construct data needed for next step.
+
+        Returns:
+            list[float]: list with data.
+        """
         res = [self.outputs[i] for i in [2, 6, 10]]
         res += [self.outputs[17], self.outputs[22]]
         for i in range(len(res)):
@@ -221,14 +310,44 @@ class DataCenterEnv(gym.Env):
             res += [self.prev_actions[0]]
             res += [self.prev_actions[2]]
         else:
-            res += [0.1, 0.12]  # some std setpoints
+            res += [0.1, 0.12]  # default setpoints
 
         return res
 
-    def realize_action(self, action):
+    @abstractmethod
+    def realize_action(self, action: list[float]) -> tuple[ObsType,
+                                                           SupportsFloat,
+                                                           bool,
+                                                           bool,
+                                                           dict[str, Any]]:
+        """
+        Realze action.
+
+        Args:
+            action (list[float]): actions list.
+        Returns:
+            tuple[ObsType, SupportsFloat, bool
+                  bool, dict[str, Any]]: next state, reward, flag: sim_finised,
+                                         flag: truncated, info dict.
+        """
         pass
 
-    def step(self, action):
+    def step(self, action: list[float]) -> tuple[ObsType,
+                                                 SupportsFloat,
+                                                 bool,
+                                                 bool,
+                                                 dict[str, Any]]:
+        """
+        Environment step.
+
+        Args:
+            action (list[float]): list with actions.
+
+        Returns:
+            tuple[ObsType, SupportsFloat, bool
+                  bool, dict[str, Any]]: next state, reward, flag: sim_finised,
+                                         flag: truncated, info dict.
+        """
         self.prev_actions = action.copy()
         action = self.construct_inputs(action)
         next_state, reward, is_sim_finised, truncated, info = \
@@ -236,12 +355,30 @@ class DataCenterEnv(gym.Env):
         reward = self.construct_reward(action)
         return next_state, reward, is_sim_finised, truncated, info
 
-    def reset(self, seed=None, options=None):
+    @abstractmethod
+    def reset(self, seed: Union[int, None] = None,
+              options: dict[str, Any] = None) -> tuple[ObsType,
+                                                       dict[str, Any]]:
+        """
+        Reset environment.
+
+        Args:
+            seed (Union[int, None], optional): random seed. Defaults to None.
+            options (_type_, optional): _description_. Defaults to None.
+        """
         pass
 
 
 class DataCenterEplusEnv(DataCenterEnv):
-    def __init__(self, config):
+    """DC env for simulation. Use EnergyPlus."""
+
+    def __init__(self, config: dict[str, Any]):
+        """
+        Initiate the environment and basic class properties based on config.
+
+        Args:
+            config (config: dict[str, Any]): _description_
+        """
         super().__init__()
         os_type = platform.system()
         pwd_del = '/'
@@ -261,6 +398,7 @@ class DataCenterEplusEnv(DataCenterEnv):
 
         # EnergyPlus number of timesteps in an hour
         self.epTimeStep = config["timestep"]
+        self.timestamps_in_hour = self.epTimeStep
 
         if "verbose" in config:
             self.verbose = config['verbose']
@@ -286,7 +424,16 @@ class DataCenterEplusEnv(DataCenterEnv):
         self.kStep = 0
         self.ep = None
 
-    def increment_step_counter(self, time):
+    def increment_step_counter(self, time: int) -> bool:
+        """
+        Increment self.kStep. If it reaches MAXSTEPS, close EP process.
+
+        Args:
+            time (int): _description_
+
+        Returns:
+            bool: Is EP simulation finished?
+        """
         self.kStep += 1
 
         is_sim_finised = False
@@ -304,13 +451,33 @@ class DataCenterEplusEnv(DataCenterEnv):
             self.ep = None
         return is_sim_finised
 
-    def construct_info(self, time):
+    def construct_info(self, time: int) -> Dict[str, Union[int, float]]:
+        """
+        Construct DC log info.
+
+        Returns:
+            Dict[str, Union[int, float]]: dictionary with info.
+        """
         info = super().construct_info()
         info['day'] = int(self.kStep / self.DAYSTEPS) + 1
         info['time'] = time
         return info
 
-    def realize_action(self, action):
+    def realize_action(self, action: list[float]) -> tuple[ObsType,
+                                                           SupportsFloat,
+                                                           bool,
+                                                           bool,
+                                                           dict[str, Any]]:
+        """
+        Send actions to E+, get a response, return data for the next step.
+
+        Args:
+            action (list[float]): actions list.
+        Returns:
+            tuple[ObsType, SupportsFloat, bool
+                  bool, dict[str, Any]]: next state, reward, flag: sim_finised,
+                                         flag: truncated, info dict.
+        """
         time = self.kStep * self.deltaT
         day_time = time % (60 * 60 * 24)
         if day_time == 0:
@@ -342,7 +509,20 @@ class DataCenterEplusEnv(DataCenterEnv):
         return next_state, reward, is_sim_finised, truncated,\
             self.construct_info(time)
 
-    def reset(self, seed=None, options=None):
+    def reset(self, seed: Union[int, None] = None,
+              options: dict[str, Any] = None) -> tuple[ObsType,
+                                                       dict[str, Any]]:
+        """
+        Reset env. Stop EP process if exist.
+
+        Args:
+            seed (int | None, optional): random seed. Defaults to None.
+            options (dict[str, Any], optional): reset options.
+                                                Defaults to None.
+
+        Returns:
+             tuple[ObsType, dict[str, Any]]: next state, info.
+        """
         if self.verbose >= 4:
             print('RESET' * 10)
         super().reset(seed=seed)
@@ -356,9 +536,9 @@ class DataCenterEplusEnv(DataCenterEnv):
             print("Starting a new simulation.")
         self.kStep = 0
         idf_dir = os.path.dirname(self.idf_file)
-        builder = socket_builder(idf_dir)
+        builder = SocketBuilder(idf_dir)
         configs = builder.build()
-        self.ep = Eplus_contoller.Eplus_controller(
+        self.ep = EplusController(
             "localhost",
             configs[0],
             self.idf_file,

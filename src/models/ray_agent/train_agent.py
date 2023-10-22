@@ -8,9 +8,10 @@ from gymnasium import spaces
 import ray
 import ray.tune as tune
 
+from config import SIM_DAYS
 from src.dc_env.make_config import make_config
-SIM_DAYS = 366
-env_config, horizon, pwd = make_config(sim_days=SIM_DAYS)
+
+env_config, horizon, pwd = make_config()
 
 pwd = os.getcwd()
 
@@ -25,7 +26,6 @@ def train_agent(restore_path=None,
     # TEST FOR COMPLEX ENV DAYS
     ray.init()
     tune.register_env("DataCenterEnv", DataCenterEplusEnv)
-    horizon = int(1 * 24 * TIMESTEP)
     nw = 1
     num_samples = 1
 

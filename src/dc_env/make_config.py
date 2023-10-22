@@ -1,26 +1,36 @@
-import platform
+"""Make config dict for EnergyPlus."""
+from typing import Union
 import os
+from config import ENERGYPLUS_PATH, TIMESTAMPS, SIM_DAYS, PWD_DELIM
+from config import VERBOSE
 
-def make_config(sim_days=366, timestamp=5):
-    os_type = platform.system()
-    pwd_del = '/'
-    if os_type == "Linux":
-        eplus_path = "/usr/local/EnergyPlus-23-1-0/"
-    elif os_type == "nt":  # windows
-        print('Windows support may not work')
-        eplus_path = "C:\\EnergyPlus-23-1-0\\"
-        pwd_del = '\\'
-    else:  # mac
-        eplus_path = "/Applications/EnergyPlus-23-1-0/"
 
+def make_config(sim_days: Union[int, None] = None) -> tuple[dict[str,
+                                                                 Union[str,
+                                                                       float,
+                                                                       int]],
+                                                            int,
+                                                            str]:
+    """
+    Construct and Return config for EnergyPlus, horizon, cwd directory.
+
+    Args:
+        sim_days (int, optional): Simulation days. Defaults to 366.
+
+    Returns:
+        tuple[dict[str, Union[str, float, int]], int, str]: env_config,
+                                                            horizon, pwd.
+    """
+    if sim_days is None:
+        sim_days = SIM_DAYS
     env_config = {
-        "eplus_path": eplus_path,
-        "weather_file": 'weather' + pwd_del + 'Moscow.epw',
+        "eplus_path": ENERGYPLUS_PATH,
+        "weather_file": 'weather' + PWD_DELIM + 'Moscow.epw',
         'days': sim_days,
-        'timestep': timestamp,
-        'verbose': 1
+        'timestep': TIMESTAMPS,
+        'verbose': VERBOSE
     }
 
     pwd = os.getcwd()
-    horizon = int(1 * 24 * timestamp)
+    horizon = int(1 * 24 * TIMESTAMPS)
     return env_config, horizon, pwd

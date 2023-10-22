@@ -21,30 +21,45 @@ endif
 #################################################################################
 
 ## Process a constant agent on data center model
-process_const_model:
-	$(PYTHON_INTERPRETER) main.py constant
+const_models:
+	$(PYTHON_INTERPRETER) main.py const_18_22_25
 
-## Train RL-agent
+## Train ray RL-agent DEPRICATED
 train_ray_agent:
 	$(PYTHON_INTERPRETER) main.py train_ray
 
-## Test RL-agent
+## Test ray RL-agent DEPRICATED
 test_ray_agent: 
 	$(PYTHON_INTERPRETER) main.py test_ray
 
+## Train SB3 RL-agent
 train_sb3:
 	$(PYTHON_INTERPRETER) main.py train_sb3
 
+## Test SB3 RL-agent
+test_sb3:
+	$(PYTHON_INTERPRETER) main.py train_sb3
+
+## Test constant models and sb3 model
+test_all: test_sb3  const_models
+
+## Raise HTTP-server with SB3 model
 raise_server:test_env
 	$(PYTHON_INTERPRETER) main.py raise_server
 
+## Simulate inference [SERVER MUST BE ARLEDY RAISED].
 simulate_inference:
 	$(PYTHON_INTERPRETER) main.py simulate_inference
+
+## Run tensorboard for SB3 models train logs
+sb3_tensorboard:
+	tensorboard --logdir ./models/new_PPO_tb
 
 ## Install Python Dependencies
 requirements: test_env
 	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
+
 
 ## Delete all compiled Python files
 clean:
@@ -92,12 +107,6 @@ endif
 ## Test python environment is setup correctly
 test_env:
 	$(PYTHON_INTERPRETER) test_environment.py
-
-#################################################################################
-# PROJECT RULES                                                                 #
-#################################################################################
-
-
 
 #################################################################################
 # Self Documenting Commands                                                     #

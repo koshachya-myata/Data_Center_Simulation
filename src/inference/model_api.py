@@ -1,19 +1,9 @@
-"""Rise REST server with RL-agent."""
-from flask import Flask, jsonify, request, make_response
-import numpy as np
-import platform
-from src.dc_env.data_center_env import DataCenterEplusEnv
+"""Rise http-server with RL-agent."""
+from typing import Union
+from flask import Flask, jsonify, request
 import os
-import numpy as np
-from datetime import datetime
-from gymnasium import spaces
-from stable_baselines3.common.evaluation import evaluate_policy
-from stable_baselines3.common.env_checker import check_env
-from stable_baselines3 import SAC
 from stable_baselines3 import PPO
-import pandas as pd
 import requests
-import json
 
 
 app = Flask(__name__)
@@ -31,6 +21,12 @@ model = PPO.load(MODEL_PATH,
 
 @app.route('/predict', methods=['POST'])
 def obs_post_request():
+    """
+    Get observation from post method and return action to client side.
+
+    Returns:
+        Response: json with action list.
+    """
     data = request.json
     obs = data['observation']
     action, hidden_state = model.predict(observation=obs)
@@ -40,11 +36,30 @@ def obs_post_request():
         })
 
 
-def raise_server(host='0.0.0.0', port=6113):
+def raise_server(host: str = '0.0.0.0', port: int = 6113):
+    """
+    Raise server on host:port.
+
+    Args:
+        host (str, optional): host. Defaults to '0.0.0.0'.
+        port (int, optional): port. Defaults to 6113.
+    """
     app.run(host=host, port=port)
 
 
-def get_model_prediction(observation, host='127.0.0.1', port=6113):
+def get_model_prediction(observation: list, host: str = '127.0.0.1',
+                         port: int = 6113) -> Union[list[float], None]:
+    """
+    Get model prediction from http host:port based on observation.
+
+    Args:
+        observation (list): observations
+        host (str, optional): host. Defaults to '127.0.0.1'.
+        port (int, optional): port. Defaults to 6113.
+
+    Returns:
+        Union[list[float], None]: list of actions or None.
+    """
     data = {'observation': observation}
     address = 'http://' + host + ':' + str(port) + '/predict'
     response = requests.post(address, json=data)
@@ -55,6 +70,7 @@ def get_model_prediction(observation, host='127.0.0.1', port=6113):
     else:
         print(f'Response code: {response.status_code}')
         return None
+
 
 if __name__ == "__main__":
     raise_server()
