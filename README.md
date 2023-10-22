@@ -1,6 +1,6 @@
-# Data Center Environment and Reinforcement Learning (RL) Control
+# Data Center Environment and Reinforcement Learning Control
 
-This repository offers a comprehensive simulation of a data center environment using EnergyPlus, accompanied by a state-of-the-art Reinforcement Learning agent trained for dynamic cooling and humidity control within the data center.
+This repository offers a comprehensive simulation of a data center (DC) environment using EnergyPlus, accompanied by a state-of-the-art Reinforcement Learning agent trained for dynamic cooling and humidity control within the data center.
 
 ### Key Features:
 
