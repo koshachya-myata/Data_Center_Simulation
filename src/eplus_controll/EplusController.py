@@ -42,7 +42,6 @@ class EplusController:
         os.chdir(idf_dir)
 
         if os.name == 'nt':  # for windows
-            print('Windows support may not work')
             idf_path = os.path.join(os.path.dirname(__file__), idf_file)
             weather_path = os.path.join(os.path.dirname(__file__), weather)
             self.p = subprocess.Popen([eplus_path, '-w', weather_path,
