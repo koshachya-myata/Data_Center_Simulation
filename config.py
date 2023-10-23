@@ -8,7 +8,6 @@ PWD_DELIM = "/"
 if os_type == "Linux":
     ENERGYPLUS_PATH = "/usr/local/EnergyPlus-23-1-0/energyplus"
 elif os_type == "Windows":
-    print('Windows support may not work')
     ENERGYPLUS_PATH = "C:\\EnergyPlusV23-1-0\\energyplus.exe"
     PWD_DELIM = "\\"
 else:  # mac
