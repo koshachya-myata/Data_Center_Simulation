@@ -16,9 +16,10 @@ from src.dc_env.make_config import make_config
 
 env_config, horizon, pwd = make_config()
 
-checkpoint_path = "/training_results/230714_234506_PPO_agent_experiment/PPO_DataCenterEnv_516b2_00000_0_2023-07-14_23-45-07/checkpoint_000005"
-
-full_path = False
+checkpoint_path = os.path.join(pwd, 'training_results',
+                               '230714_234506_PPO_agent_experiment',
+                               'PPO_DataCenterEnv_516b2_00000_0_2023',
+                               'checkpoint_000005')
 
 
 pwd = os.getcwd()
