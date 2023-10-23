@@ -24,11 +24,11 @@ endif
 const_models:
 	$(PYTHON_INTERPRETER) main.py const_18_22_25
 
-## Train ray RL-agent DEPRICATED
+## Train ray RL-agent !DEPRICATED!
 train_ray_agent:
 	$(PYTHON_INTERPRETER) main.py train_ray
 
-## Test ray RL-agent DEPRICATED
+## Test ray RL-agent !DEPRICATED!
 test_ray_agent: 
 	$(PYTHON_INTERPRETER) main.py test_ray
 
@@ -40,14 +40,14 @@ train_sb3:
 test_sb3:
 	$(PYTHON_INTERPRETER) main.py train_sb3
 
-## Test constant models and sb3 model
+## Test constant models and SB3 model
 test_all: test_sb3  const_models
 
 ## Raise HTTP-server with SB3 model
 raise_server:test_env
 	$(PYTHON_INTERPRETER) main.py raise_server
 
-## Simulate inference [SERVER MUST BE ARLEDY RAISED].
+## Simulate inference [SERVER AND CLICKHOUSE MUST BE ARLEDY RAISED].
 simulate_inference:
 	$(PYTHON_INTERPRETER) main.py simulate_inference
 

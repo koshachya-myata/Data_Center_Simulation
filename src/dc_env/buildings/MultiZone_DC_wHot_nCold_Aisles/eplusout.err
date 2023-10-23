@@ -1,4 +1,4 @@
-Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.10.22 19:45,
+Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.10.23 05:31,
    ************* Beginning Zone Sizing Calculations
    ** Warning ** RunPeriod: object=RUN PERIOD 1, start weekday (SUNDAY) does not match the start year (2006), corrected to SATURDAY.
    ** Warning ** ProcessScheduleInput: Schedule:Day:Interval="ECONOMIZER MAX OA FRACTION 70 PCT DEFAULT", Blank Schedule Type Limits Name input -- will not be validated.
@@ -103,4 +103,4 @@ Program Version,EnergyPlus, Version 23.1.0-87ed9199d4, YMD=2023.10.22 19:45,
    *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
    ************* EnergyPlus Sizing Error Summary. During Sizing: 14 Warning; 0 Severe Errors.
-   ************* EnergyPlus Completed Successfully-- 31 Warning; 0 Severe Errors; Elapsed Time=00hr 01min 36.14sec
+   ************* EnergyPlus Completed Successfully-- 31 Warning; 0 Severe Errors; Elapsed Time=00hr 01min 36.39sec
