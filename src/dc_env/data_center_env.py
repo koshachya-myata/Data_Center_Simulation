@@ -115,7 +115,7 @@ class DataCenterEnv(ABC, gym.Env):
         self.ahu_temp_min = 4
         self.ahu_temp_max = 16
 
-        self.timestamps_in_hour = 5 
+        self.timestamps_in_hour = 5
 
         # Normalized action space
         acts_len = 3

@@ -63,11 +63,12 @@ def init_db(table_name='DC_log', drop_if_exists=False):
     return db
 
 
-def insert_to_table(db, info, table_name='DC_log', iter=0):
+def insert_to_table(db, info, sim_days=0, table_name='DC_log', iter=0):
     """Insert to df.table_name DC info."""
     info = {key: round(value, 6) for key, value in info.items()}
     dt = timedelta(minutes=iter * 30)  # for simulate
-    now = (datetime.now() + dt).replace(microsecond=0)
+    minus_sim_days = timedelta(days=sim_days)
+    now = (datetime.now() - minus_sim_days + dt).replace(microsecond=0)
     insert_sql = f"""
     INSERT INTO {db.database}.{table_name} (*) VALUES (
             '{now}',
@@ -128,7 +129,7 @@ def simulate_agent_inference(init_obs: list[float],
     is_sim_finised = is_turncated = False
     while not is_sim_finised and not is_turncated:
         obs, reward, is_sim_finised, is_turncated, info = env.step(action)
-        insert_to_table(db, info, 'DC_log', iter)
+        insert_to_table(db, info, env_config['days'], 'DC_log', iter)
         action = get_model_prediction(observation=obs.tolist())
         iter += 1
     print('Sumulation Finished')
