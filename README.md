@@ -1,6 +1,6 @@
 # Data Center Environment and Reinforcement Learning Control
 
-This repository offers a comprehensive simulation of a data center (DC) environment using EnergyPlus, accompanied by a state-of-the-art Reinforcement Learning agent trained for dynamic cooling and humidity control within the data center.
+This repository offers a comprehensive simulation of a data center (DC) environment using EnergyPlus, accompanied by a Reinforcement Learning agent (PPO) trained for dynamic cooling and humidity control within the data center.
 
 ### Key Features:
 
@@ -28,6 +28,4 @@ To perform inference or analyze your simulation results, you'll need to set up [
 
 `make help` for view existing commands.
 
-### Compatibility:
-
-This repository is designed to work on various platforms, but extensive testing has been done primarily on MacOS. Windows compatibility may require additional adjustments.
+See `reports/` for more details.
